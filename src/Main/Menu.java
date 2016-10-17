@@ -16,13 +16,28 @@ public class Menu {
     {
         int op;
         
-        System.out.println("----MENU-----");
+        System.out.println("----MENU PRINCIPAL-----");
         System.out.println("1-Entrada Formal");
         System.out.println("2-Listar o Grafo");
         System.out.println("0-Finalizar o programa");
         
         op = scan.nextInt();
         
+        switch(op)
+        {
+            case 0:
+                System.out.println("Saindo do Menu Principal");
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                System.out.println("Opção Invalida");
+                break;
+        }
+        
         return op;
     }
+    
 }
