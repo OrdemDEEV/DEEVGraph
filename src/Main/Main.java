@@ -5,9 +5,6 @@
  */
 package Main;
 
-import Funcoes.Grafo; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
-import java.util.Scanner;
-
 /**
  *
  * @author emerson
@@ -15,19 +12,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+
+        Menu menu = new Menu();
+        int op = -1;
         
-        Scanner scan = new Scanner(System.in);
         
-        System.out.println("----MENU-----");
-        System.out.println("1-Entrada Formal");
-        System.out.println("2-Listar o Grafo");
-        System.out.println("0-Finalizar o programa");
-        int op = scan.nextInt();
-        
-        op=-1;
         while(op != 0){
             
+            op = menu.menu_Principal();
         }
+        System.out.println("Programa Encerrado");
     }
 }
 
