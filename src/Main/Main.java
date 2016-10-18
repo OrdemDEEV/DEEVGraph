@@ -6,10 +6,6 @@
 
 package Main;
 
-/**
- *
- * @author emerson
- */
 
 public class Main {
     
