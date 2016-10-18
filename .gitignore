@@ -1,1 +1,2 @@
 /build/
+git rm --cached nbproject/private/private.properties

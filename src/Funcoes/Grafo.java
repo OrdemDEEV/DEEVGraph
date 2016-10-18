@@ -1,69 +1,66 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor. ola
- */
+
 package Funcoes;
 
-// Este é um exemplo simples de implementação de grafo representado por lista
-// de adjacências
 
 import java.util.List;
 import java.util.ArrayList;
 
-public class Grafo {
-    public class Vertice {
-        String nome;
-        List<Aresta> adj;
-
-        Vertice(String nome) {
-            this.nome = nome;
-            this.adj = new ArrayList<Aresta>();
-        }
-
-        void addAdj(Aresta e) {
-            adj.add(e);
-        }
-    }
-
-    public class Aresta {
-        Vertice origem;
-        Vertice destino;
-
-        Aresta(Vertice origem, Vertice destino) {
-            this.origem = origem;
-            this.destino = destino;
-        }
-    }
-
+public class Grafo extends Vertice {
+    
     List<Vertice> vertices;
-    List<Aresta> arestas;
+    List<Arestas> arestas;
 
     public Grafo() {
         vertices = new ArrayList<Vertice>();
-        arestas = new ArrayList<Aresta>();
+        arestas = new ArrayList<Arestas>();
     }
 
-    Vertice addVertice(String nome) {
+    public Vertice addVertice(String nome) { //Adicona vertice e retorna para uma variavel vertice
         Vertice v = new Vertice(nome);
         vertices.add(v);
         return v;
     }
 
-    Aresta addAresta(Vertice origem, Vertice destino) {
-        Aresta e = new Aresta(origem, destino);
+    public Arestas addAresta(String nome, Vertice origem, Vertice destino) { //Adiciona aresta e retorna para uma variavel aresta
+        Arestas e = new Arestas(nome, origem, destino);
         origem.addAdj(e);
         arestas.add(e);
         return e;
     }
+    
+    public void printarVertices(Vertice v[])
+    {
+         System.out.println("Vertices");
+       for (int i = 0; i < 8; i++)
+       {
+           System.out.println("v" + i + " = nome: " + v[i].getNomeVertice(v[i]));
+       }
+    }
+   /* TA DANDO ERRO
+    public Vertice procuraNomeVertice(String nome, Vertice v[], int tam)
+    {
+        
+        for(int i = 0; i< tam; i++)
+        {
+            System.out.println("NOME : " + v[i].getNomeVertice(v[i]));
+            if(v[i].getNomeVertice(v[i]).equals(nome)) //Compara a string pega no getNome com o nome enviado
+            {   
+                return v[i];
+            }
+        }
+        System.out.println("Nome não encontrado, retornando valor inicial");
+        return v[0]; //PROPICIO A ERRO
+    };
+    */
 
+    @Override
     public String toString() {
         String r = "";
         for (Vertice u : vertices) {
-            r += u.nome + " -> ";
-            for (Aresta e : u.adj) {
+            r += u.nomeVertice + " -> ";
+            for (Arestas e : u.adj) {
                 Vertice v = e.destino;
-                r += v.nome + ", ";
+                r += v.nomeVertice + ", ";
             }
             r += "\n";
         }

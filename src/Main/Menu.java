@@ -7,6 +7,8 @@ package Main;
 
 import java.util.Scanner;
 import Funcoes.Grafo; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
+import Funcoes.Vertice;
+import Funcoes.Arestas;
 
 public class Menu {
     
@@ -19,7 +21,7 @@ public class Menu {
         
         System.out.println("----MENU PRINCIPAL-----");
         System.out.println("1-Enserir Dados do Grafo");
-        System.out.println("2-Listar o Grafo");
+        System.out.println("2-Listar o Grafo adjacente");
         System.out.println("0-Finalizar o programa");
         
         op = scan.nextInt();
@@ -30,8 +32,10 @@ public class Menu {
                 System.out.println("Saindo do Menu Principal");
                 break;
             case 1:
+                inserir_dados_do_grafo();
                 break;
             case 2:
+                System.out.println(grafo);
                 break;
             default:
                 System.out.println("Opção Invalida");
@@ -43,13 +47,24 @@ public class Menu {
     
     public void inserir_dados_do_grafo()
     {
-        System.out.println("Digite quantas arestas vão ter");
-        
-        System.out.println("Digite quantos vértices vão ter");
-        
-        //dai no caso a gente cria uma variavel vertice e outra aresta com [ ] o tamanho de quantas vão
-        //ser usadas 
-        
-    }
-    
-}
+        //TESTE PARA INSERIR GRAFOS
+       Vertice v[] = new Vertice[8];
+       Arestas a[] = new Arestas[4];
+       
+       v[0] = grafo.addVertice("vertice s");
+       v[1] = grafo.addVertice("Vertice s1");
+       v[2] = grafo.addVertice("vertive s2");
+       v[3] = grafo.addVertice("vertice s3");
+       v[4] = grafo.addVertice("vertice s4");
+       v[5] = grafo.addVertice("Vertice s5");
+       v[6] = grafo.addVertice("vertive s6");
+       v[7] = grafo.addVertice("vertice s7");
+       
+      grafo.printarVertices(v);
+       
+       a[0] = grafo.addAresta("aresta t", v[0], v[1]);
+       a[1] = grafo.addAresta("aresta t2", v[1], v[2]);
+       a[2] = grafo.addAresta("aresta t3", v[2], v[0]);
+       a[3] = grafo.addAresta("aresta 4", v[1], v[3]);
+   
+}}
