@@ -19,6 +19,8 @@ public class Arestas extends Vertice {
             this.origem = origem;
             this.destino = destino;
         }
+        
+      
 
         
 }

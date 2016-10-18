@@ -19,7 +19,7 @@ public class Vertice {
             adj.add(e);
         }
         
-        String getNomeVertice(Vertice v)
+        public String getNomeVertice(Vertice v)
         {
             return nomeVertice;
         };
