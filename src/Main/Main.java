@@ -22,8 +22,6 @@ public class Main {
         
         while(op != 0){
             
-            System.out.println("esse programaé uma bosta");
-            
             op = menu.menu_Principal();
         }
         System.out.println("Programa Encerrado");
