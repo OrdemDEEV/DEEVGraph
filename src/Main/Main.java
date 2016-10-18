@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Main;
 
 /**
@@ -11,6 +12,8 @@ package Main;
  */
 
 public class Main {
+    
+    
     public static void main(String[] args){
 
         Menu menu = new Menu();
@@ -18,6 +21,8 @@ public class Main {
         
         
         while(op != 0){
+            
+            System.out.println("esse programaé uma bosta");
             
             op = menu.menu_Principal();
         }
