@@ -1,2 +1,9 @@
-/build/
-git rm --cached nbproject/private/private.properties
+node_modules/
+dist/
+*.log
+nbproject/private/*    
+*.bak
+*.orig
+*~
+*.log
+*private.xml
