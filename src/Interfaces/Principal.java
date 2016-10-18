@@ -35,6 +35,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,12 +54,27 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.setText("Grafos");
 
         jMenu5.setText("Criar Nó");
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenu5);
 
         jMenu6.setText("Criar Aresta");
         jMenu2.add(jMenu6);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu7.setText("Visualizar");
+
+        jMenu8.setText("Matriz de incidência");
+        jMenu7.add(jMenu8);
+
+        jMenu9.setText("Lista de Adjacencia");
+        jMenu7.add(jMenu9);
+
+        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -73,6 +91,15 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        // TODO add your handling code here:
+        
+        CriarNo obj = new CriarNo();
+        jpanelprincipal.add(obj);
+        obj.setVisible(true);
+        
+    }//GEN-LAST:event_jMenu5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,6 +143,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane jpanelprincipal;
     // End of variables declaration//GEN-END:variables
