@@ -5,7 +5,7 @@
  */
 
 package Main;
-
+import Interfaces.Principal;
 
 public class Main {
     
@@ -13,8 +13,10 @@ public class Main {
     public static void main(String[] args){
 
         Menu menu = new Menu();
+        Principal janela = new Principal();
         int op = -1;
         
+        janela.setVisible(true);  //chama interface 
         
         while(op != 0){
             
