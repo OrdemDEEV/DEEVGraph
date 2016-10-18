@@ -48,7 +48,7 @@ public class Menu {
         System.out.println("Digite quantos vértices vão ter");
         
         //dai no caso a gente cria uma variavel vertice e outra aresta com [ ] o tamanho de quantas vão
-        //ser usadas
+        //ser usadas 
         
     }
     
