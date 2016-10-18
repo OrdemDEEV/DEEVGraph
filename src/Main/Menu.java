@@ -20,10 +20,10 @@ public class Menu {
         int op;
         
         System.out.println("----MENU PRINCIPAL-----");
-        System.out.println("1-Enserir Dados do Grafo");
+        System.out.println("1-Inserir Dados do Grafo");
         System.out.println("2-Listar o Grafo adjacente");
         System.out.println("0-Finalizar o programa");
-        
+                                    
         op = scan.nextInt();
         
         switch(op)
@@ -67,4 +67,5 @@ public class Menu {
        a[2] = grafo.addAresta("aresta t3", v[2], v[0]);
        a[3] = grafo.addAresta("aresta 4", v[1], v[3]);
    
-}}
+}
+}
