@@ -1,9 +1,11 @@
 node_modules/
 dist/
 *.log
-nbproject/private/*    
-*.bak
-*.orig
-*~
-*.log
-*private.xml
+nbproject/private/private/private.properties
+nbproject/private/private.xml  
+
+
+
+
+
+
