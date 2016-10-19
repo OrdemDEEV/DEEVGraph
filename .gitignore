@@ -4,6 +4,7 @@ nbproject/private/private/private.properties
 nbproject/private/private.xml  
 nbproject/*
 nbproject
+build/built-jar.properties
 
 *.log
 nbproject/private/*    
