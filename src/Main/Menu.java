@@ -15,6 +15,7 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     Grafo grafo = new Grafo();
     
+    
     public int menu_Principal()
     {
         int op;
@@ -50,6 +51,8 @@ public class Menu {
         //TESTE PARA INSERIR GRAFOS
        Vertice v[] = new Vertice[8];
        Arestas a[] = new Arestas[4];
+       Vertice matrizAdjacencia[][] = new Vertice[8][8];
+       int j = 0, i = 0;
        
        v[0] = grafo.addVertice("vertice s");
        v[1] = grafo.addVertice("Vertice s1");
@@ -66,6 +69,18 @@ public class Menu {
        a[1] = grafo.addAresta("aresta t2", v[1], v[2]);
        a[2] = grafo.addAresta("aresta t3", v[2], v[0]);
        a[3] = grafo.addAresta("aresta 4", v[1], v[3]);
-   
+       
+      for(i = 0; i < 8; i++)
+      {
+          
+          for (j = 1; j < 8;j++)
+          {
+              System.out.print("i");
+              
+          }
+          System.out.println("i");
+      }
+      
+        System.out.println();
 }
 }

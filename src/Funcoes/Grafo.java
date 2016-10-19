@@ -36,6 +36,11 @@ public class Grafo extends Vertice {
            System.out.println("v" + i + " = nome: " + v[i].getNomeVertice(v[i]));
        }
     }
+    
+    public void criarMatrizDeAdjacencia(Vertice v[], Arestas a[], int tamVertices)
+    {
+        
+    }
    /* TA DANDO ERRO
     public Vertice procuraNomeVertice(String nome, Vertice v[], int tam)
     {
