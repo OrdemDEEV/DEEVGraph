@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        Menu menu = new Menu();
+        Menu menu = new Menu(8,4);
         int op = -1;
         
         while(op != 0){

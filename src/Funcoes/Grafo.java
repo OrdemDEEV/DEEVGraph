@@ -43,10 +43,10 @@ public class Grafo extends Vertice {
         int j;
         
          System.out.println("Matriz de Adjacencia"); 
-      for(i = 0; i < tamVertices; i++)
+      for(i = 0; i < 8; i++)
       {
           
-          for (j = 1; j < tamVertices-1;j++) //Este for deve ir até o tamanho de vértices -1
+          for (j = 0; j < 7;j++) //Este for deve ir até o tamanho de vértices -1
           {
               System.out.print(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
               
