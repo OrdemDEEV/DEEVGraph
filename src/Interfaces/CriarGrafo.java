@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Funcoes.Grafo;//importa o package onde esta as funcoes para serem chamadas
+
 /**
  *
  * @author eduardo
@@ -41,7 +43,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         txtNomeAresta = new javax.swing.JTextField();
         criarAresta_button = new javax.swing.JButton();
         cancelarAresta_button = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        resultado = new javax.swing.JLabel();
         no_disponivel_1 = new javax.swing.JComboBox<>();
         no_disponivel_2 = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
@@ -84,6 +86,11 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         jLabel1.setText("Informe o nome:");
 
         criarVertice_button.setText("Criar");
+        criarVertice_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criarVertice_buttonActionPerformed(evt);
+            }
+        });
 
         cancelar_button.setText("Cancelar");
 
@@ -147,7 +154,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
 
         cancelarAresta_button.setText("Cancelar");
 
-        jLabel3.setText("Selecione os Vértices Disponíveis");
+        resultado.setText("Selecione os Vértices Disponíveis");
 
         no_disponivel_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -167,7 +174,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
                                 .addComponent(no_disponivel_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(no_disponivel_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3)
+                            .addComponent(resultado)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(criarAresta_button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -183,7 +190,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel3)
+                .addComponent(resultado)
                 .addGap(31, 31, 31)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(no_disponivel_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,6 +251,15 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
+        // TODO add your handling code here:
+        
+        Grafo grafo = new Grafo();
+        String vertice = txtNomeVertice.getText();
+        grafo.addVertice(vertice);//chama funcção
+        resultado.setText(vertice);// ainda nao pronto envia o resultado para a exibição
+    }//GEN-LAST:event_criarVertice_buttonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarAresta_button;
@@ -252,7 +268,6 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private javax.swing.JButton criarVertice_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -262,6 +277,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JComboBox<String> no_disponivel_1;
     private javax.swing.JComboBox<String> no_disponivel_2;
+    private javax.swing.JLabel resultado;
     private javax.swing.JTextField txtNomeAresta;
     private javax.swing.JTextField txtNomeVertice;
     // End of variables declaration//GEN-END:variables
