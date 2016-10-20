@@ -37,26 +37,25 @@ public class Grafo extends Vertice {
        }
     }
     
-    public void criarMatrizDeAdjacencia(Vertice v[], Arestas a[], int tamVertices)
+    public void printarMatrizAdjacente(Vertice v[], Arestas a[], int tamVertices)
     {
+        int i;
+        int j;
         
+         System.out.println("Matriz de Adjacencia"); 
+      for(i = 0; i < tamVertices; i++)
+      {
+          
+          for (j = 1; j < tamVertices-1;j++) //Este for deve ir até o tamanho de vértices -1
+          {
+              System.out.print(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
+              
+          }
+          System.out.println(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
+      }
+      
+        System.out.println();
     }
-   /* TA DANDO ERRO
-    public Vertice procuraNomeVertice(String nome, Vertice v[], int tam)
-    {
-        
-        for(int i = 0; i< tam; i++)
-        {
-            System.out.println("NOME : " + v[i].getNomeVertice(v[i]));
-            if(v[i].getNomeVertice(v[i]).equals(nome)) //Compara a string pega no getNome com o nome enviado
-            {   
-                return v[i];
-            }
-        }
-        System.out.println("Nome não encontrado, retornando valor inicial");
-        return v[0]; //PROPICIO A ERRO
-    };
-    */
 
     @Override
     public String toString() {

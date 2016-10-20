@@ -19,10 +19,20 @@ public class Menu {
     public int menu_Principal()
     {
         int op;
+        System.out.println("Defina Quantos Vértices usará ");
+        System.out.println("Defina Quantas Arestas usará");
+        System.out.println("Para testes usarei 8 para o tamanho de Vértices e 4 para arestas");
+        
+        int tamVertice = 8;
+        int tamArestas = 4;
+        
+        Vertice v[] = new Vertice[tamVertice];
+        Arestas a[] = new Arestas[tamArestas];
         
         System.out.println("----MENU PRINCIPAL-----");
         System.out.println("1-Inserir Dados do Grafo");
-        System.out.println("2-Listar o Grafo adjacente");
+        System.out.println("2-Listar Lista de adjacencia");
+        System.out.println("3-Listar Matriz adjacencia");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -33,11 +43,13 @@ public class Menu {
                 System.out.println("Saindo do Menu Principal");
                 break;
             case 1:
-                inserir_dados_do_grafo();
+                inserir_dados_do_grafo(v,a);
                 break;
             case 2:
                 System.out.println(grafo);
                 break;
+            case 3:
+                grafo.printarMatrizAdjacente(v, a, tamVertice);
             default:
                 System.out.println("Opção Invalida");
                 break;
@@ -46,11 +58,10 @@ public class Menu {
         return op;
     }
     
-    public void inserir_dados_do_grafo()
+    public void inserir_dados_do_grafo(Vertice v[], Arestas a[])
     {
         //TESTE PARA INSERIR GRAFOS
-       Vertice v[] = new Vertice[8];
-       Arestas a[] = new Arestas[4];
+       
        int j, i;
        
        v[0] = grafo.addVertice("vertice s");
@@ -69,7 +80,7 @@ public class Menu {
        a[2] = grafo.addAresta("aresta t3", v[2], v[0]);
        a[3] = grafo.addAresta("aresta 4", v[1], v[3]);
       
-       //para printar a Matriz de adjacencia é só seguir os passos abaixo
+       /*para printar a Matriz de adjacencia é só seguir os passos abaixo
        
         System.out.println("Matriz de Adjacencia"); 
       for(i = 0; i < 8; i++)
@@ -77,12 +88,26 @@ public class Menu {
           
           for (j = 1; j < 7;j++) //Este for deve ir até o tamanho de vértices -1
           {
-              System.out.print(" A[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
+              System.out.print(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
               
           }
-          System.out.println(" A[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
+          System.out.println(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
       }
       
+        System.out.println();
+      */  
+        System.out.println("Matriz de Incidencia");
+        
+        for(i = 0; i < 8; i++) //linhas representam os vertices
+      {
+          
+          for (j = 1; j < 4;j++) //Colunas representam arestas
+          {
+              System.out.print(" A[" + i + "][" + j + "] ");
+              
+          }
+          System.out.println(" A[" + i + "][" + j + "] ");
+      }
         System.out.println();
 }
 }
