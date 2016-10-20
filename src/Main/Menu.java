@@ -51,8 +51,7 @@ public class Menu {
         //TESTE PARA INSERIR GRAFOS
        Vertice v[] = new Vertice[8];
        Arestas a[] = new Arestas[4];
-       Vertice matrizAdjacencia[][] = new Vertice[8][8];
-       int j = 0, i = 0;
+       int j, i;
        
        v[0] = grafo.addVertice("vertice s");
        v[1] = grafo.addVertice("Vertice s1");
@@ -69,16 +68,19 @@ public class Menu {
        a[1] = grafo.addAresta("aresta t2", v[1], v[2]);
        a[2] = grafo.addAresta("aresta t3", v[2], v[0]);
        a[3] = grafo.addAresta("aresta 4", v[1], v[3]);
+      
+       //para printar a Matriz de adjacencia é só seguir os passos abaixo
        
+        System.out.println("Matriz de Adjacencia"); 
       for(i = 0; i < 8; i++)
       {
           
-          for (j = 1; j <= 7;j++)
+          for (j = 1; j < 7;j++) //Este for deve ir até o tamanho de vértices -1
           {
-              System.out.print(" A[" + i + "][" + j + "]");
+              System.out.print(" A[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
               
           }
-          System.out.println(" A[" + i + "][" + j + "]");
+          System.out.println(" A[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
       }
       
         System.out.println();
