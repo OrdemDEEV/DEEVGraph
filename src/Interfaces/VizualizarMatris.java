@@ -68,6 +68,12 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Vizualizar Matriz");
+
         jPanel3.setBackground(new java.awt.Color(254, 254, 254));
 
         jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N

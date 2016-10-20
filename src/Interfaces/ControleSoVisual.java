@@ -12,6 +12,11 @@ import javax.swing.UIManager;
  * @author eduardo
  */
 public class ControleSoVisual {
+    /*
+    *Codigo que realiza a submissao do look and fell ao so, 
+    *deixando o sistema com a cara do sistema operacional 
+    *que o usuario utiliza
+    */
     public void carregaVisualSistema(){
              {
         try {
