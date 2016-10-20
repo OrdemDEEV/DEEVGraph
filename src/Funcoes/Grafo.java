@@ -28,33 +28,52 @@ public class Grafo extends Vertice {
         return e;
     }
     
-    public void printarVertices(Vertice v[])
+    public void printarVertices(Vertice v[], int tamVertices)
     {
          System.out.println("Vertices");
-       for (int i = 0; i < 8; i++)
+       for (int i = 0; i < tamVertices; i++)
        {
            System.out.println("v" + i + " = nome: " + v[i].getNomeVertice(v[i]));
        }
     }
     
-    public void printarMatrizAdjacente(Vertice v[], Arestas a[], int tamVertices)
+    public void printarMatrizAdjacente(Vertice v[], Arestas a[], int tamVertices, int tamArestas)
     {
         int i;
         int j;
         
          System.out.println("Matriz de Adjacencia"); 
-      for(i = 0; i < 8; i++)
+      for(i = 0; i < tamVertices; i++)
       {
           
-          for (j = 0; j < 7;j++) //Este for deve ir até o tamanho de vértices -1
+          for (j = 1; j < tamVertices;j++) //Este for deve ir até o tamanho de vértices -1
           {
-              System.out.print(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
+              System.out.print(" V[" + i + "][" + (j-1) + "] " + a[0].pegarMatrizAdj(a, v[i], v[j-1], tamArestas));
               
           }
-          System.out.println(" V[" + i + "][" + j + "] " + a[0].pegarMatrizAdj(a, v[i], v[j], 4));
+          System.out.println(" V[" + i + "][" + (j-1) + "] " + a[0].pegarMatrizAdj(a, v[i], v[j-1], tamArestas));
       }
       
         System.out.println();
+    }
+    
+    public void printarMatrizIncidente(Vertice v[], Arestas a[], int tamVertices, int tamArestas)
+    {
+         int i, j;
+              
+            System.out.println("Matriz de Incidencia");
+            
+            for(i = 0; i < tamVertices; i++) //linhas representam os vertices
+             {
+          
+                    for (j = 1; j < tamArestas;j++) //Colunas representam arestas
+                     {
+                            System.out.print(" A[" + i + "][" + (j-1) + "] " +  a[0].pegarMatrizInc(a[i], v[j-1]));
+              
+                        }
+                System.out.println(" A[" + i + "][" + (j-1) + "] " +  a[0].pegarMatrizInc(a[i], v[j-1]));
+               }
+            System.out.println();
     }
 
     @Override

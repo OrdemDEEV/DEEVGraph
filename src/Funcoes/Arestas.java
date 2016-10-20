@@ -27,9 +27,17 @@ public class Arestas extends Vertice {
             
             for(int i = 0; i < tamAresta; i++)
             {
-                if(a[i].getOrigem(a[i]) == origem && a[i].getDestino(a[i]) == destino)
+                if(getOrigem(a[i]) == origem && getDestino(a[i]) == destino)
                 {
                     return 1;
+                }
+                else if(getOrigem(a[i]) == destino && getDestino(a[i]) == origem)
+                {
+                    return 1;
+                }
+                else
+                {
+                    
                 }
             }
             
@@ -40,6 +48,16 @@ public class Arestas extends Vertice {
             
             return 1;
             
+        }
+        
+        public int pegarMatrizInc(Arestas a, Vertice v)
+        {
+           if(a.origem == v || a.destino == v)
+           {
+               return 1;
+           }
+            
+            return 0;
         }
       
  

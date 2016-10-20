@@ -37,8 +37,9 @@ public class Menu {
         
         System.out.println("----MENU PRINCIPAL-----");
         System.out.println("1-Inserir Dados do Grafo");
-        System.out.println("2-Listar Lista de adjacencia");
-        System.out.println("3-Listar Matriz adjacencia");
+        System.out.println("2-Mostrar Lista de adjacencia");
+        System.out.println("3-Mostrar Matriz adjacencia");
+        System.out.println("4-Mostrar Matriz de Incidencia");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -55,8 +56,10 @@ public class Menu {
                 System.out.println(grafo);
                 break;
             case 3:
-                
-                grafo.printarMatrizAdjacente(this.v, this.a, tamVertice);
+                grafo.printarMatrizAdjacente(this.v, this.a, tamVertice, tamArestas);
+                break;
+            case 4:
+                grafo.printarMatrizIncidente(this.v, this.a, tamVertice, tamArestas);
                 break;
             default:
                 System.out.println("Opção Invalida");
@@ -78,11 +81,11 @@ public class Menu {
        vf[1] = grafo.addVertice("Vertice s1");
        vf[2] = grafo.addVertice("vertive s2");
        vf[3] = grafo.addVertice("vertice s3");
-       vf[4] = grafo.addVertice("vertice s4");
+      /* vf[4] = grafo.addVertice("vertice s4");
        vf[5] = grafo.addVertice("Vertice s5");
        vf[6] = grafo.addVertice("vertive s6");
        vf[7] = grafo.addVertice("vertice s7");
-       
+       */
        this.v = vf;
        
        af[0] = grafo.addAresta("aresta t0", v[0], v[1]);
@@ -92,20 +95,9 @@ public class Menu {
       
        this.a = af;
        
-       grafo.printarVertices(this.v);
+       //grafo.printarVertices(this.v, tamVertice);
        
-        System.out.println("Matriz de Incidencia");
-        
-        for(i = 0; i < 8; i++) //linhas representam os vertices
-      {
-          
-          for (j = 1; j < 4;j++) //Colunas representam arestas
-          {
-              System.out.print(" A[" + i + "][" + j + "] ");
-              
-          }
-          System.out.println(" A[" + i + "][" + j + "] ");
-      }
+       
         System.out.println();
 }
 }
