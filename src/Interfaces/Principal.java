@@ -163,6 +163,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem3);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/salvarr.png"))); // NOI18N
         jMenuItem4.setText("Salvar");
         jMenu1.add(jMenuItem4);
 
