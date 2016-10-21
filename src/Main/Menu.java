@@ -81,8 +81,8 @@ public class Menu {
        vf[1] = grafo.addVertice("Vertice s1");
        vf[2] = grafo.addVertice("vertive s2");
        vf[3] = grafo.addVertice("vertice s3");
-      /* vf[4] = grafo.addVertice("vertice s4");
-       vf[5] = grafo.addVertice("Vertice s5");
+       vf[4] = grafo.addVertice("vertice s4");
+      /* vf[5] = grafo.addVertice("Vertice s5");
        vf[6] = grafo.addVertice("vertive s6");
        vf[7] = grafo.addVertice("vertice s7");
        */
