@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Funcoes.Grafo;//importa o package onde esta as funcoes para serem chamadas
+import Main.MainControllerInterface_Back_And_Front;
 
 /**
  *
@@ -254,9 +255,15 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
         // TODO add your handling code here:
         
+        MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
         Grafo grafo = new Grafo();
         String vertice = txtNomeVertice.getText();
+        
+        
         grafo.addVertice(vertice);//chama funcção
+        
+        
+        
         resultado.setText(vertice);// ainda nao pronto envia o resultado para a exibição
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
