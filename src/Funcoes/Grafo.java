@@ -37,10 +37,13 @@ public class Grafo extends Vertice {
        }
     }
     
+     
+      
     public void printarMatrizAdjacente(Vertice v[], Arestas a[], int tamVertices, int tamArestas)
     {
         int i;
         int j;
+        
         
          System.out.println("Matriz de Adjacencia"); 
       for(i = 0; i < tamVertices; i++)
@@ -48,14 +51,16 @@ public class Grafo extends Vertice {
           
           for (j = 1; j < tamVertices;j++) //Este for deve ir até o tamanho de vértices -1
           {
-              System.out.print(" V[" + i + "][" + (j-1) + "] " + a[0].pegarMatrizAdj(a, v[i], v[j-1], tamArestas));
+              System.out.print(" V[" + i + "][" + (j-1) + "] " + a[0].pegarMatrizAdj(a, v[i], v[j-1], tamArestas) );
               
           }
-          System.out.println(" V[" + i + "][" + (j-1) + "] " + a[0].pegarMatrizAdj(a, v[i], v[j-1], tamArestas));
+          System.out.println(" V[" + i + "][" + (j-1) + "] "+ a[0].pegarMatrizAdj(a, v[i], v[j-1], tamArestas));
       }
       
         System.out.println();
     }
+    
+  
     
     public void printarMatrizIncidente(Vertice v[], Arestas a[], int tamVertices, int tamArestas)
     {

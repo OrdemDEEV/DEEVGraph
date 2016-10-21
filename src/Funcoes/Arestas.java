@@ -21,24 +21,23 @@ public class Arestas extends Vertice {
         }
 
        
-        public int pegarMatrizAdj(Arestas a[], Vertice origem, Vertice destino, int tamAresta)
+         public int pegarMatrizAdj(Arestas a[], Vertice origem, Vertice destino, int tamAresta)
         {
             int verificador = 0;
             
             for(int i = 0; i < tamAresta; i++)
             {
-                if(getOrigem(a[i]) == origem && getDestino(a[i]) == destino)
+                if(a[0].origem.nomeVertice.equals(origem.nomeVertice)  && a[0].destino.nomeVertice.equals(destino.nomeVertice))
                 {
                     return 1;
                 }
-                else if(getOrigem(a[i]) == destino && getDestino(a[i]) == origem)
+                
+                if(a[0].origem.nomeVertice.equals(destino.nomeVertice)  && a[0].destino.nomeVertice.equals(origem.nomeVertice))
                 {
                     return 1;
-                }
-                else
-                {
                     
                 }
+        
             }
             
             if(verificador == 0)
