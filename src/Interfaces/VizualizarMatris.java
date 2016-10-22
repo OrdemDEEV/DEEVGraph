@@ -74,10 +74,10 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Vizualizar");
 
-        jPanel3.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel3.setBackground(new java.awt.Color(60, 60, 60));
 
         jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(27, 27, 27));
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
         jLabel8.setText("Vizualizador de Grafos");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

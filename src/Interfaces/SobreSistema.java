@@ -40,10 +40,10 @@ public class SobreSistema extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Ajuda - Sobre");
 
-        jPanel2.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel2.setBackground(new java.awt.Color(60, 60, 60));
 
         jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(27, 27, 27));
+        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
         jLabel7.setText("Editor de grafos");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

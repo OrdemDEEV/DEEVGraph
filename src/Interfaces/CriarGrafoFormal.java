@@ -45,10 +45,10 @@ public class CriarGrafoFormal extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Criar Grafo Formal");
 
-        jPanel2.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel2.setBackground(new java.awt.Color(60, 60, 60));
 
         jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(27, 27, 27));
+        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
         jLabel7.setText("Criador de Gafo Formal");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
