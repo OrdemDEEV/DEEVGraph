@@ -101,4 +101,8 @@ public class NoAresta {
     {
         return noAntAresta;
     }
+    
+    public String getNomeAresta() {
+        return aresta == null ? "erro aqui" : aresta.nomeAresta;
+    }
 }

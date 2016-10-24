@@ -93,8 +93,8 @@ public class Menu {
        */
        
        //TESTE PARA INSERIR NO GRAFO PARA MATRIZES
-       Vertice v = new Vertice();
-       Arestas a = new Arestas();
+       Vertice v;
+       Arestas a;
        
        v = grafo.addVertice("vertice s0", 0);   
        grafo.setVertice_na_ListaVertice(v);
@@ -111,6 +111,8 @@ public class Menu {
        v = grafo.addVertice("Vertice s4", 4);
        grafo.setVertice_na_ListaVertice(v);
        
+       grafo.imprimirVertices();
+       /*
        a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_ID(0), grafo.encontrar_Vertice_ID(1), 0);
        grafo.setAresta_na_ListaAresta(a);
        
@@ -122,7 +124,7 @@ public class Menu {
        
        a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(3), 3);
        grafo.setAresta_na_ListaAresta(a);
-       
+       */
        
 
         System.out.println();
