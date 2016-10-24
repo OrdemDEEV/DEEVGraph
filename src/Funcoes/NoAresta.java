@@ -6,7 +6,7 @@
 package Funcoes;
 
 
-class NoAresta {
+public class NoAresta {
        private Arestas aresta;
        private NoAresta noProxAresta;
        private NoAresta noAntAresta;

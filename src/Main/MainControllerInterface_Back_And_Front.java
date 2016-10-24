@@ -23,7 +23,10 @@ import Funcoes.GrafoListaAdj;
 public class MainControllerInterface_Back_And_Front {
     GrafoListaAdj funcoes = new GrafoListaAdj();
    
+    //PRECISA DAR UM ID PARA O VERTICE AGORA
+    
     public void Criar_Vertice(String nome){
-        funcoes.addVertice(nome);
+        funcoes.addVertice(nome, 1);
+        //                       ^^>>Deve-se criar uma vareavel e um campo na interface grafica para colocar o id
     }
 }

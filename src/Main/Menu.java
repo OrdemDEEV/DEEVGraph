@@ -7,13 +7,16 @@ package Main;
 
 import java.util.Scanner;
 import Funcoes.GrafoListaAdj; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
+import Funcoes.GrafoNo;
 import Funcoes.Vertice;
 import Funcoes.Arestas;
+
 
 public class Menu {
     
     Scanner scan = new Scanner(System.in);
     GrafoListaAdj grafoadj = new GrafoListaAdj();
+    GrafoNo grafo = new GrafoNo();
     
     public int menu_Principal()
     {
@@ -58,31 +61,28 @@ public class Menu {
     {
         
         //Não vamos precisar saber o valor,só criei um vetor aqui para saber 
-        //TESTE PARA INSERIR GRAFOS
+        //TESTE PARA INSERIR NO GRAFO PARA LISTA DE ADJACENCIA
        Vertice vf[] = new Vertice[5];
        Arestas af[] = new Arestas[4];
         
        int j, i;
        
-       vf[0] = grafoadj.addVertice("vertice s0");
-       vf[1] = grafoadj.addVertice("Vertice s1");
-       vf[2] = grafoadj.addVertice("vertive s2");
-       vf[3] = grafoadj.addVertice("vertice s3");
-       vf[4] = grafoadj.addVertice("vertice s4");
-      /*  vf[5] = grafoadj.addVertice("Vertice s5");
-       vf[6] = grafoadj.addVertice("vertive s6");
-       vf[7] = grafoadj.addVertice("vertice s7");
+       vf[0] = grafoadj.addVertice("vertice s0", 0);
+       vf[1] = grafoadj.addVertice("Vertice s1", 1);
+       vf[2] = grafoadj.addVertice("vertive s2", 2);
+       vf[3] = grafoadj.addVertice("vertice s3", 3);
+       vf[4] = grafoadj.addVertice("vertice s4", 4);
+      /*  vf[5] = grafoadj.addVertice("Vertice s5", 5);
+       vf[6] = grafoadj.addVertice("vertive s6", 6);
+       vf[7] = grafoadj.addVertice("vertice s7", 7);
        */
       
        
-       af[0] = grafoadj.addAresta("aresta t0", vf[0], vf[1]);
-       af[1] = grafoadj.addAresta("aresta t2", vf[1], vf[2]);
-       af[2] = grafoadj.addAresta("aresta t3", vf[2], vf[0]);
-       af[3] = grafoadj.addAresta("aresta t4", vf[1], vf[3]);
+       af[0] = grafoadj.addAresta("aresta t0", vf[0], vf[1], 0);
+       af[1] = grafoadj.addAresta("aresta t2", vf[1], vf[2], 1);
+       af[2] = grafoadj.addAresta("aresta t3", vf[2], vf[0], 2);
+       af[3] = grafoadj.addAresta("aresta t4", vf[1], vf[3], 3);
       
-       
-       
-       //grafo.printarVertices(this.v, tamVertice);
        
        /*
         O que da de fazer nessa parte na interdace grafica, e quando adicionar um grafo e uma aresta da de fazer o seguinte
@@ -92,7 +92,28 @@ public class Menu {
        É um sugestão interessante
        */
        
+       //TESTE PARA INSERIR NO GRAFO PARA MATRIZES
+       Vertice v = null;
+       Arestas a = null;
        
+       v.setVertice("vertice s0", 0);
+       
+       grafo.setVertice_na_ListaVertice(v);
+       
+       v.setVertice("Vertice s1", 1);
+       grafo.setVertice_na_ListaVertice(v);
+       
+       v.setVertice("Vertice s2", 2);
+       grafo.setVertice_na_ListaVertice(v);
+       
+       v.setVertice("Vertice s3", 3);
+       grafo.setVertice_na_ListaVertice(v);
+       
+       v.setVertice("Vertice s4", 4);
+       grafo.setVertice_na_ListaVertice(v);
+       
+      
+
         System.out.println();
 }
 }

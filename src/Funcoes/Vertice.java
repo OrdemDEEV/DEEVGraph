@@ -4,14 +4,16 @@ package Funcoes;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Vertice {
+public class Vertice{ 
+        int id;
         String nomeVertice;
         List<Arestas> adj;
         
         Vertice(){}
         
-        Vertice(String nome) {
+        Vertice(String nome, int id) {
             this.nomeVertice = nome;
+            this.id = id;
             this.adj = new ArrayList<Arestas>();
         }
 
@@ -24,4 +26,16 @@ public class Vertice {
             return nomeVertice;
         };
         
+        public int getID(Vertice v)
+        {
+            return id;
+        }
+        
+        public void setVertice(String nome, int id)
+        {
+            this.nomeVertice = nome;
+            this.id = id;
+        }
+      
+    
 }

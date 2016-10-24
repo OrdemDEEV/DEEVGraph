@@ -6,7 +6,7 @@
 package Funcoes;
 
 
-class NoVertice {
+public class NoVertice {
         private Vertice vertice;
         private NoVertice noProxVertice;
         private NoVertice noAntVertice;

@@ -260,8 +260,8 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         GrafoListaAdj grafo = new GrafoListaAdj();
         String vertice = txtNomeVertice.getText();
         
-        
-        grafo.addVertice(vertice);//chama funcção
+        //ARRUMAR AQUI, COM UMA VAREAVEL NO LUGAR DO NUMERO
+        grafo.addVertice(vertice, 1);//chama funcção
         
         
         
