@@ -14,14 +14,14 @@
 */
 package Main;
 
-import Funcoes.Grafo;
+import Funcoes.GrafoListaAdj;
 
 /**
  *
  * @author Eduardo
  */
 public class MainControllerInterface_Back_And_Front {
-    Grafo funcoes = new Grafo();
+    GrafoListaAdj funcoes = new GrafoListaAdj();
    
     public void Criar_Vertice(String nome){
         funcoes.addVertice(nome);

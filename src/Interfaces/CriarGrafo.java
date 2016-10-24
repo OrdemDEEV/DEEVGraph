@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Funcoes.Grafo;//importa o package onde esta as funcoes para serem chamadas
+import Funcoes.GrafoListaAdj;//importa o package onde esta as funcoes para serem chamadas
 import Main.MainControllerInterface_Back_And_Front;
 
 /**
@@ -257,7 +257,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
         MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
-        Grafo grafo = new Grafo();
+        GrafoListaAdj grafo = new GrafoListaAdj();
         String vertice = txtNomeVertice.getText();
         
         

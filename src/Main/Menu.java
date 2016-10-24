@@ -6,29 +6,14 @@
 package Main;
 
 import java.util.Scanner;
-import Funcoes.Grafo; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
+import Funcoes.GrafoListaAdj; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
 import Funcoes.Vertice;
 import Funcoes.Arestas;
 
 public class Menu {
     
     Scanner scan = new Scanner(System.in);
-    Grafo grafo = new Grafo();
-    private int tamVertice;
-    private int tamArestas;
-    private Vertice v[] = new Vertice[tamVertice];
-    private Arestas a[] = new Arestas[tamArestas];
-    
-    public Menu(int tamVertice, int tamArestas)
-    {
-        System.out.println("Defina Quantos Vértices usará ");
-        System.out.println("Defina Quantas Arestas usará");
-        System.out.println("Para testes usarei 8 para o tamanho de Vértices e 4 para arestas");
-        
-        this.tamVertice = tamVertice;
-        this.tamArestas = tamArestas;
-        
-    }
+    GrafoListaAdj grafoadj = new GrafoListaAdj();
     
     public int menu_Principal()
     {
@@ -50,16 +35,16 @@ public class Menu {
                 System.out.println("Saindo do Menu Principal");
                 break;
             case 1:
-                inserir_dados_do_grafo(/*v,a,*/ tamVertice, tamArestas);
+                inserir_dados_do_grafo();
                 break;
             case 2:
-                System.out.println(grafo);
+                System.out.println(grafoadj);
                 break;
             case 3:
-                grafo.printarMatrizAdjacente(this.v, this.a, tamVertice, tamArestas);
+                
                 break;
             case 4:
-                grafo.printarMatrizIncidente(this.v, this.a, tamVertice, tamArestas);
+                
                 break;
             default:
                 System.out.println("Opção Invalida");
@@ -69,33 +54,43 @@ public class Menu {
         return op;
     }
     
-    public void inserir_dados_do_grafo(/*Vertice v[], Arestas a[],*/ int tamVertice, int tamArestas)
+    public void inserir_dados_do_grafo()
     {
+        
+        //Não vamos precisar saber o valor,só criei um vetor aqui para saber 
         //TESTE PARA INSERIR GRAFOS
-       Vertice vf[] = new Vertice[tamVertice];
-       Arestas af[] = new Arestas[tamArestas];
+       Vertice vf[] = new Vertice[5];
+       Arestas af[] = new Arestas[4];
         
        int j, i;
        
-       vf[0] = grafo.addVertice("vertice s0");
-       vf[1] = grafo.addVertice("Vertice s1");
-       vf[2] = grafo.addVertice("vertive s2");
-       vf[3] = grafo.addVertice("vertice s3");
-       vf[4] = grafo.addVertice("vertice s4");
-      /* vf[5] = grafo.addVertice("Vertice s5");
-       vf[6] = grafo.addVertice("vertive s6");
-       vf[7] = grafo.addVertice("vertice s7");
+       vf[0] = grafoadj.addVertice("vertice s0");
+       vf[1] = grafoadj.addVertice("Vertice s1");
+       vf[2] = grafoadj.addVertice("vertive s2");
+       vf[3] = grafoadj.addVertice("vertice s3");
+       vf[4] = grafoadj.addVertice("vertice s4");
+      /*  vf[5] = grafoadj.addVertice("Vertice s5");
+       vf[6] = grafoadj.addVertice("vertive s6");
+       vf[7] = grafoadj.addVertice("vertice s7");
        */
-       this.v = vf;
-       
-       af[0] = grafo.addAresta("aresta t0", v[0], v[1]);
-       af[1] = grafo.addAresta("aresta t2", v[1], v[2]);
-       af[2] = grafo.addAresta("aresta t3", v[2], v[0]);
-       af[3] = grafo.addAresta("aresta t4", v[1], v[3]);
       
-       this.a = af;
+       
+       af[0] = grafoadj.addAresta("aresta t0", vf[0], vf[1]);
+       af[1] = grafoadj.addAresta("aresta t2", vf[1], vf[2]);
+       af[2] = grafoadj.addAresta("aresta t3", vf[2], vf[0]);
+       af[3] = grafoadj.addAresta("aresta t4", vf[1], vf[3]);
+      
+       
        
        //grafo.printarVertices(this.v, tamVertice);
+       
+       /*
+        O que da de fazer nessa parte na interdace grafica, e quando adicionar um grafo e uma aresta da de fazer o seguinte
+       grafoadj.addAresta("aresta t0", grafoadj.addVertice("vertice s0"), grafoadj.addVertice("Vertice s1"));
+       Sendo adiconando uma aresta, pega o nome da aresta, depois ja cria o vertice que eles se conectam junto com a aresta.
+       
+       É um sugestão interessante
+       */
        
        
         System.out.println();
