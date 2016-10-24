@@ -33,7 +33,7 @@ public class GrafoNo extends NoVertice {
     public void setVertice_na_ListaVertice(Vertice vertice)
     { 
         System.out.println(vertice.getNomeVertice(vertice));
-        lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
+        lista_no_vertice = lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
         
     }
     
