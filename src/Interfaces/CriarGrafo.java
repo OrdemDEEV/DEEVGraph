@@ -14,7 +14,7 @@ import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
  * @author eduardo
  */
 public class CriarGrafo extends javax.swing.JInternalFrame {
-
+GrafoListaAdj grafo = new GrafoListaAdj();
     /**
      * Creates new form CriarGrafo
      */
@@ -270,13 +270,14 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
         MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
-        GrafoListaAdj grafo = new GrafoListaAdj();
+        
         String nome = txtNomeVertice.getText();//recolhe nome do input
         int id = Integer.parseInt(txtIdVertice.getText());//recolhe id do input e ja coloca como integer
         
         grafo.addVertice(nome, id);//chama funcção
 
         resultado.setText(nome);// somante para teste de funcionamento
+        System.out.println(grafo);
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
 
