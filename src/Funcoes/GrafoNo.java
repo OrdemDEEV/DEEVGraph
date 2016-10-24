@@ -31,6 +31,22 @@ public class GrafoNo extends NoVertice {
         lista_no_arestas = lista_no_arestas.insereArestaNo(lista_no_arestas, aresta);
     }
     
+    public Vertice encontrar_Vertice_ID(int id)
+    {
+        NoVertice lista = lista_no_vertice;
+        
+        while(lista != null)
+        {
+            if(id == lista.getVertice().id)
+            {
+             break;   
+            }
+            lista = lista.getNoProxVertice();
+        }
+        
+        return lista.getVertice();
+    }
+    
     public void imprimirVertices()
     {
         NoVertice lista = lista_no_vertice;

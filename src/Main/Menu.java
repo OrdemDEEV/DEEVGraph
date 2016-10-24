@@ -96,8 +96,7 @@ public class Menu {
        Vertice v = null;
        Arestas a = null;
        
-       v.setVertice("vertice s0", 0);
-       
+       v.setVertice("vertice s0", 0);   
        grafo.setVertice_na_ListaVertice(v);
        
        v.setVertice("Vertice s1", 1);
@@ -112,8 +111,19 @@ public class Menu {
        v.setVertice("Vertice s4", 4);
        grafo.setVertice_na_ListaVertice(v);
        
-      
-
+       a.setAresta("aresta t0", grafo.encontrar_Vertice_ID(0), grafo.encontrar_Vertice_ID(1), 0);
+       grafo.setAresta_na_ListaAresta(a);
+       
+       a.setAresta("aresta t1", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(2), 1);
+       grafo.setAresta_na_ListaAresta(a);
+       
+       a.setAresta("aresta t2", grafo.encontrar_Vertice_ID(2), grafo.encontrar_Vertice_ID(0), 2);
+       grafo.setAresta_na_ListaAresta(a);
+       
+       a.setAresta("aresta t3", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(3), 3);
+       grafo.setAresta_na_ListaAresta(a);
+       
+       
         System.out.println();
 }
 }

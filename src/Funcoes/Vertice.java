@@ -26,15 +26,11 @@ public class Vertice{
             return nomeVertice;
         };
         
-        public int getID(Vertice v)
-        {
-            return id;
-        }
-        
         public void setVertice(String nome, int id)
         {
             this.nomeVertice = nome;
             this.id = id;
+            this.adj = new ArrayList<Arestas>();
         }
       
     
