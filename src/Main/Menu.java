@@ -93,37 +93,38 @@ public class Menu {
        */
        
        //TESTE PARA INSERIR NO GRAFO PARA MATRIZES
-       Vertice v = null;
-       Arestas a = null;
+       Vertice v = new Vertice();
+       Arestas a = new Arestas();
        
-       v.setVertice("vertice s0", 0);   
+       v = grafo.addVertice("vertice s0", 0);   
        grafo.setVertice_na_ListaVertice(v);
        
-       v.setVertice("Vertice s1", 1);
+       v = grafo.addVertice("Vertice s1", 1);
        grafo.setVertice_na_ListaVertice(v);
        
-       v.setVertice("Vertice s2", 2);
+       v = grafo.addVertice("Vertice s2", 2);
        grafo.setVertice_na_ListaVertice(v);
        
-       v.setVertice("Vertice s3", 3);
+       v = grafo.addVertice("Vertice s3", 3);
        grafo.setVertice_na_ListaVertice(v);
        
-       v.setVertice("Vertice s4", 4);
+       v = grafo.addVertice("Vertice s4", 4);
        grafo.setVertice_na_ListaVertice(v);
        
-       a.setAresta("aresta t0", grafo.encontrar_Vertice_ID(0), grafo.encontrar_Vertice_ID(1), 0);
+       a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_ID(0), grafo.encontrar_Vertice_ID(1), 0);
        grafo.setAresta_na_ListaAresta(a);
        
-       a.setAresta("aresta t1", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(2), 1);
+       a = grafo.addAresta("aresta t1", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(2), 1);
        grafo.setAresta_na_ListaAresta(a);
        
-       a.setAresta("aresta t2", grafo.encontrar_Vertice_ID(2), grafo.encontrar_Vertice_ID(0), 2);
+       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_ID(2), grafo.encontrar_Vertice_ID(0), 2);
        grafo.setAresta_na_ListaAresta(a);
        
-       a.setAresta("aresta t3", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(3), 3);
+       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(3), 3);
        grafo.setAresta_na_ListaAresta(a);
        
        
+
         System.out.println();
 }
 }

@@ -9,6 +9,21 @@ package Funcoes;
 public class GrafoNo extends NoVertice {
     private NoVertice lista_no_vertice;
     private NoAresta lista_no_arestas;
+
+    public GrafoNo() {
+        this.lista_no_arestas = null;
+        this.lista_no_vertice = null;
+    }
+    
+     public Vertice addVertice(String nome, int id) { //Adicona vertice e retorna para uma variavel vertice
+        Vertice v = new Vertice(nome, id);
+        return v;
+    }
+     
+    public Arestas addAresta(String nome, Vertice origem, Vertice destino, int id) { //Adiciona aresta e retorna para uma variavel aresta
+        Arestas e = new Arestas(nome, origem, destino, id);
+        return e;
+    }
     
     public NoVertice getListaVertice()
     {
@@ -17,7 +32,8 @@ public class GrafoNo extends NoVertice {
     
     public void setVertice_na_ListaVertice(Vertice vertice)
     { 
-        lista_no_vertice = lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
+        System.out.println(vertice.getNomeVertice(vertice));
+        lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
         
     }
     

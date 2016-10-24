@@ -9,13 +9,14 @@ public class Vertice{
         String nomeVertice;
         List<Arestas> adj;
         
-        Vertice(){}
+       public Vertice(){}
         
         Vertice(String nome, int id) {
             this.nomeVertice = nome;
             this.id = id;
             this.adj = new ArrayList<Arestas>();
         }
+
 
         void addAdj(Arestas e) {
             adj.add(e);

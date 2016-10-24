@@ -12,7 +12,7 @@ public class Arestas extends Vertice {
         Vertice origem;
         Vertice destino;
         
-        Arestas(){}
+        public Arestas(){}
         
         Arestas (String nome, Vertice origem, Vertice destino, int id)
         {
