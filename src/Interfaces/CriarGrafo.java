@@ -7,6 +7,7 @@ package Interfaces;
 
 import Funcoes.GrafoListaAdj;//importa o package onde esta as funcoes para serem chamadas
 import Main.MainControllerInterface_Back_And_Front;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 
 /**
  *
@@ -39,7 +40,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         criarVertice_button = new javax.swing.JButton();
         cancelar_button = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        txtNomeVertice1 = new javax.swing.JTextField();
+        txtIdVertice = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -119,7 +120,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNomeVertice)
-                            .addComponent(txtNomeVertice1))))
+                            .addComponent(txtIdVertice))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -128,7 +129,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtNomeVertice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdVertice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -270,14 +271,12 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         
         MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
         GrafoListaAdj grafo = new GrafoListaAdj();
-        String vertice = txtNomeVertice.getText();
+        String nome = txtNomeVertice.getText();//recolhe nome do input
+        int id = Integer.parseInt(txtIdVertice.getText());//recolhe id do input e ja coloca como integer
         
-        //ARRUMAR AQUI, COM UMA VAREAVEL NO LUGAR DO NUMERO
-        grafo.addVertice(vertice, 1);//chama funcção
+        grafo.addVertice(nome, id);//chama funcção
         
-        
-        
-        resultado.setText(vertice);// ainda nao pronto envia o resultado para a exibição
+        resultado.setText(nome);// ainda nao pronto envia o resultado para a exibição
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
 
@@ -299,8 +298,8 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> no_disponivel_1;
     private javax.swing.JComboBox<String> no_disponivel_2;
     private javax.swing.JLabel resultado;
+    private javax.swing.JTextField txtIdVertice;
     private javax.swing.JTextField txtNomeAresta;
     private javax.swing.JTextField txtNomeVertice;
-    private javax.swing.JTextField txtNomeVertice1;
     // End of variables declaration//GEN-END:variables
 }
