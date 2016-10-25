@@ -21,15 +21,6 @@ public class Arestas extends Vertice {
             this.origem = origem;
             this.destino = destino;
         }
-        
-        public void setAresta(String nome, Vertice origem, Vertice destino, int id)
-        {
-            this.nomeAresta = nome;
-            this.id = id;
-            this.origem = origem;
-            this.destino = destino;
-        }
-
        
          public int pegarMatrizAdj(Arestas a[], Vertice origem, Vertice destino, int tamAresta)
         {
@@ -37,12 +28,12 @@ public class Arestas extends Vertice {
             
             for(int i = 0; i < tamAresta; i++)
             {
-                if(a[0].origem.nomeVertice.equals(origem.nomeVertice)  && a[0].destino.nomeVertice.equals(destino.nomeVertice))
+                if(a[0].origem.getNomeVertice().equals(origem.getNomeVertice())  && a[0].destino.getNomeVertice().equals(destino.getNomeVertice()))
                 {
                     return 1;
                 }
                 
-                if(a[0].origem.nomeVertice.equals(destino.nomeVertice)  && a[0].destino.nomeVertice.equals(origem.nomeVertice))
+                if(a[0].origem.getNomeVertice().equals(destino.getNomeVertice())  && a[0].destino.getNomeVertice().equals(origem.getNomeVertice()))
                 {
                     return 1;
                     
@@ -70,12 +61,12 @@ public class Arestas extends Vertice {
         }
       
  
-        public Vertice getOrigem(Arestas a)
+        public Vertice getOrigem()
         {
             return origem;
         }
 
-        public Vertice getDestino(Arestas a)
+        public Vertice getDestino()
         {
             return destino;
         }

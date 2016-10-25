@@ -90,6 +90,11 @@ public class NoVertice {
     public String getNomeVertice() {
         return vertice == null ? "erro aqui" : vertice.getNomeVertice();
     }
+    
+    public int getIdVertice()
+    {
+        return vertice == null ? -1 : vertice.getVerticeId();
+    }
 
 
 }

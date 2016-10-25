@@ -37,10 +37,10 @@ public class GrafoListaAdj extends Vertice {
     public String toString() {
         String r = "";
         for (Vertice u : vertices) {
-            r += u.nomeVertice + " -> ";
+            r += u.getNomeVertice() + " -> ";
             for (Arestas e : u.adj) {
                 Vertice v = e.destino;
-                r += v.nomeVertice + ", ";
+                r += v.getNomeVertice() + ", ";
             }
             r += "\n";
         }
