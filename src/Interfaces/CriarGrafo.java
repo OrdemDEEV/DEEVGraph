@@ -276,7 +276,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         
         grafo.addVertice(nome, id);//chama funcção
         
-        resultado.setText(nome);// somante para teste de funcionamento
+        resultado.setText(nome);// somante para teste de funcionamento ola
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
 
