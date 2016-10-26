@@ -7,16 +7,14 @@ package Funcoes;
 
 
 public class GrafoNo extends NoVertice {
-    private NoVertice lista_no_vertice;
-    private NoAresta lista_no_arestas;
-
-    public GrafoNo() {
-        this.lista_no_arestas = null;
-        this.lista_no_vertice = null;
-    }
+    private NoVertice lista_no_vertice = new NoVertice();
+    private NoAresta lista_no_arestas = new NoAresta();
+    
     
      public Vertice addVertice(String nome, int id) { //Adicona vertice e retorna para uma variavel vertice
-        Vertice v = new Vertice(nome, id);
+        Vertice v = new Vertice();
+        v.setVerdiceID(id);
+        v.setVerticeNome(nome);
         return v;
     }
      
@@ -32,8 +30,8 @@ public class GrafoNo extends NoVertice {
     
     public void setVertice_na_ListaVertice(Vertice vertice)
     { 
-        System.out.println(vertice.getNomeVertice(vertice));
-        lista_no_vertice = lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
+        //System.out.println(vertice.getNomeVertice());
+        this.lista_no_vertice = lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
         
     }
     
@@ -49,11 +47,11 @@ public class GrafoNo extends NoVertice {
     
     public Vertice encontrar_Vertice_ID(int id)
     {
-        NoVertice lista = lista_no_vertice;
+        NoVertice lista = lista_no_vertice.getNoProxVertice();
         
         while(lista != null)
         {
-            if(id == lista.getVertice().id)
+            if(id == lista.getIdVertice())
             {
              break;   
             }
@@ -65,16 +63,18 @@ public class GrafoNo extends NoVertice {
     
     public void imprimirVertices()
     {
-        NoVertice lista = lista_no_vertice;
+        NoVertice lista = lista_no_vertice.getNoProxVertice();
+       
         
-        if (lista == null)
+        if (lista.getVertice() == null)
         {
             System.out.println("não a vertices");
         }else
         {
             while(lista != null)
             {
-                System.out.println(lista.getVertice().nomeVertice);
+                
+                System.out.println(lista.getNomeVertice());
                 lista = lista.getNoProxVertice();
             }
         }
@@ -82,7 +82,7 @@ public class GrafoNo extends NoVertice {
     
     public void imprimirArestas()
     {
-        NoAresta lista = lista_no_arestas;
+        NoAresta lista = lista_no_arestas.getNoProxAresta();
         
         if (lista == null)
         {
@@ -91,7 +91,7 @@ public class GrafoNo extends NoVertice {
         {
             while(lista != null)
             {
-                System.out.println(lista.getAresta().nomeAresta);
+                System.out.println(lista.getNomeAresta() + " // Vertice Origem = " + lista.getAresta().getOrigem().getNomeVertice() + " // Vertice Destino = " + lista.getAresta().getOrigem().getNomeVertice());
                 lista = lista.getNoProxAresta();
             }
         }

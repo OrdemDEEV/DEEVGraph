@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Vertice{ 
-        int id;
-        String nomeVertice;
+        private int id;
+        private String nomeVertice;
         List<Arestas> adj;
         
        public Vertice(){}
@@ -16,13 +16,22 @@ public class Vertice{
             this.id = id;
             this.adj = new ArrayList<Arestas>();
         }
-
+        
+        void setVerdiceID(int id)
+        {
+            this.id = id;
+        }
+        
+        void setVerticeNome(String nome)
+        {
+            this.nomeVertice = nome;
+        }
 
         void addAdj(Arestas e) {
             adj.add(e);
         }
         
-        public String getNomeVertice(Vertice v)
+        public String getNomeVertice()
         {
             return nomeVertice;
         };
@@ -32,6 +41,11 @@ public class Vertice{
             this.nomeVertice = nome;
             this.id = id;
             this.adj = new ArrayList<Arestas>();
+        }
+        
+        public int getVerticeId()
+        {
+            return id;
         }
       
     
