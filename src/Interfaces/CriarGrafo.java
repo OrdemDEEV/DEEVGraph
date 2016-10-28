@@ -275,14 +275,14 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         int id = Integer.parseInt(txtIdVertice.getText());//recolhe id do input e ja coloca como integer
         
         grafo.addVertice(nome, id);//chama funcção
-<<<<<<< HEAD
+
 
         resultado.setText(nome);// somante para teste de funcionamento
         System.out.println(grafo);
-=======
-        
+
+       
         resultado.setText(nome);// somante para teste de funcionamento ola
->>>>>>> origin/master
+
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
 
