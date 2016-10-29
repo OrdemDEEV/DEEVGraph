@@ -44,15 +44,17 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtNomeAresta = new javax.swing.JTextField();
+        nome_aresta = new javax.swing.JTextField();
         criarAresta_button = new javax.swing.JButton();
         cancelarAresta_button = new javax.swing.JButton();
         resultado = new javax.swing.JLabel();
-        no_disponivel_1 = new javax.swing.JComboBox<>();
-        no_disponivel_2 = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        txtNomeAresta1 = new javax.swing.JTextField();
+        codigo_aresta = new javax.swing.JTextField();
+        vertice1 = new javax.swing.JTextField();
+        vertice2 = new javax.swing.JTextField();
+        resultado1 = new javax.swing.JLabel();
+        resultado2 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -168,16 +170,21 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         jLabel2.setText("Informe o nome:");
 
         criarAresta_button.setText("LIgar Vértices");
+        criarAresta_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criarAresta_buttonActionPerformed(evt);
+            }
+        });
 
         cancelarAresta_button.setText("Cancelar");
 
-        resultado.setText("Selecione os Vértices Disponíveis");
-
-        no_disponivel_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        no_disponivel_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        resultado.setText("Informe o codigo dos vertices a conectar");
 
         jLabel4.setText("Informe o código:");
+
+        resultado1.setText("Vertice 2");
+
+        resultado2.setText("Vertice 1");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -189,45 +196,58 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
                     .addComponent(jSeparator1)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(no_disponivel_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(no_disponivel_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(codigo_aresta)
+                            .addComponent(nome_aresta)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(resultado)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(criarAresta_button, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cancelarAresta_button, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cancelarAresta_button, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vertice1)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNomeAresta1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNomeAresta, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 13, Short.MAX_VALUE)))
+                                .addGap(68, 68, 68)
+                                .addComponent(resultado2)
+                                .addGap(0, 73, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vertice2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(resultado1)
+                                .addGap(90, 90, 90)))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(resultado)
-                .addGap(31, 31, 31)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(no_disponivel_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(no_disponivel_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(resultado1)
+                    .addComponent(resultado2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vertice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vertice2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtNomeAresta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigo_aresta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtNomeAresta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nome_aresta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(criarAresta_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,7 +299,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
-        // TODO add your handling code here:
+        // FUNÇÃO QUE CRIA UM VERTICE:
         
         MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
         String nome = txtNomeVertice.getText();//recolhe nome do input
@@ -290,10 +310,25 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
+    private void criarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarAresta_buttonActionPerformed
+        // FUNÇÃO QUE CRIA UMA ARESTA:
+        
+        MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
+        String nome = nome_aresta.getText();//recolhe o nome da aresta
+        int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
+        int vertice_1 = Integer.parseInt(vertice1.getText());//recolhe vertice 1
+        int vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
+        
+        //chama funçoes que cria a  aresta
+        metodos.Criar_Aresta(nome, id, vertice_1, vertice_2);
+        
+    }//GEN-LAST:event_criarAresta_buttonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarAresta_button;
     private javax.swing.JButton cancelar_button;
+    private javax.swing.JTextField codigo_aresta;
     private javax.swing.JButton criarAresta_button;
     private javax.swing.JButton criarVertice_button;
     private javax.swing.JLabel jLabel1;
@@ -307,12 +342,13 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JComboBox<String> no_disponivel_1;
-    private javax.swing.JComboBox<String> no_disponivel_2;
+    private javax.swing.JTextField nome_aresta;
     private javax.swing.JLabel resultado;
+    private javax.swing.JLabel resultado1;
+    private javax.swing.JLabel resultado2;
     private javax.swing.JTextField txtIdVertice;
-    private javax.swing.JTextField txtNomeAresta;
-    private javax.swing.JTextField txtNomeAresta1;
     private javax.swing.JTextField txtNomeVertice;
+    private javax.swing.JTextField vertice1;
+    private javax.swing.JTextField vertice2;
     // End of variables declaration//GEN-END:variables
 }

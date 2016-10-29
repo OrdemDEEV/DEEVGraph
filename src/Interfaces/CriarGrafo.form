@@ -268,32 +268,45 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator1" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="codigo_aresta" max="32767" attributes="0"/>
+                                  <Component id="nome_aresta" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="no_disponivel_1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="no_disponivel_2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="resultado" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="criarAresta_button" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cancelarAresta_button" min="-2" pref="86" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="vertice1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtNomeAresta1" min="-2" pref="281" max="-2" attributes="0"/>
-                                          <Component id="txtNomeAresta" min="-2" pref="281" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="resultado2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="73" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="vertice2" min="-2" pref="223" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="resultado1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -303,24 +316,29 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="resultado" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="no_disponivel_1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="no_disponivel_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resultado1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resultado2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="vertice1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="vertice2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNomeAresta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="codigo_aresta" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNomeAresta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nome_aresta" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -338,12 +356,15 @@
                 <Property name="text" type="java.lang.String" value="Informe o nome:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNomeAresta">
+            <Component class="javax.swing.JTextField" name="nome_aresta">
             </Component>
             <Component class="javax.swing.JButton" name="criarAresta_button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="LIgar V&#xe9;rtices"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criarAresta_buttonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="cancelarAresta_button">
               <Properties>
@@ -352,38 +373,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="resultado">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Selecione os V&#xe9;rtices Dispon&#xed;veis"/>
+                <Property name="text" type="java.lang.String" value="Informe o codigo dos vertices a conectar"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="no_disponivel_1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="no_disponivel_2">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
             </Component>
@@ -392,7 +383,21 @@
                 <Property name="text" type="java.lang.String" value="Informe o c&#xf3;digo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNomeAresta1">
+            <Component class="javax.swing.JTextField" name="codigo_aresta">
+            </Component>
+            <Component class="javax.swing.JTextField" name="vertice1">
+            </Component>
+            <Component class="javax.swing.JTextField" name="vertice2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="resultado1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vertice 2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="resultado2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vertice 1"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

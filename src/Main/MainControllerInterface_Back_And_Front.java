@@ -28,4 +28,9 @@ public class MainControllerInterface_Back_And_Front {
     public void Criar_Vertice(String nome, int id){
         grafoadj.addVertice(nome, id);
     }
+    
+    //Função capaz de criar aresta
+    public void Criar_Aresta(String nome, int id, int vertice_1, int vertice_2){
+        grafoadj.addAresta(nome, grafoadj, grafoadj, id);
+    }
 }
