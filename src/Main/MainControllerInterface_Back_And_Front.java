@@ -22,10 +22,10 @@ import Funcoes.GrafoListaAdj;
  */
 public class MainControllerInterface_Back_And_Front {
     //instanciando classe principal das funcoes
-    GrafoListaAdj funcoes = new GrafoListaAdj();
+    GrafoListaAdj grafoadj = new GrafoListaAdj();
     
     //função capaz de criar vertice
     public void Criar_Vertice(String nome, int id){
-        funcoes.addVertice(nome, id);
+        grafoadj.addVertice(nome, id);
     }
 }
