@@ -37,7 +37,7 @@ public class GrafoListaAdj extends Vertice {
         for (Vertice u : vertices) {
             r += u.getNomeVertice() + " -> ";
             for (Arestas e : u.adj) {
-                Vertice v = e.destino;
+                Vertice v = e.getDestino();
                 r += v.getNomeVertice() + ", ";
             }
             r += "\n";

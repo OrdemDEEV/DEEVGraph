@@ -19,7 +19,7 @@ public class NoAresta {
                NoAresta n = lista_de_arestas;
                while (n != null)
                {
-                   System.out.println("Aresta: " + n.aresta.nomeAresta);
+                   System.out.println("Aresta: " + n.aresta.getnomeAresta());
                    n = n.noProxAresta;
                }
            }
@@ -101,6 +101,6 @@ public class NoAresta {
     }
     
     public String getNomeAresta() {
-        return aresta == null ? "erro aqui" : aresta.nomeAresta;
+        return aresta == null ? "erro aqui" : aresta.getnomeAresta();
     }
 }

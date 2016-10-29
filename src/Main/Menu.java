@@ -47,7 +47,7 @@ public class Menu {
                 grafo.imprimirMatrizAdj();
                 break;
             case 4:
-                
+                grafo.imprimirMatrizInc();
                 break;
             default:
                 System.out.println("Opção Invalida");

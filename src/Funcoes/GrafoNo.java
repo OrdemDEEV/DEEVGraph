@@ -166,6 +166,31 @@ public class GrafoNo extends NoVertice {
         }
     }
     
+    public void imprimirMatrizInc()
+    {
+        NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        
+        while(lista_vertice != null)
+        {
+            while(lista_aresta != null)
+            {
+                if(lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino() )
+                {
+                    System.out.print(" 1");
+                }
+                else
+                {
+                    System.out.print(" 0");
+                }
+                lista_aresta = lista_aresta.getNoProxAresta();
+            }
+            System.out.println();
+            lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
+        }
+        
+    }
     /*public String retornarListaAdj()
     {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();

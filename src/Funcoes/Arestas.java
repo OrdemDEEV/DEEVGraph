@@ -5,10 +5,10 @@ package Funcoes;
 
 
 public class Arestas extends Vertice {
-        int id;
-        String nomeAresta;
-        Vertice origem;
-        Vertice destino;
+       private int id;
+       private String nomeAresta;
+       private Vertice origem;
+       private Vertice destino;
         
         public Arestas(){}
         
@@ -67,5 +67,10 @@ public class Arestas extends Vertice {
         public Vertice getDestino()
         {
             return destino;
+        }
+        
+        public String getnomeAresta()
+        {
+            return nomeAresta;
         }
 }
