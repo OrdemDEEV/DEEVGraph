@@ -44,7 +44,7 @@ public class Menu {
                 grafo.imprimirListaAdj();
                 break;
             case 3:
-                
+                grafo.imprimirMatrizAdj();
                 break;
             case 4:
                 

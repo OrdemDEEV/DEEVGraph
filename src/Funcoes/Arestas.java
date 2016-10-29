@@ -19,7 +19,7 @@ public class Arestas extends Vertice {
             this.origem = origem;
             this.destino = destino;
         }
-       
+ /*     
          public int pegarMatrizAdj(Arestas a[], Vertice origem, Vertice destino, int tamAresta)
         {
             int verificador = 0;
@@ -47,8 +47,8 @@ public class Arestas extends Vertice {
             return 1;
             
         }
-        
-        public int pegarMatrizInc(Arestas a, Vertice v)
+   */     
+ /*       public int pegarMatrizInc(Arestas a, Vertice v)
         {
            if(a.origem == v || a.destino == v)
            {
@@ -57,7 +57,7 @@ public class Arestas extends Vertice {
             
             return 0;
         }
-      
+  */    
  
         public Vertice getOrigem()
         {

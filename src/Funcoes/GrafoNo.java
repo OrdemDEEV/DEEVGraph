@@ -94,6 +94,25 @@ public class GrafoNo extends NoVertice {
             }
         }
     }
+    public int verificar_Adjacencia(Vertice origem, Vertice destino)
+    {
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        
+         while(lista_aresta != null)
+        {
+           if(origem == lista_aresta.getAresta().getOrigem() && destino == lista_aresta.getAresta().getDestino())
+           {
+               return 1;
+            }
+           else if(destino == lista_aresta.getAresta().getOrigem() && origem == lista_aresta.getAresta().getDestino())
+           {
+               return 1;
+           }
+           lista_aresta = lista_aresta.getNoProxAresta();
+           
+         }
+         return 0;
+    }
     
     public void imprimirListaAdj()
     {
@@ -121,6 +140,29 @@ public class GrafoNo extends NoVertice {
                 lista_vertice = lista_vertice.getNoProxVertice();
                 lista_aresta = lista_no_arestas.getNoProxAresta();
                 System.out.println();
+        }
+    }
+    
+    public void imprimirMatrizAdj()
+    {
+        NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
+        NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+
+        while(lista_verticeL != null)
+        {
+                
+                while(lista_verticeC != null)
+                {
+                    //System.out.print("LINHA"+"COLUNA");
+                    System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()));
+
+                    
+                    lista_verticeC = lista_verticeC.getNoProxVertice();
+                }
+            System.out.println();
+            lista_verticeC = lista_no_vertice.getNoProxVertice();
+            lista_verticeL = lista_verticeL.getNoProxVertice();
         }
     }
     
