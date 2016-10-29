@@ -89,7 +89,7 @@ public class GrafoNo extends NoVertice {
         {
             while(lista != null)
             {
-                System.out.println(lista.getNomeAresta() + " // Vertice Origem = " + lista.getAresta().getOrigem().getNomeVertice() + " // Vertice Destino = " + lista.getAresta().getOrigem().getNomeVertice());
+                System.out.println(lista.getNomeAresta() + " // Vertice Origem = " + lista.getAresta().getOrigem().getNomeVertice() + " // Vertice Destino = " + lista.getAresta().getDestino().getNomeVertice());
                 lista = lista.getNoProxAresta();
             }
         }

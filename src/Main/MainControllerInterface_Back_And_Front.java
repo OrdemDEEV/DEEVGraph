@@ -41,5 +41,8 @@ public class MainControllerInterface_Back_And_Front {
     public void Criar_Aresta(String nome, int id, int id_vertice_1, int id_vertice_2){
         grafoadj.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_1), id);
         a = grafo.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
+        grafo.setAresta_na_ListaAresta(a);
+        grafo.imprimirArestas(); 
+      
     }
 }

@@ -28,6 +28,7 @@ public class Vertice{
         }
 
         void addAdj(Arestas e) {
+            System.out.println("na classe vertice; aresta: " + e.nomeAresta);
             adj.add(e);
         }
         

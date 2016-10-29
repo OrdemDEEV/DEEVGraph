@@ -27,6 +27,7 @@ public class GrafoListaAdj extends Vertice {
 
     public Arestas addAresta(String nome, Vertice origem, Vertice destino, int id) { //Adiciona aresta e retorna para uma variavel aresta
         Arestas e = new Arestas(nome, origem, destino, id);
+        System.out.println("aresta: " + e.nomeAresta);
         origem.addAdj(e);
         arestas.add(e);
         return e;
