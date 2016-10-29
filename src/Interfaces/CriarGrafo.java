@@ -15,6 +15,7 @@ import Main.MainControllerInterface_Back_And_Front;
  */
 public class CriarGrafo extends javax.swing.JInternalFrame {
 
+    MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
     /**
      * Creates new form CriarGrafo
      */
@@ -301,7 +302,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
         // FUNÇÃO QUE CRIA UM VERTICE:
         
-        MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
+        
         String nome = txtNomeVertice.getText();//recolhe nome do input
         int id = Integer.parseInt(txtIdVertice.getText());//recolhe id do input e ja coloca como integer
 
@@ -313,14 +314,14 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private void criarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarAresta_buttonActionPerformed
         // FUNÇÃO QUE CRIA UMA ARESTA:
         
-        MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
+        
         String nome = nome_aresta.getText();//recolhe o nome da aresta
         int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
-        int vertice_1 = Integer.parseInt(vertice1.getText());//recolhe vertice 1
-        int vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
+        int id_vertice_1 = Integer.parseInt(vertice1.getText());//recolhe vertice 1
+        int id_vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
         
         //chama funçoes que cria a  aresta
-        metodos.Criar_Aresta(nome, id, vertice_1, vertice_2);
+        metodos.Criar_Aresta(nome, id, id_vertice_1, id_vertice_2);
         
     }//GEN-LAST:event_criarAresta_buttonActionPerformed
 

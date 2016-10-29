@@ -14,7 +14,10 @@
 */
 package Main;
 
+import Funcoes.Arestas;
 import Funcoes.GrafoListaAdj;
+import Funcoes.GrafoNo;
+import Funcoes.Vertice;
 
 /**
  *
@@ -23,14 +26,20 @@ import Funcoes.GrafoListaAdj;
 public class MainControllerInterface_Back_And_Front {
     //instanciando classe principal das funcoes
     GrafoListaAdj grafoadj = new GrafoListaAdj();
+    GrafoNo grafo = new GrafoNo();
+    Vertice v;
+    Arestas a;
     
     //função capaz de criar vertice
     public void Criar_Vertice(String nome, int id){
         grafoadj.addVertice(nome, id);
+        v = grafo.addVertice(nome, id); //Cria o vertice nó
+        grafo.setVertice_na_ListaVertice(v); //coloca na lista de nós de GrafoNo
     }
     
     //Função capaz de criar aresta
-    public void Criar_Aresta(String nome, int id, int vertice_1, int vertice_2){
-        grafoadj.addAresta(nome, grafoadj, grafoadj, id);
+    public void Criar_Aresta(String nome, int id, int id_vertice_1, int id_vertice_2){
+        grafoadj.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_1), id);
+        a = grafo.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
     }
 }
