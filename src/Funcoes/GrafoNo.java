@@ -94,4 +94,34 @@ public class GrafoNo extends NoVertice {
             }
         }
     }
+    
+    public void imprimirListaAdj()
+    {
+        NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        
+        while(lista_vertice != null)
+        {
+            System.out.print(lista_vertice.getNomeVertice());
+            
+                while(lista_aresta != null)
+                {
+                    if(lista_aresta.getAresta().getDestino() == lista_vertice.getVertice())
+                    {
+                        System.out.print(" -> ");
+                        System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
+                    }
+                    else if(lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice())
+                    {
+                        System.out.print(" -> ");
+                        System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
+                    }
+                    lista_aresta = lista_aresta.getNoProxAresta();
+                 }
+                lista_vertice = lista_vertice.getNoProxVertice();
+                lista_aresta = lista_no_arestas.getNoProxAresta();
+                System.out.println();
+        }
+    }
+    
 }

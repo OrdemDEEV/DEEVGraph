@@ -41,7 +41,7 @@ public class Menu {
                 inserir_dados_do_grafo();
                 break;
             case 2:
-                System.out.println(grafoadj);
+                grafo.imprimirListaAdj();
                 break;
             case 3:
                 
