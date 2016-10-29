@@ -5,8 +5,6 @@
  */
 package Interfaces;
 
-import Arquivos.SalvaDados;
-
 /**
  *
  * @author eduardo
@@ -307,7 +305,7 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         
-        SalvaDados arquivo = new SalvaDados();
+     
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
