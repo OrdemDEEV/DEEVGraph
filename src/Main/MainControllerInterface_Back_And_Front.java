@@ -15,6 +15,7 @@
 package Main;
 
 import Funcoes.Arestas;
+import Funcoes.GrafoFormal;
 import Funcoes.GrafoListaAdj;
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
@@ -42,7 +43,19 @@ public class MainControllerInterface_Back_And_Front {
         //grafoadj.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
         a = grafo.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
         grafo.setAresta_na_ListaAresta(a);
-        grafo.imprimirArestas();
-      
+        grafo.imprimirArestas(); 
+    }
+    
+    //Função que realiza leitura do grafo formal
+    public void Ler_Grafo_Formal(String grafo){
+        GrafoFormal leitura = new GrafoFormal();
+        //chamada da func que ordena os dados
+        int retorno = leitura.separa_dados(grafo);
+            if(retorno == 1){
+                System.out.println("Erro na leitura!");
+            }
+            else{
+                System.out.println("Sucesso na leitura!");
+            }
     }
 }
