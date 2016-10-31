@@ -32,7 +32,6 @@ public class Menu {
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
-        
         switch(op)
         {
             case 0:
@@ -51,7 +50,7 @@ public class Menu {
                 grafo.imprimirMatrizInc();
                 break;
             case 5:
-                grafo.limpar_dados_grafo();
+               this.grafo = new GrafoNo();
                 break;
             default:
                 System.out.println("Opção Invalida");

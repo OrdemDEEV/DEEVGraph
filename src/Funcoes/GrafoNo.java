@@ -43,29 +43,6 @@ public class GrafoNo extends NoVertice {
         lista_no_arestas = lista_no_arestas.insereArestaNo(lista_no_arestas, aresta);
     }
     
-    public void limpar_dados_grafo()
-    {
-        NoVertice lista_vertice = lista_no_vertice;
-        NoAresta lista_aresta = lista_no_arestas;
-        
-        while(lista_vertice != null)
-        {
-            System.out.println("preso no vertice");
-            NoVertice excluir = lista_no_vertice;
-            lista_vertice = lista_vertice.getNoProxVertice();
-            excluir = null;
-        }
-        System.out.println("Agora os Vertices estão vazios");
-        while(lista_aresta != null)
-        {
-            System.out.println("preso na aresta");
-            NoAresta excluir = lista_aresta;
-            lista_aresta = lista_aresta.getNoProxAresta();
-            excluir = null;
-        }
-        
-    }
-    
     public Vertice encontrar_Vertice_ID(int id)
     {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
