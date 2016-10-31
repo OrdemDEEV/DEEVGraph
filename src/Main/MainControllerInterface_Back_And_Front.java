@@ -47,10 +47,16 @@ public class MainControllerInterface_Back_And_Front {
     }
     
     //imprimir lista na interface
-    public String Imprimir_listaADJ(){
+    public String imprimir_listaADJ(){
         //chama função que retona a lista com texto
         String lista = grafo.retornarListaAdj();
         return lista;
+    }
+    
+    public String imprimir_matrizADJ()
+    {
+        String matriz = grafo.retornarMatrizADJ();
+        return matriz;
     }
     
     //Função que realiza leitura do grafo formal

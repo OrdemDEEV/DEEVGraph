@@ -39,10 +39,10 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        impressao_matrizADJ = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        impressao_matrizINC = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -106,9 +106,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jPanel7.setBackground(new java.awt.Color(254, 254, 254));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz de Adjacência"));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        impressao_matrizADJ.setColumns(20);
+        impressao_matrizADJ.setRows(5);
+        jScrollPane2.setViewportView(impressao_matrizADJ);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -130,9 +130,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jPanel9.setBackground(new java.awt.Color(254, 254, 254));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz de Incidência"));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        impressao_matrizINC.setColumns(20);
+        impressao_matrizINC.setRows(5);
+        jScrollPane1.setViewportView(impressao_matrizINC);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -259,8 +259,12 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         //criar função que realiza a impressao dos dados la na classe grafono
         
         
-        String lista = dados.Imprimir_listaADJ();
-        impressao_lista.setText(lista);
+        String imprimir = dados.imprimir_listaADJ();
+        impressao_lista.setText(imprimir);
+        
+        imprimir = dados.imprimir_matrizADJ();
+        impressao_matrizADJ.setText(imprimir);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void colocarDadosTextArea(){
@@ -269,6 +273,8 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea impressao_lista;
+    private javax.swing.JTextArea impressao_matrizADJ;
+    private javax.swing.JTextArea impressao_matrizINC;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -282,7 +288,5 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

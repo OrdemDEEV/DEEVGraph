@@ -239,4 +239,53 @@ public class GrafoNo extends NoVertice {
                
     }
     
+    public String retornarMatrizADJ()
+    {
+        NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
+        NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+        String texto = null;
+        int verifica_primeiro = 0, valor;
+
+
+        while(lista_verticeL != null)
+        {
+                
+                while(lista_verticeC != null)
+                {
+                                if(verifica_primeiro == 0)
+                                {
+                                    if(verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()) == 1)
+                                    {
+                                        texto = " 1";
+                                    }else
+                                    {
+                                        texto = " 0"; 
+                                    }
+                                        
+                                        verifica_primeiro = 1;
+                                }else
+                                {
+                                    if(verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()) == 1)
+                                    {
+                                        texto += " 1";
+                                    }else
+                                    {
+                                        texto += " 0"; 
+                                    }
+                                }
+                    //System.out.print("LINHA"+"COLUNA");
+                    System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()));
+
+                    
+                    lista_verticeC = lista_verticeC.getNoProxVertice();
+                }
+            texto += "\n";
+            System.out.println();
+            lista_verticeC = lista_no_vertice.getNoProxVertice();
+            lista_verticeL = lista_verticeL.getNoProxVertice();
+        }
+        
+        return texto;
+    }
+    
 }
