@@ -196,41 +196,37 @@ public class GrafoNo extends NoVertice {
     public String retornarListaAdj()
     {
         String texto = null;
-        String texto1 = null;
-        String texto2 = null;
-        String listaAdj = null;
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         
+        texto = lista_vertice.getNomeVertice();
         while(lista_vertice != null)
         {
+            
             System.out.print(lista_vertice.getNomeVertice());
-            texto = lista_vertice.getNomeVertice();
+            
                 while(lista_aresta != null)
                 {
                     if(lista_aresta.getAresta().getDestino() == lista_vertice.getVertice())
                     {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
-                        texto1 = lista_aresta.getAresta().getOrigem().getNomeVertice();
+                        texto += "->" + lista_aresta.getAresta().getOrigem().getNomeVertice();
                     }
                     else if(lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice())
                     {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
-                        texto2 = lista_aresta.getAresta().getDestino().getNomeVertice();
-                        
+                        texto += "->" + lista_aresta.getAresta().getDestino().getNomeVertice();
                     }
                     lista_aresta = lista_aresta.getNoProxAresta();
-                    
                  }
                 lista_vertice = lista_vertice.getNoProxVertice();
                 lista_aresta = lista_no_arestas.getNoProxAresta();
                 System.out.println();
-                listaAdj = texto + "->" + texto1 + "->" + texto2;
-                
+                texto += " \n  ";
         }
-        return listaAdj;
+        return texto;
                
     }
     

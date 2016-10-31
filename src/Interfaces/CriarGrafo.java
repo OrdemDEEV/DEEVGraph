@@ -15,13 +15,14 @@ import Main.MainControllerInterface_Back_And_Front;
  */
 public class CriarGrafo extends javax.swing.JInternalFrame {
 
-    MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
+    MainControllerInterface_Back_And_Front dados;
     
     /**
      * Creates new form CriarGrafo
      */
-    public CriarGrafo() {
+    public CriarGrafo(MainControllerInterface_Back_And_Front dados) {
         initComponents();
+        this.dados = dados;
     }
 
 
@@ -361,7 +362,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         int id = Integer.parseInt(txtIdVertice.getText());//recolhe id do input e ja coloca como integer
 
         //chama função que cria vertice
-        metodos.Criar_Vertice(nome, id);
+        dados.Criar_Vertice(nome, id);
         
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
@@ -375,12 +376,12 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         int id_vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
         
         //chama funçoes que cria a  aresta
-        metodos.Criar_Aresta(nome, id, id_vertice_1, id_vertice_2);
+        dados.Criar_Aresta(nome, id, id_vertice_1, id_vertice_2);
         
         //realiza leitura da lista
-        String lista = metodos.Imprimir_lista();
-        lista_adjacencia.setText(lista);
-        lista_adjacencia.append("\n");
+      //  String lista = metodos.Imprimir_lista();
+      //  lista_adjacencia.setText(lista);
+      //  lista_adjacencia.append("\n");
         
     }//GEN-LAST:event_criarAresta_buttonActionPerformed
 

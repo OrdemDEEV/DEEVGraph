@@ -47,7 +47,7 @@ public class MainControllerInterface_Back_And_Front {
     }
     
     //imprimir lista na interface
-    public String Imprimir_lista(){
+    public String Imprimir_listaADJ(){
         //chama função que retona a lista com texto
         String lista = grafo.retornarListaAdj();
         return lista;

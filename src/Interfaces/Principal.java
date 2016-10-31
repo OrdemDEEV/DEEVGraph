@@ -14,7 +14,7 @@ import Main.MainControllerInterface_Back_And_Front;
 public class Principal extends javax.swing.JFrame {
 
         
-    
+    MainControllerInterface_Back_And_Front dados = new MainControllerInterface_Back_And_Front();
     /**
      * Creates new form Principal
      */
@@ -246,7 +246,7 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         
-        CriarGrafo novo = new CriarGrafo();
+        CriarGrafo novo = new CriarGrafo(dados);
         area_trabalho.add(novo);
         novo.setVisible(true);
         
@@ -260,7 +260,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        VizualizarMatris ver = new VizualizarMatris();
+        VizualizarMatris ver = new VizualizarMatris(dados);
         area_trabalho.add(ver);
         ver.setVisible(true);
                 
@@ -269,7 +269,7 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         
-        VizualizarMatris ver = new VizualizarMatris();
+        VizualizarMatris ver = new VizualizarMatris(dados);
         area_trabalho.add(ver);
         ver.setVisible(true);
         
@@ -293,7 +293,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        CriarGrafo novo = new CriarGrafo();
+        CriarGrafo novo = new CriarGrafo(dados);
         area_trabalho.add(novo);
         novo.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed

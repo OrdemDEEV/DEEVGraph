@@ -13,12 +13,14 @@ import Main.MainControllerInterface_Back_And_Front;
  * @author eduardo
  */
 public class VizualizarMatris extends javax.swing.JInternalFrame {
+    MainControllerInterface_Back_And_Front dados;
 
     /**
      * Creates new form VizualizarMatris
      */
-    public VizualizarMatris() {
+    public VizualizarMatris(MainControllerInterface_Back_And_Front dados) {
         initComponents();
+        this.dados = dados;
     }
 
     /**
@@ -187,6 +189,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jPanel10.setBackground(new java.awt.Color(254, 254, 254));
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista"));
 
+        impressao_lista.setEditable(false);
         impressao_lista.setColumns(20);
         impressao_lista.setRows(5);
         jScrollPane3.setViewportView(impressao_lista);
@@ -256,6 +259,8 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         //criar função que realiza a impressao dos dados la na classe grafono
         
         
+        String lista = dados.Imprimir_listaADJ();
+        impressao_lista.setText(lista);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void colocarDadosTextArea(){
