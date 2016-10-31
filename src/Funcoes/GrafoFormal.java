@@ -4,6 +4,9 @@
  */
 package Funcoes;
 
+import java.util.Arrays;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author eduardo
@@ -17,9 +20,9 @@ public class GrafoFormal {
         String aresta;
         
         //g(a1) = 1 – 2,(a1) = 1 – 2,
-        System.out.println(grafo);
-        
-        
+        //System.out.println(grafo);
+        String [] texto = grafo.split("[,]");
+        System.out.println(Arrays.toString(texto));
         
         return 0;
     }
