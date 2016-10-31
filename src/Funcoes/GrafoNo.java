@@ -198,10 +198,19 @@ public class GrafoNo extends NoVertice {
         String texto = null;
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int verifica_primeiro = 0;
         
-        texto = lista_vertice.getNomeVertice();
+        
         while(lista_vertice != null)
         {
+            if(verifica_primeiro == 0)
+            {
+                texto = lista_vertice.getNomeVertice();
+                verifica_primeiro = 1;
+            }else
+            {
+                texto += lista_vertice.getNomeVertice();
+            }
             
             System.out.print(lista_vertice.getNomeVertice());
             
@@ -224,7 +233,7 @@ public class GrafoNo extends NoVertice {
                 lista_vertice = lista_vertice.getNoProxVertice();
                 lista_aresta = lista_no_arestas.getNoProxAresta();
                 System.out.println();
-                texto += " \n  ";
+                texto += "\n";
         }
         return texto;
                
