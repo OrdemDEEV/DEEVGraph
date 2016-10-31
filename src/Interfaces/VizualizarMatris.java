@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Funcoes.GrafoNo;
+import Main.MainControllerInterface_Back_And_Front;
 
 /**
  *
@@ -252,14 +253,14 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        //GrafoNo grafo = new GrafoNo();
         //criar função que realiza a impressao dos dados la na classe grafono
-        impressao_lista.setText("texto aqui");
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void colocarDadosTextArea(){
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea impressao_lista;

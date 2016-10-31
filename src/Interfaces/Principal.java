@@ -5,12 +5,16 @@
  */
 package Interfaces;
 
+import Main.MainControllerInterface_Back_And_Front;
+
 /**
  *
  * @author eduardo
  */
 public class Principal extends javax.swing.JFrame {
 
+        
+    
     /**
      * Creates new form Principal
      */

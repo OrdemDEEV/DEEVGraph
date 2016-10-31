@@ -46,6 +46,13 @@ public class MainControllerInterface_Back_And_Front {
         grafo.imprimirArestas(); 
     }
     
+    //imprimir lista na interface
+    public String Imprimir_lista(){
+        //chama função que retona a lista com texto
+        String lista = grafo.retornarListaAdj();
+        return lista;
+    }
+    
     //Função que realiza leitura do grafo formal
     public void Ler_Grafo_Formal(String grafo){
         GrafoFormal leitura = new GrafoFormal();
