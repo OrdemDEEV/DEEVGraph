@@ -28,6 +28,7 @@ public class Menu {
         System.out.println("2-Mostrar Lista de adjacencia");
         System.out.println("3-Mostrar Matriz adjacencia");
         System.out.println("4-Mostrar Matriz de Incidencia");
+        System.out.println("5-DeletarGrafo");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -48,6 +49,9 @@ public class Menu {
                 break;
             case 4:
                 grafo.imprimirMatrizInc();
+                break;
+            case 5:
+                grafo.limpar_dados_grafo();
                 break;
             default:
                 System.out.println("Opção Invalida");
