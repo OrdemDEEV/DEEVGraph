@@ -53,7 +53,7 @@ public class GrafoNo extends NoVertice {
         return lista.getVertice();
     }
 
-    public int getTamVertices() {
+    public int getTamVertices(NoVertice lista_no_Vertice) {
 
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         int tam_vertices = 0;
@@ -65,7 +65,7 @@ public class GrafoNo extends NoVertice {
         return tam_vertices;
     }
 
-    public int getTamArestas() {
+    public int getTamArestas(NoAresta lista_no_arestas) {
 
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int tam_arestas = 0;
@@ -123,20 +123,51 @@ public class GrafoNo extends NoVertice {
     public void imprimirListaAdj() {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int tamAresta = getTamArestas(lista_no_arestas);
+        int id_pego[] = new int[tamAresta] ;
+        int verificador = 0;
+        int k=0;
 
         while (lista_vertice != null) {
             System.out.print(lista_vertice.getNomeVertice());
 
             while (lista_aresta != null) {
                 if (lista_aresta.getAresta().getDestino() == lista_vertice.getVertice()) {
-                    System.out.print(" -> ");
-                    System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
-                } else if (lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice()) {
-                    System.out.print(" -> ");
-                    System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
+                    for(int i=0; i<tamAresta; i++)
+                    {
+                        if(lista_aresta.getAresta().getOrigem().getVerticeId() == id_pego[i])
+                        {
+                            verificador = 1;
+                        }
+                    }
+                    if(verificador == 0)
+                    {
+                        System.out.print(" -> ");
+                        System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
+                        id_pego[k] = lista_aresta.getAresta().getOrigem().getVerticeId();
+                        k++;
+                    }
+                    verificador =0;
+                    } else if (lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice()) {
+                    for(int i=0; i<tamAresta; i++)
+                    {
+                        if(lista_aresta.getAresta().getDestino().getVerticeId() == id_pego[i])
+                        {
+                            verificador = 1;
+                        }
+                    }
+                    if(verificador == 0)
+                    {
+                        System.out.print(" -> ");
+                        System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
+                        id_pego[k] = lista_aresta.getAresta().getDestino().getVerticeId();
+                        k++;
+                    }
+                    verificador = 0;
                 }
                 lista_aresta = lista_aresta.getNoProxAresta();
             }
+            k = 0;
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
             System.out.println();
