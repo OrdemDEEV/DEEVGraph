@@ -7,6 +7,7 @@ package Interfaces;
 
 import Funcoes.GrafoListaAdj;//importa o package onde esta as funcoes para serem chamadas
 import Main.MainControllerInterface_Back_And_Front;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 
@@ -26,7 +27,10 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         this.dados = dados;
     }
     
-
+    //Função para fechar o internaljframe
+    private void closeInternalFrame(){  
+        this.dispose();  
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,6 +111,11 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         });
 
         cancelar_button.setText("Cancelar");
+        cancelar_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelar_buttonActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Informe o codigo:");
 
@@ -182,6 +191,11 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         });
 
         cancelarAresta_button.setText("Cancelar");
+        cancelarAresta_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarAresta_buttonActionPerformed(evt);
+            }
+        });
 
         resultado.setText("Informe o codigo dos vertices a conectar");
 
@@ -332,6 +346,16 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE); 
         }  
     }//GEN-LAST:event_criarAresta_buttonActionPerformed
+
+    private void cancelar_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelar_buttonActionPerformed
+        // TODO add your handling code here:
+        closeInternalFrame();
+    }//GEN-LAST:event_cancelar_buttonActionPerformed
+
+    private void cancelarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarAresta_buttonActionPerformed
+        // TODO add your handling code here:
+        closeInternalFrame();
+    }//GEN-LAST:event_cancelarAresta_buttonActionPerformed
     
     
 

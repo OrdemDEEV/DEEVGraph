@@ -29,6 +29,7 @@ public class Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);//inicia aplicação no centro da tela
     }
     
+    //Função que centraliza internaljframe
      private void centralizaForm(JInternalFrame frame) {
         Dimension desktopSize = area_trabalho.getSize();
         Dimension jInternalFrameSize = frame.getSize();
