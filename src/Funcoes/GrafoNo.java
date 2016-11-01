@@ -308,7 +308,7 @@ public class GrafoNo extends NoVertice {
                     }
                     else
                     {
-                        texto += " 0";
+                        texto += " 1";
                     }
                     System.out.print(" 1");
                 }
