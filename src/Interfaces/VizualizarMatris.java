@@ -161,7 +161,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
             }
         });
 
-        Resetar.setText("Limpar Grafos");
+        Resetar.setText("Excluir Grafos");
         Resetar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetarActionPerformed(evt);
@@ -278,6 +278,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         
         imprimir = dados.imprimir_matrizADJ();
         impressao_matrizADJ.setText(imprimir);
+        
+        imprimir = dados.imprimir_matrizINC();
+        impressao_matrizINC.setText(imprimir);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

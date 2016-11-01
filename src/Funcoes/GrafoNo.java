@@ -288,4 +288,53 @@ public class GrafoNo extends NoVertice {
         return texto;
     }
     
+    public String retornarMatrizINC()
+    {
+        String texto = null;
+        NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int verifica_primeiro = 0;
+        
+        while(lista_vertice != null)
+        {
+            while(lista_aresta != null)
+            {
+                if(lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino() )
+                {
+                    if(verifica_primeiro == 0)
+                    {
+                        texto = " 1";
+                        verifica_primeiro = 1;
+                    }
+                    else
+                    {
+                        texto += " 0";
+                    }
+                    System.out.print(" 1");
+                }
+                else
+                {
+                    if(verifica_primeiro == 0)
+                    {
+                        texto = "0";
+                        verifica_primeiro = 1;
+                    }
+                    else
+                    {
+                        texto += " 0";
+                    }
+                    
+                    System.out.print(" 0");
+                }
+                lista_aresta = lista_aresta.getNoProxAresta();
+            }
+            texto += "\n";
+            System.out.println();
+            lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
+        }
+        
+        return texto;
+    }
+    
 }
