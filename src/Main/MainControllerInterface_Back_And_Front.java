@@ -71,4 +71,8 @@ public class MainControllerInterface_Back_And_Front {
                 System.out.println("Sucesso na leitura!");
             }
     }
+    public void resetar_Grafo()
+    {
+      this.grafo = new GrafoNo();
+    }
 }
