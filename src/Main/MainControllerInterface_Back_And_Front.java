@@ -78,6 +78,8 @@ public class MainControllerInterface_Back_And_Front {
                 System.out.println("Sucesso na leitura!");
             }
     }
+    
+    //Destrutor reciar os grafos vazios
     public void resetar_Grafo()
     {
       this.grafo = new GrafoNo();

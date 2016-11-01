@@ -21,9 +21,21 @@ public class GrafoFormal {
         
         //g(a1) = 1 – 2,(a1) = 1 – 2,
         //System.out.println(grafo);
-        String [] texto = grafo.split("[,]");
-        System.out.println(Arrays.toString(texto));
+        //é preciso criar um for dinamico
+        //cada texto tem 10 caracter
+        //se contar quantos grupos de 10 nos encontramos a quantidade de grafos que deve ser criada
+        //é preciso 2 for um para qtdade de grafose outro dentro com a quantidade de splits
+        //basta fazer as repetiçoes e os splits seguidos
+        //cada grafo lido deve ser inserido imediatamento se nao so ira inserir o ultimo
         
+        //possivelmente vai ficar lento verificar barra de progresso!!
+        
+        String [] texto = grafo.split(",");
+        System.out.println(texto[0]);
+        System.out.println(texto[1]);
+        String [] dadoss = texto[1].split("=");
+        System.out.println(dadoss[0]);
+        System.out.println(dadoss[1]);
         return 0;
     }
     
