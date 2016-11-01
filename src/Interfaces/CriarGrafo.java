@@ -7,6 +7,7 @@ package Interfaces;
 
 import Funcoes.GrafoListaAdj;//importa o package onde esta as funcoes para serem chamadas
 import Main.MainControllerInterface_Back_And_Front;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -304,14 +305,16 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
 
     private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
         // FUNÇÃO QUE CRIA UM VERTICE:
-        
-        
-        String nome = txtNomeVertice.getText();//recolhe nome do input
-        int id = Integer.parseInt(txtIdVertice.getText());//recolhe id do input e ja coloca como integer
-
-        //chama função que cria vertice
-        dados.Criar_Vertice(nome, id);
-        
+        //ja validanddo formulario vazio
+        if(txtNomeVertice.getText().length() > 0 && txtIdVertice.getText().length() > 0){
+            String nome = txtNomeVertice.getText();
+            int id = Integer.parseInt(txtIdVertice.getText());
+            dados.Criar_Vertice(nome, id); 
+            JOptionPane.showMessageDialog(null,"Vertice criado com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+           JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE);  
+        }
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
     private void criarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarAresta_buttonActionPerformed
