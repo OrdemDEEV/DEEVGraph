@@ -2,185 +2,174 @@
     Armazen todos os nós arestas e vertices em duas listas.
  */
 package Funcoes;
+
 import Interfaces.VizualizarMatris;
 
 public class GrafoNo extends NoVertice {
+
     private NoVertice lista_no_vertice = new NoVertice();
     private NoAresta lista_no_arestas = new NoAresta();
-    
-    
-     public Vertice addVertice(String nome, int id) { //Adicona vertice e retorna para uma variavel vertice
+
+    public Vertice addVertice(String nome, int id) { //Adicona vertice e retorna para uma variavel vertice
         Vertice v = new Vertice();
         v.setVerdiceID(id);
         v.setVerticeNome(nome);
         return v;
     }
-     
+
     public Arestas addAresta(String nome, Vertice origem, Vertice destino, int id) { //Adiciona aresta e retorna para uma variavel aresta
         Arestas e = new Arestas(nome, origem, destino, id);
         return e;
     }
-    
-    public NoVertice getListaVertice()
-    {
+
+    public NoVertice getListaVertice() {
         return lista_no_vertice;
     }
-    
-    public void setVertice_na_ListaVertice(Vertice vertice)
-    { 
+
+    public void setVertice_na_ListaVertice(Vertice vertice) {
         //System.out.println(vertice.getNomeVertice());
         this.lista_no_vertice = lista_no_vertice.insereVerticeNo(lista_no_vertice, vertice);
-        
+
     }
-    
-    public NoAresta getListaAresta()
-    {
+
+    public NoAresta getListaAresta() {
         return lista_no_arestas;
     }
-    
-    public void setAresta_na_ListaAresta(Arestas aresta)
-    {
+
+    public void setAresta_na_ListaAresta(Arestas aresta) {
         lista_no_arestas = lista_no_arestas.insereArestaNo(lista_no_arestas, aresta);
     }
-    
-    public Vertice encontrar_Vertice_ID(int id)
-    {
+
+    public Vertice encontrar_Vertice_ID(int id) {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
-        
-        while(lista != null)
-        {
-            if(id == lista.getIdVertice())
-            {
-             break;   
+
+        while (lista != null) {
+            if (id == lista.getIdVertice()) {
+                break;
             }
             lista = lista.getNoProxVertice();
         }
-        
+
         return lista.getVertice();
     }
-    
-    public void imprimirVertices()
-    {
+
+    public int getTamVertices() {
+
+        NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
+        int tam_vertices = 0;
+
+        while (lista_vertice != null) {
+            tam_vertices++;
+            lista_vertice = lista_vertice.getNoProxVertice();
+        }
+        return tam_vertices;
+    }
+
+    public int getTamArestas() {
+
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int tam_arestas = 0;
+
+        while (lista_aresta != null) {
+            tam_arestas++;
+            lista_aresta = lista_aresta.getNoProxAresta();
+        }
+        return tam_arestas;
+    }
+
+    public void imprimirVertices() {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
-       
-        
-        if (lista.getVertice() == null)
-        {
+
+        if (lista.getVertice() == null) {
             System.out.println("não a vertices");
-        }else
-        {
-            while(lista != null)
-            {
-                
+        } else {
+            while (lista != null) {
+
                 System.out.println(lista.getNomeVertice());
                 lista = lista.getNoProxVertice();
             }
         }
     }
-    
-    public void imprimirArestas()
-    {
+
+    public void imprimirArestas() {
         NoAresta lista = lista_no_arestas.getNoProxAresta();
-        
-        if (lista == null)
-        {
+
+        if (lista == null) {
             System.out.println("não a Arestas");
-        }else
-        {
-            while(lista != null)
-            {
+        } else {
+            while (lista != null) {
                 System.out.println(lista.getNomeAresta() + " // Vertice Origem = " + lista.getAresta().getOrigem().getNomeVertice() + " // Vertice Destino = " + lista.getAresta().getDestino().getNomeVertice());
                 lista = lista.getNoProxAresta();
             }
         }
     }
-    public int verificar_Adjacencia(Vertice origem, Vertice destino)
-    {
+
+    public int verificar_Adjacencia(Vertice origem, Vertice destino) {
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
-        
-         while(lista_aresta != null)
-        {
-           if(origem == lista_aresta.getAresta().getOrigem() && destino == lista_aresta.getAresta().getDestino())
-           {
-               return 1;
+        int valor = 0;
+
+        while (lista_aresta != null) {
+            if (origem == lista_aresta.getAresta().getOrigem() && destino == lista_aresta.getAresta().getDestino()) {
+                valor++;
+            } else if (destino == lista_aresta.getAresta().getOrigem() && origem == lista_aresta.getAresta().getDestino()) {
+                valor++;
             }
-           else if(destino == lista_aresta.getAresta().getOrigem() && origem == lista_aresta.getAresta().getDestino())
-           {
-               return 1;
-           }
-           lista_aresta = lista_aresta.getNoProxAresta();
-           
-         }
-         return 0;
+            lista_aresta = lista_aresta.getNoProxAresta();
+
+        }
+        return valor;
     }
-    
-    public void imprimirListaAdj()
-    {
+
+    public void imprimirListaAdj() {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
-        
-        while(lista_vertice != null)
-        {
+
+        while (lista_vertice != null) {
             System.out.print(lista_vertice.getNomeVertice());
-            
-                while(lista_aresta != null)
-                {
-                    if(lista_aresta.getAresta().getDestino() == lista_vertice.getVertice())
-                    {
-                        System.out.print(" -> ");
-                        System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
-                    }
-                    else if(lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice())
-                    {
-                        System.out.print(" -> ");
-                        System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
-                    }
-                    lista_aresta = lista_aresta.getNoProxAresta();
-                 }
-                lista_vertice = lista_vertice.getNoProxVertice();
-                lista_aresta = lista_no_arestas.getNoProxAresta();
-                System.out.println();
+
+            while (lista_aresta != null) {
+                if (lista_aresta.getAresta().getDestino() == lista_vertice.getVertice()) {
+                    System.out.print(" -> ");
+                    System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
+                } else if (lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice()) {
+                    System.out.print(" -> ");
+                    System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
+                }
+                lista_aresta = lista_aresta.getNoProxAresta();
+            }
+            lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
+            System.out.println();
         }
     }
-    
-    public void imprimirMatrizAdj()
-    {
+
+    public void imprimirMatrizAdj() {
         NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
         NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
 
+        while (lista_verticeL != null) {
 
-        while(lista_verticeL != null)
-        {
-                
-                while(lista_verticeC != null)
-                {
-                    //System.out.print("LINHA"+"COLUNA");
-                    System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()));
+            while (lista_verticeC != null) {
+                //System.out.print("LINHA"+"COLUNA");
+                System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
 
-                    
-                    lista_verticeC = lista_verticeC.getNoProxVertice();
-                }
+                lista_verticeC = lista_verticeC.getNoProxVertice();
+            }
             System.out.println();
             lista_verticeC = lista_no_vertice.getNoProxVertice();
             lista_verticeL = lista_verticeL.getNoProxVertice();
         }
     }
-    
-    public void imprimirMatrizInc()
-    {
+
+    public void imprimirMatrizInc() {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
-        
-        while(lista_vertice != null)
-        {
-            while(lista_aresta != null)
-            {
-                if(lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino() )
-                {
+
+        while (lista_vertice != null) {
+            while (lista_aresta != null) {
+                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
                     System.out.print(" 1");
-                }
-                else
-                {
+                } else {
                     System.out.print(" 0");
                 }
                 lista_aresta = lista_aresta.getNoProxAresta();
@@ -189,141 +178,100 @@ public class GrafoNo extends NoVertice {
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
-        
+
     }
-    
-    
-    public String retornarListaAdj()
-    {
+
+    public String retornarListaAdj() {
         String texto = null;
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int verifica_primeiro = 0;
-        
-        
-        while(lista_vertice != null)
-        {
-            if(verifica_primeiro == 0)
-            {
+
+        while (lista_vertice != null) {
+            if (verifica_primeiro == 0) {
                 texto = lista_vertice.getNomeVertice();
                 verifica_primeiro = 1;
-            }else
-            {
+            } else {
                 texto += lista_vertice.getNomeVertice();
             }
-            
+
             System.out.print(lista_vertice.getNomeVertice());
-            
-                while(lista_aresta != null)
-                {
-                    if(lista_aresta.getAresta().getDestino() == lista_vertice.getVertice())
-                    {
-                        System.out.print(" -> ");
-                        System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
-                        texto += "->" + lista_aresta.getAresta().getOrigem().getNomeVertice();
-                    }
-                    else if(lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice())
-                    {
-                        System.out.print(" -> ");
-                        System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
-                        texto += "->" + lista_aresta.getAresta().getDestino().getNomeVertice();
-                    }
-                    lista_aresta = lista_aresta.getNoProxAresta();
-                 }
-                lista_vertice = lista_vertice.getNoProxVertice();
-                lista_aresta = lista_no_arestas.getNoProxAresta();
-                System.out.println();
-                texto += "\n";
+
+            while (lista_aresta != null) {
+                if (lista_aresta.getAresta().getDestino() == lista_vertice.getVertice()) {
+                    System.out.print(" -> ");
+                    System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
+                    texto += "->" + lista_aresta.getAresta().getOrigem().getNomeVertice();
+                } else if (lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice()) {
+                    System.out.print(" -> ");
+                    System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
+                    texto += "->" + lista_aresta.getAresta().getDestino().getNomeVertice();
+                }
+                lista_aresta = lista_aresta.getNoProxAresta();
+            }
+            lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
+            System.out.println();
+            texto += "\n";
         }
         return texto;
-               
+
     }
-    
-    public String retornarMatrizADJ()
-    {
+
+    public String retornarMatrizADJ() {
         NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
         NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
         String texto = null;
-        int verifica_primeiro = 0, valor;
+        int verifica_primeiro = 0;
 
+        while (lista_verticeL != null) {
 
-        while(lista_verticeL != null)
-        {
-                
-                while(lista_verticeC != null)
-                {
-                                if(verifica_primeiro == 0)
-                                {
-                                    if(verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()) == 1)
-                                    {
-                                        texto = " 1";
-                                    }else
-                                    {
-                                        texto = " 0"; 
-                                    }
-                                        
-                                        verifica_primeiro = 1;
-                                }else
-                                {
-                                    if(verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()) == 1)
-                                    {
-                                        texto += " 1";
-                                    }else
-                                    {
-                                        texto += " 0"; 
-                                    }
-                                }
-                    //System.out.print("LINHA"+"COLUNA");
-                    System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(),lista_verticeC.getVertice()));
+            while (lista_verticeC != null) {
+                if (verifica_primeiro == 0) {
+                    texto = Integer.toString(verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
 
-                    
-                    lista_verticeC = lista_verticeC.getNoProxVertice();
+                    verifica_primeiro = 1;
+                } else {
+                   texto += Integer.toString(verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
                 }
+                //System.out.print("LINHA"+"COLUNA");
+                System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
+
+                lista_verticeC = lista_verticeC.getNoProxVertice();
+            }
             texto += "\n";
             System.out.println();
             lista_verticeC = lista_no_vertice.getNoProxVertice();
             lista_verticeL = lista_verticeL.getNoProxVertice();
         }
-        
+
         return texto;
     }
-    
-    public String retornarMatrizINC()
-    {
+
+    public String retornarMatrizINC() {
         String texto = null;
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int verifica_primeiro = 0;
-        
-        while(lista_vertice != null)
-        {
-            while(lista_aresta != null)
-            {
-                if(lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino() )
-                {
-                    if(verifica_primeiro == 0)
-                    {
+
+        while (lista_vertice != null) {
+            while (lista_aresta != null) {
+                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
+                    if (verifica_primeiro == 0) {
                         texto = " 1";
                         verifica_primeiro = 1;
-                    }
-                    else
-                    {
+                    } else {
                         texto += " 1";
                     }
                     System.out.print(" 1");
-                }
-                else
-                {
-                    if(verifica_primeiro == 0)
-                    {
+                } else {
+                    if (verifica_primeiro == 0) {
                         texto = "0";
                         verifica_primeiro = 1;
-                    }
-                    else
-                    {
+                    } else {
                         texto += " 0";
                     }
-                    
+
                     System.out.print(" 0");
                 }
                 lista_aresta = lista_aresta.getNoProxAresta();
@@ -333,8 +281,8 @@ public class GrafoNo extends NoVertice {
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
-        
+
         return texto;
     }
-    
+
 }

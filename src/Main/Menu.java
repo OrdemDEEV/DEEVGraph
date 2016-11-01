@@ -128,6 +128,9 @@ public class Menu {
        a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(3), 3);
        grafo.setAresta_na_ListaAresta(a);
        
+       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_ID(2), grafo.encontrar_Vertice_ID(1), 4);
+       grafo.setAresta_na_ListaAresta(a);
+       
       grafo.imprimirArestas(); 
        
 
