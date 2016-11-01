@@ -4,6 +4,7 @@
  */
 package Funcoes;
 
+import Main.MainControllerInterface_Back_And_Front;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -12,9 +13,11 @@ import java.util.regex.Pattern;
  * @author eduardo
  */
 public class GrafoFormal {
+        
+     MainControllerInterface_Back_And_Front dados;
     
     //realiza a separação dos dados pela vigula
-    public int separa_dados(String grafo){
+    public int separa_dados(String grafo, int tamanho){
         
         String vertice;
         String aresta;
@@ -30,12 +33,29 @@ public class GrafoFormal {
         
         //possivelmente vai ficar lento verificar barra de progresso!!
         
-        String [] texto = grafo.split(",");
+        /*String [] texto = grafo.split(",");
         System.out.println(texto[0]);
         System.out.println(texto[1]);
         String [] dadoss = texto[1].split("=");
         System.out.println(dadoss[0]);
-        System.out.println(dadoss[1]);
+        System.out.println(dadoss[1]);*/
+        int quantidade_grafos = tamanho / 10;
+        String [] texto = null;
+        String [] vertices_lidos = null;
+        String [] vertices_cadastro = null;
+        for(int i=0;i<=quantidade_grafos;i++){
+            
+               texto =  grafo.split(",");
+               System.out.println("Grafo" + i + ":\t" + texto[i]);
+               
+                   vertices_lidos = texto[i].split("=");
+                   
+              for(int j=0;j<vertices_lidos.length;j++){
+                  System.out.println(vertices_lidos[j]);
+                  
+              }
+               
+        }
         return 0;
     }
     

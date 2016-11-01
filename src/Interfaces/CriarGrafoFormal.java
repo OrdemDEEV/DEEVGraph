@@ -177,8 +177,8 @@ public class CriarGrafoFormal extends javax.swing.JInternalFrame {
 
         MainControllerInterface_Back_And_Front metodos = new MainControllerInterface_Back_And_Front();
         String grafo = grafo_formal_txt.getText();//recebe o grafo formal em forma de texto
-        
-        metodos.Ler_Grafo_Formal(grafo);
+        int tamanho = grafo_formal_txt.getText().length();//recupera quantidade de strings digitadas deve ter 10 para estar apto
+        metodos.Ler_Grafo_Formal(grafo, tamanho);
 
         /*
         Aqui devera chamar os metodos que vao separar os textos, e criar os vertices e arestas e depois ligar
