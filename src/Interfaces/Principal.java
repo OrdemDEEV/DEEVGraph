@@ -6,6 +6,8 @@
 package Interfaces;
 
 import Main.MainControllerInterface_Back_And_Front;
+import java.awt.Dimension;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -22,10 +24,18 @@ public class Principal extends javax.swing.JFrame {
         
         ControleSoVisual visual = new ControleSoVisual();
         visual.carregaVisualSistema();
-        
-        initComponents();
-    }
 
+        initComponents();
+        setLocationRelativeTo(null);//inicia aplicação no centro da tela
+    }
+    
+     private void centralizaForm(JInternalFrame frame) {
+        Dimension desktopSize = area_trabalho.getSize();
+        Dimension jInternalFrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - jInternalFrameSize.width) / 2,
+                (desktopSize.height - jInternalFrameSize.height) / 2);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -248,10 +258,11 @@ public class Principal extends javax.swing.JFrame {
         
         CriarGrafo novo = new CriarGrafo(dados);
         area_trabalho.add(novo);
+        centralizaForm(novo);
         novo.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
+    
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);     // Código do botão exit(para fechar o programa).
                             // PS: Provavelmente alem de sair também botaremos para salvar ao sair.
@@ -262,6 +273,7 @@ public class Principal extends javax.swing.JFrame {
         
         VizualizarMatris ver = new VizualizarMatris(dados);
         area_trabalho.add(ver);
+        centralizaForm(ver);
         ver.setVisible(true);
                 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -271,6 +283,7 @@ public class Principal extends javax.swing.JFrame {
         
         VizualizarMatris ver = new VizualizarMatris(dados);
         area_trabalho.add(ver);
+        centralizaForm(ver);
         ver.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -280,6 +293,7 @@ public class Principal extends javax.swing.JFrame {
         
         CriarGrafoFormal formal = new CriarGrafoFormal();
         area_trabalho.add(formal);
+        centralizaForm(formal);
         formal.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -288,6 +302,7 @@ public class Principal extends javax.swing.JFrame {
         
         SobreSistema sobre = new SobreSistema();
         area_trabalho.add(sobre);
+        centralizaForm(sobre);
         sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -295,6 +310,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         CriarGrafo novo = new CriarGrafo(dados);
         area_trabalho.add(novo);
+        centralizaForm(novo);
         novo.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -303,6 +319,7 @@ public class Principal extends javax.swing.JFrame {
         
         CriarGrafoFormal formal = new CriarGrafoFormal();
         area_trabalho.add(formal);
+        centralizaForm(formal);
         formal.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 

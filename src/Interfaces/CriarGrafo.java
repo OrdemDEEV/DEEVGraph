@@ -25,7 +25,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         initComponents();
         this.dados = dados;
     }
-
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -332,7 +332,8 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE); 
         }  
     }//GEN-LAST:event_criarAresta_buttonActionPerformed
-
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarAresta_button;
@@ -361,3 +362,4 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private javax.swing.JTextField vertice2;
     // End of variables declaration//GEN-END:variables
 }
+
