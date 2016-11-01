@@ -19,6 +19,7 @@ import Funcoes.GrafoFormal;
 import Funcoes.GrafoListaAdj;
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,7 +44,7 @@ public class MainControllerInterface_Back_And_Front {
         //grafoadj.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
         a = grafo.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
         grafo.setAresta_na_ListaAresta(a);
-        grafo.imprimirArestas(); 
+        grafo.imprimirArestas();  
     }
     
     //imprimir lista na interface

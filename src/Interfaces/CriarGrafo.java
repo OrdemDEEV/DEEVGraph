@@ -318,22 +318,19 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_criarVertice_buttonActionPerformed
 
     private void criarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarAresta_buttonActionPerformed
-        // FUNÇÃO QUE CRIA UMA ARESTA:
-        
-        
-       String nome = nome_aresta.getText();//recolhe o nome da aresta
-        int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
-        int id_vertice_1 = Integer.parseInt(vertice1.getText());//recolhe vertice 1
-        int id_vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
-        
-        //chama funçoes que cria a  aresta
-        dados.Criar_Aresta(nome, id, id_vertice_1, id_vertice_2);
-        
-        //realiza leitura da lista
-      //  String lista = metodos.Imprimir_lista();
-      //  lista_adjacencia.setText(lista);
-      //  lista_adjacencia.append("\n");
-        
+        // FUNÇÃO QUE CRIA UMA ARESTA: 
+        if(codigo_aresta.getText().length() > 0 && nome_aresta.getText().length() > 0 && vertice1.getText().length() > 0 && vertice2.getText().length() > 0){
+            String nome = nome_aresta.getText();//recolhe o nome da aresta
+            int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
+            int id_vertice_1 = Integer.parseInt(vertice1.getText());//recolhe vertice 1
+            int id_vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
+            //chama funçoes que cria a  aresta
+            dados.Criar_Aresta(nome, id, id_vertice_1, id_vertice_2);
+            JOptionPane.showMessageDialog(null,"Aresta criada com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE); 
+        }  
     }//GEN-LAST:event_criarAresta_buttonActionPerformed
 
 

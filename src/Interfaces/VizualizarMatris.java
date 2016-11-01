@@ -7,6 +7,7 @@ package Interfaces;
 
 import Funcoes.GrafoNo;
 import Main.MainControllerInterface_Back_And_Front;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -272,8 +273,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         //criar função que realiza a impressao dos dados la na classe grafono
         
+        String imprimir = null;
         
-        String imprimir = dados.imprimir_listaADJ();
+        imprimir = dados.imprimir_listaADJ();
         impressao_lista.setText(imprimir);
         
         imprimir = dados.imprimir_matrizADJ();
@@ -282,11 +284,19 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         imprimir = dados.imprimir_matrizINC();
         impressao_matrizINC.setText(imprimir);
         
+        if(imprimir == null){
+            JOptionPane.showMessageDialog(null,"Não existem grafos para serem impressos!","Erro",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ResetarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetarActionPerformed
         // TODO add your handling code here:
         dados.resetar_Grafo();
+        JOptionPane.showMessageDialog(null,"grafos apagados com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_ResetarActionPerformed
 
     public void colocarDadosTextArea(){
