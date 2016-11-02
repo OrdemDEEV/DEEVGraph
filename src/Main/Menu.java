@@ -70,21 +70,21 @@ public class Menu {
         
        int j, i;
        
-       vf[0] = grafoadj.addVertice("vertice s0", 0);
-       vf[1] = grafoadj.addVertice("Vertice s1", 1);
-       vf[2] = grafoadj.addVertice("vertive s2", 2);
-       vf[3] = grafoadj.addVertice("vertice s3", 3);
-       vf[4] = grafoadj.addVertice("vertice s4", 4);
+       vf[0] = grafoadj.addVertice("vertice s0");
+       vf[1] = grafoadj.addVertice("Vertice s1");
+       vf[2] = grafoadj.addVertice("vertive s2");
+       vf[3] = grafoadj.addVertice("vertice s3");
+       vf[4] = grafoadj.addVertice("vertice s4");
       /*  vf[5] = grafoadj.addVertice("Vertice s5", 5);
        vf[6] = grafoadj.addVertice("vertive s6", 6);
        vf[7] = grafoadj.addVertice("vertice s7", 7);
        */
       
        
-       af[0] = grafoadj.addAresta("aresta t0", vf[0], vf[1], 0);
-       af[1] = grafoadj.addAresta("aresta t2", vf[1], vf[2], 1);
-       af[2] = grafoadj.addAresta("aresta t3", vf[2], vf[0], 2);
-       af[3] = grafoadj.addAresta("aresta t4", vf[1], vf[3], 3);
+       af[0] = grafoadj.addAresta("aresta t0", vf[0], vf[1]);
+       af[1] = grafoadj.addAresta("aresta t2", vf[1], vf[2]);
+       af[2] = grafoadj.addAresta("aresta t3", vf[2], vf[0]);
+       af[3] = grafoadj.addAresta("aresta t4", vf[1], vf[3]);
       
        
        /*
@@ -99,36 +99,36 @@ public class Menu {
        Vertice v;
        Arestas a;
        
-       v = grafo.addVertice("vertice s0", 0);   
+       v = grafo.addVertice("vertice s0");   
        grafo.setVertice_na_ListaVertice(v);
        
-       v = grafo.addVertice("Vertice s1", 1);
+       v = grafo.addVertice("Vertice s1");
        grafo.setVertice_na_ListaVertice(v);
        
-       v = grafo.addVertice("Vertice s2", 2);
+       v = grafo.addVertice("Vertice s2");
        grafo.setVertice_na_ListaVertice(v);
        
-       v = grafo.addVertice("Vertice s3", 3);
+       v = grafo.addVertice("Vertice s3");
        grafo.setVertice_na_ListaVertice(v);
        
-       v = grafo.addVertice("Vertice s4", 4);
+       v = grafo.addVertice("Vertice s4");
        grafo.setVertice_na_ListaVertice(v);
        
        grafo.imprimirVertices();
        
-       a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_ID(0), grafo.encontrar_Vertice_ID(1), 0);
+       a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_Nome("vertice s0"), grafo.encontrar_Vertice_Nome("Vertice s1"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t1", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(2), 1);
+       a = grafo.addAresta("aresta t1", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s2"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_ID(2), grafo.encontrar_Vertice_ID(0), 2);
+       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("vertice s0"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_ID(1), grafo.encontrar_Vertice_ID(3), 3);
+       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s3"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_ID(2), grafo.encontrar_Vertice_ID(1), 4);
+       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("vertice s0"));
        grafo.setAresta_na_ListaAresta(a);
        
       grafo.imprimirArestas(); 

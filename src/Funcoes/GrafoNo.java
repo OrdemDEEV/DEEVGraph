@@ -10,15 +10,14 @@ public class GrafoNo extends NoVertice {
     private NoVertice lista_no_vertice = new NoVertice();
     private NoAresta lista_no_arestas = new NoAresta();
 
-    public Vertice addVertice(String nome, int id) { //Adicona vertice e retorna para uma variavel vertice
+    public Vertice addVertice(String nome) { //Adicona vertice e retorna para uma variavel vertice
         Vertice v = new Vertice();
-        v.setVerdiceID(id);
         v.setVerticeNome(nome);
         return v;
     }
 
-    public Arestas addAresta(String nome, Vertice origem, Vertice destino, int id) { //Adiciona aresta e retorna para uma variavel aresta
-        Arestas e = new Arestas(nome, origem, destino, id);
+    public Arestas addAresta(String nome, Vertice origem, Vertice destino) { //Adiciona aresta e retorna para uma variavel aresta
+        Arestas e = new Arestas(nome, origem, destino);
         return e;
     }
 
@@ -40,11 +39,11 @@ public class GrafoNo extends NoVertice {
         lista_no_arestas = lista_no_arestas.insereArestaNo(lista_no_arestas, aresta);
     }
 
-    public Vertice encontrar_Vertice_ID(int id) {
+    public Vertice encontrar_Vertice_Nome(String nome) {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
 
         while (lista != null) {
-            if (id == lista.getIdVertice()) {
+            if (nome.equals(lista.getNomeVertice())) {
                 break;
             }
             lista = lista.getNoProxVertice();
@@ -124,7 +123,7 @@ public class GrafoNo extends NoVertice {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int tamAresta = getTamArestas(lista_no_arestas);
-        int id_pego[] = new int[tamAresta] ;
+        String nome_pego[] = new String[tamAresta] ;
         int verificador = 0;
         int k=0;
 
@@ -135,7 +134,7 @@ public class GrafoNo extends NoVertice {
                 if (lista_aresta.getAresta().getDestino() == lista_vertice.getVertice()) {
                     for(int i=0; i<tamAresta; i++)
                     {
-                        if(lista_aresta.getAresta().getOrigem().getVerticeId() == id_pego[i])
+                        if(lista_aresta.getAresta().getOrigem().getNomeVertice().equals(nome_pego[i]))
                         {
                             verificador = 1;
                         }
@@ -144,14 +143,14 @@ public class GrafoNo extends NoVertice {
                     {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
-                        id_pego[k] = lista_aresta.getAresta().getOrigem().getVerticeId();
+                        nome_pego[k] = lista_aresta.getAresta().getOrigem().getNomeVertice();
                         k++;
                     }
                     verificador =0;
                     } else if (lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice()) {
                     for(int i=0; i<tamAresta; i++)
                     {
-                        if(lista_aresta.getAresta().getDestino().getVerticeId() == id_pego[i])
+                        if(lista_aresta.getAresta().getDestino().getNomeVertice().equals(nome_pego[i]))
                         {
                             verificador = 1;
                         }
@@ -160,7 +159,7 @@ public class GrafoNo extends NoVertice {
                     {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
-                        id_pego[k] = lista_aresta.getAresta().getDestino().getVerticeId();
+                        nome_pego[k] = lista_aresta.getAresta().getDestino().getNomeVertice();
                         k++;
                     }
                     verificador = 0;
@@ -218,7 +217,7 @@ public class GrafoNo extends NoVertice {
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int verifica_primeiro = 0;
         int tamAresta = getTamArestas(lista_no_arestas);
-        int id_pego[] = new int[tamAresta] ;
+        String nome_pego[] = new String[tamAresta] ;
         int verificador = 0;
         int k=0;
         
@@ -236,7 +235,7 @@ public class GrafoNo extends NoVertice {
                 if (lista_aresta.getAresta().getDestino() == lista_vertice.getVertice()) {
                     for(int i=0; i<tamAresta; i++)
                     {
-                        if(lista_aresta.getAresta().getOrigem().getVerticeId() == id_pego[i])
+                        if(lista_aresta.getAresta().getOrigem().getNomeVertice().equals(nome_pego[i]))
                         {
                             verificador = 1;
                         }
@@ -246,14 +245,14 @@ public class GrafoNo extends NoVertice {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());
                         texto += "->" + lista_aresta.getAresta().getOrigem().getNomeVertice();
-                        id_pego[k] = lista_aresta.getAresta().getOrigem().getVerticeId();
+                        nome_pego[k] = lista_aresta.getAresta().getOrigem().getNomeVertice();
                         k++;
                     }
                     verificador =0;
                     } else if (lista_aresta.getAresta().getOrigem() == lista_vertice.getVertice()) {
                     for(int i=0; i<tamAresta; i++)
                     {
-                        if(lista_aresta.getAresta().getDestino().getVerticeId() == id_pego[i])
+                        if(lista_aresta.getAresta().getDestino().getNomeVertice().equals(nome_pego[i]))
                         {
                             verificador = 1;
                         }
@@ -263,7 +262,7 @@ public class GrafoNo extends NoVertice {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getDestino().getNomeVertice());
                         texto += "->" + lista_aresta.getAresta().getDestino().getNomeVertice();
-                        id_pego[k] = lista_aresta.getAresta().getDestino().getVerticeId();
+                        nome_pego[k] = lista_aresta.getAresta().getDestino().getNomeVertice();
                         k++;
                     }
                     verificador = 0;

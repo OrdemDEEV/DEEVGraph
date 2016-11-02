@@ -5,17 +5,16 @@ package Funcoes;
 
 
 public class Arestas extends Vertice {
-       private int id;
+       
        private String nomeAresta;
        private Vertice origem;
        private Vertice destino;
         
         public Arestas(){}
         
-        Arestas (String nome, Vertice origem, Vertice destino, int id)
+        Arestas (String nome, Vertice origem, Vertice destino)
         {
             this.nomeAresta = nome;
-            this.id = id;
             this.origem = origem;
             this.destino = destino;
         }

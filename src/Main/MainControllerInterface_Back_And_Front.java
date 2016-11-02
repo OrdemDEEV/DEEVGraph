@@ -33,16 +33,16 @@ public class MainControllerInterface_Back_And_Front {
     Arestas a;
     
     //função capaz de criar vertice
-    public void Criar_Vertice(String nome, int id){
+    public void Criar_Vertice(String nome){
        // grafoadj.addVertice(nome, id);
-        v = grafo.addVertice(nome, id); //Cria o vertice nó
+        v = grafo.addVertice(nome); //Cria o vertice nó
         grafo.setVertice_na_ListaVertice(v); //coloca na lista de nós de GrafoNo
     }
     
     //Função capaz de criar aresta
-    public void Criar_Aresta(String nome, int id, int id_vertice_1, int id_vertice_2){
+    public void Criar_Aresta(String nome, String nome_vertice_1, String nome_vertice_2){
         //grafoadj.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
-        a = grafo.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
+        a = grafo.addAresta(nome, grafo.encontrar_Vertice_Nome(nome_vertice_1), grafo.encontrar_Vertice_Nome(nome_vertice_2));
         grafo.setAresta_na_ListaAresta(a);
         grafo.imprimirArestas();  
     }

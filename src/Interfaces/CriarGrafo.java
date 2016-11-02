@@ -320,10 +320,10 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
         // FUNÇÃO QUE CRIA UM VERTICE:
         //ja validanddo formulario vazio
-        if(txtNomeVertice.getText().length() > 0 && txtIdVertice.getText().length() > 0){
+        if(txtNomeVertice.getText().length() > 0 /*&& txtIdVertice.getText().length() > 0*/){
             String nome = txtNomeVertice.getText();
-            int id = Integer.parseInt(txtIdVertice.getText());
-            dados.Criar_Vertice(nome, id); 
+            //int id = Integer.parseInt(txtIdVertice.getText());
+            dados.Criar_Vertice(nome); 
             JOptionPane.showMessageDialog(null,"Vertice criado com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
         }
         else{
@@ -333,13 +333,13 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
 
     private void criarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarAresta_buttonActionPerformed
         // FUNÇÃO QUE CRIA UMA ARESTA: 
-        if(codigo_aresta.getText().length() > 0 && nome_aresta.getText().length() > 0 && vertice1.getText().length() > 0 && vertice2.getText().length() > 0){
+        if(/*codigo_aresta.getText().length() > 0 && */ nome_aresta.getText().length() > 0 && vertice1.getText().length() > 0 && vertice2.getText().length() > 0){
             String nome = nome_aresta.getText();//recolhe o nome da aresta
-            int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
-            int id_vertice_1 = Integer.parseInt(vertice1.getText());//recolhe vertice 1
-            int id_vertice_2 = Integer.parseInt(vertice2.getText());//recolhe vertice 2
+           // int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
+            String nome_vertice_1 = vertice1.getText();//recolhe vertice 1
+            String nome_vertice_2 = vertice2.getText();//recolhe vertice 2
             //chama funçoes que cria a  aresta
-            dados.Criar_Aresta(nome, id, id_vertice_1, id_vertice_2);
+            dados.Criar_Aresta(nome, nome_vertice_1, nome_vertice_2);
             JOptionPane.showMessageDialog(null,"Aresta criada com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
         }
         else{
