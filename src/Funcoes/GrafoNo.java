@@ -290,11 +290,11 @@ public class GrafoNo extends NoVertice {
 
             while (lista_verticeC != null) {
                 if (verifica_primeiro == 0) {
-                    texto = Integer.toString(verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
+                    texto = " " + Integer.toString(verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
 
                     verifica_primeiro = 1;
                 } else {
-                   texto += Integer.toString(verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
+                   texto += " " + Integer.toString(verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));
                 }
                 //System.out.print("LINHA"+"COLUNA");
                 System.out.print(" " + verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice()));

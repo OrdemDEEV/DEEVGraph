@@ -10,6 +10,8 @@ import Funcoes.GrafoListaAdj; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
 import Funcoes.Arestas;
+import Funcoes.Arquivo;
+import java.io.IOException;
 
 
 public class Menu {
@@ -17,11 +19,12 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     GrafoListaAdj grafoadj = new GrafoListaAdj();
     GrafoNo grafo = new GrafoNo();
+    Arquivo arq = new Arquivo();
     
     public int menu_Principal()
     {
         int op;
-        
+        String dados;
         
         System.out.println("----MENU PRINCIPAL-----");
         System.out.println("1-Inserir Dados do Grafo");
@@ -29,6 +32,7 @@ public class Menu {
         System.out.println("3-Mostrar Matriz adjacencia");
         System.out.println("4-Mostrar Matriz de Incidencia");
         System.out.println("5-DeletarGrafo");
+        System.out.println("6-Salvar Grafo");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -52,6 +56,8 @@ public class Menu {
             case 5:
                this.grafo = new GrafoNo();
                 break;
+            case 6: 
+                arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC());
             default:
                 System.out.println("Opção Invalida");
                 break;
