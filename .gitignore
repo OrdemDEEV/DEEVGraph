@@ -8,7 +8,7 @@ build/built-jar.properties
 build/*
 build/classes/*
 grafo.txt
-
+dados.txt
 *.log
 nbproject/private/*    
 *.bak

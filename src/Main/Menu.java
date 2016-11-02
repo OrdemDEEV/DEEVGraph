@@ -32,7 +32,8 @@ public class Menu {
         System.out.println("3-Mostrar Matriz adjacencia");
         System.out.println("4-Mostrar Matriz de Incidencia");
         System.out.println("5-DeletarGrafo");
-        System.out.println("6-Salvar Grafo");
+        System.out.println("6-Exportar Grafo");
+        System.out.println("7-Salvar Grafo");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -58,6 +59,10 @@ public class Menu {
                 break;
             case 6: 
                 arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC());
+                break;
+            case 7:
+                arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas());
+                break;
             default:
                 System.out.println("Opção Invalida");
                 break;
@@ -120,7 +125,7 @@ public class Menu {
        v = grafo.addVertice("Vertice s4");
        grafo.setVertice_na_ListaVertice(v);
        
-       grafo.imprimirVertices();
+       String ver1 = grafo.imprimirVertices();
        
        a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_Nome("vertice s0"), grafo.encontrar_Vertice_Nome("Vertice s1"));
        grafo.setAresta_na_ListaAresta(a);
@@ -137,9 +142,12 @@ public class Menu {
        a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("vertice s0"));
        grafo.setAresta_na_ListaAresta(a);
        
-      grafo.imprimirArestas(); 
+       String ver2 = grafo.imprimirArestas(); 
+       
+        System.out.println("\n\n\n\n AGORA VAMOS IMPRIMIR AS VAREAVEIS");
+        System.out.println("");
        
 
-        System.out.println();
+        System.out.println(ver1 + "\n" + ver2);
 }
 }
