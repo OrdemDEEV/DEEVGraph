@@ -88,17 +88,19 @@ public class GrafoNo extends NoVertice {
             while (lista != null) {
                 if(verificador == 0)
                 {
-                    texto = lista.getNomeVertice() + ",";
+                    texto = lista.getNomeVertice();
+                    verificador = 1;
                 }
                 else
                 {
-                    texto += lista.getNomeVertice() + ",";
+                    texto += "," + lista.getNomeVertice();
                 }
 
                 System.out.println(lista.getNomeVertice());
                 lista = lista.getNoProxVertice();
             }
         }
+        texto += ";";
         return texto;
     }
 
@@ -114,17 +116,18 @@ public class GrafoNo extends NoVertice {
             while (lista != null) {
                 if(verificador == 0)
                 {
-                    texto = lista.getNomeAresta() + lista.getAresta().getOrigem().getNomeVertice() + lista.getAresta().getDestino().getNomeVertice() + ",";
+                    texto = lista.getNomeAresta() + "," + lista.getAresta().getOrigem().getNomeVertice() + "," + lista.getAresta().getDestino().getNomeVertice();
                     verificador = 1;
                 }
                 else
                 {
-                    texto += lista.getNomeAresta() + lista.getAresta().getOrigem().getNomeVertice() + lista.getAresta().getDestino().getNomeVertice() + ",";
+                    texto += "," + lista.getNomeAresta() + "," + lista.getAresta().getOrigem().getNomeVertice() + "," + lista.getAresta().getDestino().getNomeVertice();
                 }
                 System.out.println(lista.getNomeAresta() + " // Vertice Origem = " + lista.getAresta().getOrigem().getNomeVertice() + " // Vertice Destino = " + lista.getAresta().getDestino().getNomeVertice());
                 lista = lista.getNoProxAresta();
             }
         }
+        texto += ";";
         return texto;
     }
 

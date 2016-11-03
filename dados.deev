@@ -1,0 +1,2 @@
+vertice s0,Vertice s1,Vertice s2,Vertice s3,Vertice s4;
+aresta t0,vertice s0,Vertice s1,aresta t1,Vertice s1,Vertice s2,aresta t2,Vertice s2,vertice s0,aresta t3,Vertice s1,Vertice s3,aresta t3,Vertice s2,vertice s0;
