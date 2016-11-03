@@ -11,7 +11,6 @@ import Funcoes.GrafoNo;
 import Funcoes.Vertice;
 import Funcoes.Arestas;
 import Funcoes.Arquivo;
-import java.io.IOException;
 
 
 public class Menu {
@@ -34,6 +33,7 @@ public class Menu {
         System.out.println("5-DeletarGrafo");
         System.out.println("6-Exportar Grafo");
         System.out.println("7-Salvar Grafo");
+        System.out.println("8-Carregar dados");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -62,6 +62,9 @@ public class Menu {
                 break;
             case 7:
                 arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas());
+                break;
+            case 8:
+                grafo = arq.carregar_dados();
                 break;
             default:
                 System.out.println("Opção Invalida");
