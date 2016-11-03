@@ -9,6 +9,7 @@ build/*
 build/classes/*
 grafo.txt
 dados.txt
+dados.deev
 *.log
 nbproject/private/*    
 *.bak
