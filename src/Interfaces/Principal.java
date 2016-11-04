@@ -5,8 +5,14 @@
  */
 package Interfaces;
 
+import Funcoes.Arquivo;
 import Main.MainControllerInterface_Back_And_Front;
 import java.awt.Dimension;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JInternalFrame;
 
 /**
@@ -17,6 +23,7 @@ public class Principal extends javax.swing.JFrame {
 
         
     MainControllerInterface_Back_And_Front dados = new MainControllerInterface_Back_And_Front();
+    Arquivo arq = new Arquivo();
     /**
      * Creates new form Principal
      */
@@ -327,7 +334,18 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         
-     
+     JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        int result = fileChooser.showOpenDialog(this);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            System.out.println("Selected file" + selectedFile.getAbsolutePath());
+            
+                //manda txt para codigo de importação
+                //arq.carregar_dados(selectedFile.getAbsolutePath()); 
+                arq.carregar_dados();//busca dados
+ 
+        }
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
