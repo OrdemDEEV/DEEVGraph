@@ -48,7 +48,7 @@ public class Arquivo {
 
     }
 
-    public GrafoNo carregar_dados() {
+    public GrafoNo carregar_dados(String arquivo) {
         GrafoNo grafo = new GrafoNo();
         Vertice v;
         Arestas a;
@@ -56,7 +56,7 @@ public class Arquivo {
         String nomeAresta, vertice1, vertice2;
         
         try {
-            FileReader arq = new FileReader("dados.deev");
+            FileReader arq = new FileReader(arquivo);
             BufferedReader lerArq = new BufferedReader(arq);
 
             String linha = lerArq.readLine(); // lê a primeira linha a variável "linha" recebe o valor "null" quando o processo de repetição atingir o final do arquivo texto

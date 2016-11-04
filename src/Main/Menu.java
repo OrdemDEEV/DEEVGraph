@@ -64,7 +64,8 @@ public class Menu {
                 arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas());
                 break;
             case 8:
-                grafo = arq.carregar_dados();
+                //COMENTADO PARA FUNCIONAR NA INTERFACE E PRECISO PEGAR O CAMINHO E NOME DO ARQUIVO E PASSAR COMO PARAMETRO
+                //grafo = arq.carregar_dados();
                 break;
             default:
                 System.out.println("Opção Invalida");

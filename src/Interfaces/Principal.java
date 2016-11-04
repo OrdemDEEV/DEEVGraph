@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -192,6 +193,11 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/salvar.png"))); // NOI18N
         jMenuItem4.setText("Salvar");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
@@ -343,11 +349,26 @@ public class Principal extends javax.swing.JFrame {
             
                 //manda txt para codigo de importação
                 //arq.carregar_dados(selectedFile.getAbsolutePath()); 
-                arq.carregar_dados();//busca dados
+                arq.carregar_dados(selectedFile.getAbsolutePath());//busca dados e abre na função
  
         }
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+          JFileChooser file = new JFileChooser(); 
+          file.setFileSelectionMode(JFileChooser.FILES_ONLY);
+          int i= file.showSaveDialog(null);
+        if (i==1){
+            System.out.println("Nome invalido");
+            JOptionPane.showMessageDialog(null,"ATENÇÃO DADOS OS DADOS NÃO FORAM SALVOS!!","Erro",JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            File arquivo = file.getSelectedFile();
+            //arq.salvar_dados(Vertices, Arestas); AQUI TEM QUE CHAMAR A FUNÇÃO QUE SALVA 
+          //JtextFieldLocal.setText(arquivo.getPath());
+        }
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
