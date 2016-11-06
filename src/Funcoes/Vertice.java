@@ -32,7 +32,7 @@ public class Vertice{
             return nomeVertice;
         };
         
-        public void setVertice(String nome, int id)
+        public void setVertice(String nome)
         {
             this.nomeVertice = nome;
             this.adj = new ArrayList<Arestas>();

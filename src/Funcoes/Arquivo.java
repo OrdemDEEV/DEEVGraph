@@ -12,15 +12,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import Funcoes.GrafoNo;
-import Funcoes.Vertice;
-import Funcoes.Arestas;
 
 public class Arquivo {
 
-    public void exportar_Grafo(String listaADJ, String MatrizADJ, String MatrizINC) {
+    public void exportar_Grafo(String listaADJ, String MatrizADJ, String MatrizINC, String caminho) {
 
-        try (FileWriter arq = new FileWriter("grafo.txt")) {
+        try (FileWriter arq = new FileWriter(caminho+"/grafo.txt")) {
 
             PrintWriter gravarArq = new PrintWriter(arq);
             gravarArq.printf("Lista de Adjacencia%n%n" + listaADJ + "%n%nMatriz de Adjacencia%n%n" + MatrizADJ + "%n%nMatriz de Incidencia%n%n" + MatrizINC);
@@ -33,74 +30,72 @@ public class Arquivo {
 
     }
 
-    public void salvar_dados(String Vertices, String Arestas) {
+    public void salvar_dados(String Vertices, String Arestas, String caminho) {
 
-        try (FileWriter arq = new FileWriter("dados.deev")) {
+        try (FileWriter arq = new FileWriter(caminho+"/dados.deev")) {
 
             PrintWriter gravarArq = new PrintWriter(arq);
-            gravarArq.printf(Vertices + "%n" + Arestas);
+            gravarArq.printf(Vertices + "\n" + Arestas);
             arq.close();
 
         } catch (IOException ex) {
             Logger.getLogger(Arquivo.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("deu algum erro no arquivo");
+            System.out.println("deu algum erro no Vertices");
         }
 
     }
 
-    public GrafoNo carregar_dados(String arquivo) {
+    public GrafoNo carregar_dados(String caminho) {
         GrafoNo grafo = new GrafoNo();
         Vertice v;
         Arestas a;
-        int teste = 0, vertice=0, arestas=0;
-        String nomeAresta, vertice1, vertice2;
+        int testaaresta = 0, testevertice=0, fimVertice = 0;
+        String nomeAresta = " ", vertice1 = " ", vertice2 = " ";
+        
         
         try {
-            FileReader arq = new FileReader(arquivo);
+            FileReader arq = new FileReader(caminho);
             BufferedReader lerArq = new BufferedReader(arq);
 
             String linha = lerArq.readLine(); // lê a primeira linha a variável "linha" recebe o valor "null" quando o processo de repetição atingir o final do arquivo texto
             while (linha != null) {
-                System.out.printf("%s\n", linha);
+                System.out.printf("%s\n", linha);  
                 
                 
-                        if(linha.equals("FimVertice") && teste == 0) // se ele chegou no fim de todos os vertices, teste vira 1
-                        {
-                           teste = 1; 
-                        }else if( teste == 0) //entra até chegar em todos os vertices
-                        {
-                            v = grafo.addVertice(linha);
-                            grafo.setVertice_na_ListaVertice(v);
-                           
-                        }else if(linha.equals("FimAresta") && teste == 1) //se ele chego em todos os vertices, printa e o teste vira 2;
-                        {
-                            System.out.println("final do arquivo encontrado");
-                            teste = 2;
-                        }else if(teste == 1 && !linha.equals("FimVertice")) //entra se teste == 1 e não for FimVertice
-                        {
-                            if(arestas == 0)
-                            {
-                                nomeAresta = linha;
-                                arestas = 1;
-                            }else if(vertice == 0)
-                            {
-                                vertice1 = linha;
-                                vertice = 1;
-                            }
-                            else if(vertice == 1)
-                            {
-                                vertice2 = linha;
-                                vertice = 0;
-                                arestas = 0;
-                                a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s3"));
-                                grafo.setAresta_na_ListaAresta(a);
-                            } 
-                        }
-                        else
-                        {
-                            System.out.println("não entrou em nenhum if, deve ter algum erro");
-                        }
-
+             if(fimVertice == 1)
+                {
+                    if(testaaresta == 0)
+                {
+                    nomeAresta = linha;
+                    testaaresta = 1;
+                }else if(testevertice == 0)
+                {
+                    vertice1 = linha;
+                    testevertice = 1;
+                }else if(testevertice ==  1)
+                {
+                    vertice2 = linha;
+                    testevertice = 2;
+                }else if(testevertice == 2)
+                {
+                    grafo.setAresta_na_ListaAresta(grafo.addAresta(nomeAresta, grafo.encontrar_Vertice_Nome(vertice1), grafo.encontrar_Vertice_Nome(vertice2)));
+                    testaaresta = 0;
+                    testevertice = 0;
+                }
+              }
+             else
+             {
+                 if(linha.equals("fimVertices"))
+                 {
+                     fimVertice = 1;
+                 }else
+                 {
+                     grafo.setVertice_na_ListaVertice(grafo.addVertice(linha));
+                 }
+                 
+             }
+                
+                
                 linha = lerArq.readLine(); // lê da segunda até a última linha
             }
 
@@ -110,7 +105,6 @@ public class Arquivo {
                     e.getMessage());
         }
 
-        System.out.println();
         return grafo;
     }
 

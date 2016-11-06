@@ -6,7 +6,6 @@
 package Main;
 
 import java.util.Scanner;
-import Funcoes.GrafoListaAdj; //IMPORTA A FUNÇÃO GRAFO DE OUTRO PACOTE
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
 import Funcoes.Arestas;
@@ -16,7 +15,6 @@ import Funcoes.Arquivo;
 public class Menu {
     
     Scanner scan = new Scanner(System.in);
-    GrafoListaAdj grafoadj = new GrafoListaAdj();
     GrafoNo grafo = new GrafoNo();
     Arquivo arq = new Arquivo();
     
@@ -34,6 +32,7 @@ public class Menu {
         System.out.println("6-Exportar Grafo");
         System.out.println("7-Salvar Grafo");
         System.out.println("8-Carregar dados");
+        System.out.println("9-Mostrar Vértices e Arestas");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -58,14 +57,19 @@ public class Menu {
                this.grafo = new GrafoNo();
                 break;
             case 6: 
-                arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC());
+                arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), "Grafo");
                 break;
             case 7:
-                arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas());
+                arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas(), "Grafo/");
                 break;
             case 8:
                 //COMENTADO PARA FUNCIONAR NA INTERFACE E PRECISO PEGAR O CAMINHO E NOME DO ARQUIVO E PASSAR COMO PARAMETRO
-                //grafo = arq.carregar_dados();
+                grafo = arq.carregar_dados("Grafo/dados.deev");
+                break;
+            case 9:
+                grafo.imprimirArestas();
+                System.out.println();
+                grafo.imprimirVertices();
                 break;
             default:
                 System.out.println("Opção Invalida");
@@ -77,44 +81,11 @@ public class Menu {
     
     public void inserir_dados_do_grafo()
     {
-        
-        //Não vamos precisar saber o valor,só criei um vetor aqui para saber 
-        //TESTE PARA INSERIR NO GRAFO PARA LISTA DE ADJACENCIA
-       Vertice vf[] = new Vertice[5];
-       Arestas af[] = new Arestas[4];
-        
-       int j, i;
-       
-       vf[0] = grafoadj.addVertice("vertice s0");
-       vf[1] = grafoadj.addVertice("Vertice s1");
-       vf[2] = grafoadj.addVertice("vertive s2");
-       vf[3] = grafoadj.addVertice("vertice s3");
-       vf[4] = grafoadj.addVertice("vertice s4");
-      /*  vf[5] = grafoadj.addVertice("Vertice s5", 5);
-       vf[6] = grafoadj.addVertice("vertive s6", 6);
-       vf[7] = grafoadj.addVertice("vertice s7", 7);
-       */
-      
-       
-       af[0] = grafoadj.addAresta("aresta t0", vf[0], vf[1]);
-       af[1] = grafoadj.addAresta("aresta t2", vf[1], vf[2]);
-       af[2] = grafoadj.addAresta("aresta t3", vf[2], vf[0]);
-       af[3] = grafoadj.addAresta("aresta t4", vf[1], vf[3]);
-      
-       
-       /*
-        O que da de fazer nessa parte na interdace grafica, e quando adicionar um grafo e uma aresta da de fazer o seguinte
-       grafoadj.addAresta("aresta t0", grafoadj.addVertice("vertice s0"), grafoadj.addVertice("Vertice s1"));
-       Sendo adiconando uma aresta, pega o nome da aresta, depois ja cria o vertice que eles se conectam junto com a aresta.
-       
-       É um sugestão interessante
-       */
-       
        //TESTE PARA INSERIR NO GRAFO PARA MATRIZES
        Vertice v;
        Arestas a;
        
-       v = grafo.addVertice("vertice s0");   
+       v = grafo.addVertice("Vertice s0");   
        grafo.setVertice_na_ListaVertice(v);
        
        v = grafo.addVertice("Vertice s1");
@@ -131,19 +102,19 @@ public class Menu {
        
        String ver1 = grafo.imprimirVertices();
        
-       a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_Nome("vertice s0"), grafo.encontrar_Vertice_Nome("Vertice s1"));
+       a = grafo.addAresta("aresta t0", grafo.encontrar_Vertice_Nome("Vertice s0"), grafo.encontrar_Vertice_Nome("Vertice s1"));
        grafo.setAresta_na_ListaAresta(a);
        
        a = grafo.addAresta("aresta t1", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s2"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("vertice s0"));
+       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s0"));
        grafo.setAresta_na_ListaAresta(a);
        
        a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s3"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("vertice s0"));
+       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s0"));
        grafo.setAresta_na_ListaAresta(a);
        
        String ver2 = grafo.imprimirArestas(); 

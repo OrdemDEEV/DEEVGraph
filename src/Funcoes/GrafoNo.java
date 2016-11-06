@@ -4,6 +4,7 @@
 package Funcoes;
 
 import Interfaces.VizualizarMatris;
+import Funcoes.Vertice;
 
 public class GrafoNo extends NoVertice {
 
@@ -47,6 +48,13 @@ public class GrafoNo extends NoVertice {
                 break;
             }
             lista = lista.getNoProxVertice();
+        }
+        if(lista == null)
+        {
+            Vertice v = new Vertice();
+            v.setVertice("deu erro");
+            return v;
+            
         }
 
         return lista.getVertice();
@@ -100,7 +108,8 @@ public class GrafoNo extends NoVertice {
                 lista = lista.getNoProxVertice();
             }
         }
-        texto += "\nFimVertice";
+        texto += "\nfimVertices";
+        
         return texto;
     }
 
@@ -127,7 +136,7 @@ public class GrafoNo extends NoVertice {
                 lista = lista.getNoProxAresta();
             }
         }
-        texto += "\nFimAresta";
+        
         return texto;
     }
 
