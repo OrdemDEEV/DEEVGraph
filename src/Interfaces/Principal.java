@@ -366,7 +366,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"ATENÇÃO DADOS OS DADOS NÃO FORAM SALVOS!!","Erro",JOptionPane.INFORMATION_MESSAGE);
         } else {
             File arquivo = file.getSelectedFile();
-            //arq.salvar_dados(Vertices, Arestas); AQUI TEM QUE CHAMAR A FUNÇÃO QUE SALVA 
+           arq.salvar_dados(dados.getGrafo().imprimirVertices(), dados.getGrafo().imprimirArestas(),"dados");
           //JtextFieldLocal.setText(arquivo.getPath());
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed

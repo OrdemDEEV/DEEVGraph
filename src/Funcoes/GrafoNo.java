@@ -169,14 +169,14 @@ public class GrafoNo extends NoVertice {
 
             while (lista_aresta != null) {
                 if (lista_aresta.getAresta().getDestino() == lista_vertice.getVertice()) {
-                    for(int i=0; i<tamAresta; i++)
+               /*     for(int i=0; i<tamAresta; i++)
                     {
                         if(lista_aresta.getAresta().getOrigem().getNomeVertice().equals(nome_pego[i]))
                         {
                             verificador = 1;
                         }
                     }
-                    if(verificador == 0)
+                 */   if(verificador == 0)
                     {
                         System.out.print(" -> ");
                         System.out.print(lista_aresta.getAresta().getOrigem().getNomeVertice());

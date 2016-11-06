@@ -57,10 +57,10 @@ public class Menu {
                this.grafo = new GrafoNo();
                 break;
             case 6: 
-                arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), "Grafo");
+                arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), "Grafo/grafo");
                 break;
             case 7:
-                arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas(), "Grafo/");
+                arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas(), "Grafo/dados");
                 break;
             case 8:
                 //COMENTADO PARA FUNCIONAR NA INTERFACE E PRECISO PEGAR O CAMINHO E NOME DO ARQUIVO E PASSAR COMO PARAMETRO

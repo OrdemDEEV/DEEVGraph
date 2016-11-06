@@ -17,7 +17,7 @@ public class Arquivo {
 
     public void exportar_Grafo(String listaADJ, String MatrizADJ, String MatrizINC, String caminho) {
 
-        try (FileWriter arq = new FileWriter(caminho+"/grafo.txt")) {
+        try (FileWriter arq = new FileWriter(caminho+".txt")) {
 
             PrintWriter gravarArq = new PrintWriter(arq);
             gravarArq.printf("Lista de Adjacencia%n%n" + listaADJ + "%n%nMatriz de Adjacencia%n%n" + MatrizADJ + "%n%nMatriz de Incidencia%n%n" + MatrizINC);
@@ -32,7 +32,7 @@ public class Arquivo {
 
     public void salvar_dados(String Vertices, String Arestas, String caminho) {
 
-        try (FileWriter arq = new FileWriter(caminho+"/dados.deev")) {
+        try (FileWriter arq = new FileWriter(caminho+".deev")) {
 
             PrintWriter gravarArq = new PrintWriter(arq);
             gravarArq.printf(Vertices + "\n" + Arestas);
