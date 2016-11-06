@@ -74,6 +74,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editor de Grafos");
+        setPreferredSize(new java.awt.Dimension(1135, 722));
 
         jPanel1.setBackground(new java.awt.Color(38, 35, 33));
 
