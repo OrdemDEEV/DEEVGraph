@@ -36,8 +36,6 @@ public class SobreSistema extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Ajuda - Sobre");
 
         jPanel2.setBackground(new java.awt.Color(60, 60, 60));
