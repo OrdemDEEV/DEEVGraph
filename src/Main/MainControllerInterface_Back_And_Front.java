@@ -84,4 +84,9 @@ public class MainControllerInterface_Back_And_Front {
     {
       this.grafo = new GrafoNo();
     }
+    
+    public void carrega_Grafo(GrafoNo grafo)
+    {
+        this.grafo = grafo;
+    }
 }

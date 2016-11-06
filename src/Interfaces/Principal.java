@@ -350,7 +350,7 @@ public class Principal extends javax.swing.JFrame {
             
                 //manda txt para codigo de importação
                 //arq.carregar_dados(selectedFile.getAbsolutePath()); 
-            arq.carregar_dados(selectedFile.getAbsolutePath());//busca dados e abre na função
+            dados.carrega_Grafo(arq.carregar_dados(selectedFile.getAbsolutePath()));//busca dados e abre na função
  
         }
         
