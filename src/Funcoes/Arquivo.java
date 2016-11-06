@@ -68,14 +68,17 @@ public class Arquivo {
                 {
                     nomeAresta = linha;
                     testaaresta = 1;
+                    linha = lerArq.readLine();
                 }else if(testevertice == 0)
                 {
                     vertice1 = linha;
                     testevertice = 1;
+                    linha = lerArq.readLine();
                 }else if(testevertice ==  1)
                 {
                     vertice2 = linha;
                     testevertice = 2;
+                    linha = lerArq.readLine();
                 }else if(testevertice == 2)
                 {
                     grafo.setAresta_na_ListaAresta(grafo.addAresta(nomeAresta, grafo.encontrar_Vertice_Nome(vertice1), grafo.encontrar_Vertice_Nome(vertice2)));
@@ -88,15 +91,17 @@ public class Arquivo {
                  if(linha.equals("fimVertices"))
                  {
                      fimVertice = 1;
+                     linha = lerArq.readLine();
                  }else
                  {
                      grafo.setVertice_na_ListaVertice(grafo.addVertice(linha));
+                     linha = lerArq.readLine();
                  }
                  
              }
                 
                 
-                linha = lerArq.readLine(); // lê da segunda até a última linha
+                 // lê da segunda até a última linha
             }
 
             arq.close();
