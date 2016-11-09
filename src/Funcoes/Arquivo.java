@@ -79,8 +79,6 @@ public class Arquivo {
                     vertice2 = linha;
                     testevertice = 2;
                     linha = lerArq.readLine();
-                }else if(testevertice == 2)
-                {
                     grafo.setAresta_na_ListaAresta(grafo.addAresta(nomeAresta, grafo.encontrar_Vertice_Nome(vertice1), grafo.encontrar_Vertice_Nome(vertice2)));
                     testaaresta = 0;
                     testevertice = 0;
