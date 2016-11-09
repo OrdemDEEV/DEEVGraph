@@ -354,5 +354,50 @@ public class GrafoNo extends NoVertice {
 
         return texto;
     }
+    
+    public int verificar_conectividade()
+    {
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i = 0, j = 0, testador = 0;
+        
+        
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
+        matrizadj[0][0] = 0;
+        
+        NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
+        NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+        
+        //Armazena os valores em uma Matriz de adjacencia
+        
+         for(i=0;i<quantidade_de_vertices;i++)
+        {
+            for(j=0;j<quantidade_de_vertices;j++)
+            {
+                matrizadj[i][j] = verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice());
+                lista_verticeC = lista_verticeC.getNoProxVertice();
+            }
+            lista_verticeC = lista_no_vertice.getNoProxVertice();
+            lista_verticeL = lista_verticeL.getNoProxVertice();
+        }
+        
+        for(i=0;i<quantidade_de_vertices;i++)
+        {
+            for(j=0;j<quantidade_de_vertices;j++)
+            {
+                System.out.print(matrizadj[i][j]);
+                testador = matrizadj[i][j]+testador ;
+                
+            }
+            System.out.println();
+            if(testador == 0)
+            {
+                return 1;
+            }
+            testador = 0;
+            
+        }
+        
+        
+        return 0;
+    }
 
 }

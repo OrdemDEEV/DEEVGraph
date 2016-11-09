@@ -33,6 +33,7 @@ public class Menu {
         System.out.println("7-Salvar Grafo");
         System.out.println("8-Carregar dados");
         System.out.println("9-Mostrar Vértices e Arestas");
+        System.out.println("10-Verificar Conectividade");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -71,12 +72,30 @@ public class Menu {
                 System.out.println();
                 grafo.imprimirVertices();
                 break;
+            case 10:
+                verconexao();
+                break;
             default:
                 System.out.println("Opção Invalida");
                 break;
         }
         
         return op;
+    }
+    
+    public void verconexao()
+    {
+        int ver;
+        ver = grafo.verificar_conectividade();
+        
+        if(ver == 1)
+        {
+            System.out.println("É desconexo");
+        }
+        else
+        {
+            System.out.println("É conexo");
+        }
     }
     
     public void inserir_dados_do_grafo()
@@ -99,6 +118,7 @@ public class Menu {
        
        v = grafo.addVertice("Vertice s4");
        grafo.setVertice_na_ListaVertice(v);
+       
        
        String ver1 = grafo.imprimirVertices();
        
