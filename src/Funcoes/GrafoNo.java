@@ -355,6 +355,7 @@ public class GrafoNo extends NoVertice {
         return texto;
     }
     
+    //retorna 0 se for conexo, 1 se for desconexo
     public int verificar_conectividade()
     {
         int quantidade_de_vertices = getTamVertices(lista_no_vertice), i = 0, j = 0, testador = 0;
