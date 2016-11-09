@@ -52,7 +52,7 @@ public class GrafoNo extends NoVertice {
         if(lista == null)
         {
             Vertice v = new Vertice();
-            v.setVertice("deu erro");
+            v.setVertice("Vertice " + nome + " não encontrado");
             return v;
             
         }
@@ -159,7 +159,7 @@ public class GrafoNo extends NoVertice {
     public void imprimirListaAdj() {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
-        Vertice v = new Vertice("s");
+        Vertice v = new Vertice("null");
         while(lista_vertice != null)
         {
             System.out.print(lista_vertice.getNomeVertice());
@@ -188,6 +188,7 @@ public class GrafoNo extends NoVertice {
                     }
                     lista_aresta = lista_aresta.getNoProxAresta();
                 }
+            v = new Vertice("null");
             System.out.println("");
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
@@ -235,7 +236,7 @@ public class GrafoNo extends NoVertice {
     public String retornarListaAdj() {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
-        Vertice v = new Vertice("s");
+        Vertice v = new Vertice("null");
         String texto = null;
         int verificador_primeiro = 0;
         while(lista_vertice != null)
@@ -277,6 +278,7 @@ public class GrafoNo extends NoVertice {
                     lista_aresta = lista_aresta.getNoProxAresta();
                 }
             System.out.println("");
+            v = new Vertice("null");
             texto += "\n";
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
