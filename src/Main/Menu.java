@@ -36,6 +36,7 @@ public class Menu {
         System.out.println("10-Verificar Conectividade");
         System.out.println("11-Verificar paralelo");
         System.out.println("12-Verificar laço");
+        System.out.println("13-Verificar tipo de Grafo");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -83,6 +84,9 @@ public class Menu {
             case 12:
                 verlaco();
                 break;
+            case 13:
+                System.out.println(grafo.verificaTipoGrafo());
+                break;
             default:
                 System.out.println("Opção Invalida");
                 break;
@@ -96,7 +100,7 @@ public class Menu {
         int ver;
         ver = grafo.verificar_conectividade();
         
-        if(ver == 1)
+        if(ver == 0)
         {
             System.out.println("É desconexo");
         }

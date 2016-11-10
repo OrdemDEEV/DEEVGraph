@@ -334,9 +334,9 @@ public class GrafoNo extends NoVertice {
         return texto;
     }
 
-    //retorna 0 se for conexo, 1 se for desconexo
+    //retorna 1 se for conexo
     public int verificar_conectividade() {
-        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i = 0, j = 0, testador = 0;
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j, testador = 0;
 
         int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
 
@@ -362,17 +362,18 @@ public class GrafoNo extends NoVertice {
             }
             System.out.println();
             if (testador == 0) {
-                return 1;
+                return 0;
             }
             testador = 0;
 
         }
 
-        return 0;
+        return 1;
     }
-
+    
+    //retorna 1 se tiver alguma aresta paralela
     public int verificar_paralelo() {
-        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i = 0, j = 0;
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j;
 
         int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
 
@@ -406,9 +407,10 @@ public class GrafoNo extends NoVertice {
         return 0;
 
     }
-
+    
+    //retorna 1 se tiver laço
     public int verifica_laco() {
-        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i = 0, j = 0;
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j;
 
         int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
 
@@ -442,6 +444,35 @@ public class GrafoNo extends NoVertice {
         }
        
        return 0;
+    }
+    
+    public String verificaTipoGrafo()
+    {
+        String resposta = "desconhecido";
+        int laco, conexo, paralelo;
+        
+        laco = verifica_laco();
+        conexo = verificar_conectividade();
+        paralelo = verificar_paralelo();
+        
+        
+        System.out.println("\n\n\nConexo = "+ conexo + " \nParalelo = " + paralelo + "\nLaco = " + laco + "\n");
+        if(laco == 0 && paralelo == 0)
+        {
+            resposta = "É um grafo simples";
+        }
+        
+        if(conexo == 1 && paralelo == 1 && laco == 1)
+        {
+            resposta = "É um grafo completo";
+        }
+        
+        if(paralelo == 1 && laco == 1)
+        {
+            resposta = "É um Pseudografo";
+        }
+        
+        return resposta;
     }
 
 }
