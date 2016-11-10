@@ -34,6 +34,8 @@ public class Menu {
         System.out.println("8-Carregar dados");
         System.out.println("9-Mostrar Vértices e Arestas");
         System.out.println("10-Verificar Conectividade");
+        System.out.println("11-Verificar paralelo");
+        System.out.println("12-Verificar laço");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -75,6 +77,12 @@ public class Menu {
             case 10:
                 verconexao();
                 break;
+            case 11:
+                verparalelo();
+                break;
+            case 12:
+                verlaco();
+                break;
             default:
                 System.out.println("Opção Invalida");
                 break;
@@ -96,6 +104,37 @@ public class Menu {
         {
             System.out.println("É conexo");
         }
+    }
+    
+    public void verparalelo()
+    {
+        int ver;
+        ver = grafo.verificar_paralelo();
+        
+        if(ver == 1)
+        {
+            System.out.println("Tem aresta paralela");
+        }
+        else
+        {
+            System.out.println("não tem aresta paralela");
+        }
+    }
+    
+    public void verlaco()
+    {
+        int ver;
+        ver = grafo.verifica_laco();
+        
+        if(ver == 1)
+        {
+            System.out.println("tem laço");
+        }
+        else
+        {
+            System.out.println("não tem laço");
+        }
+        
     }
     
     public void inserir_dados_do_grafo()
@@ -135,6 +174,9 @@ public class Menu {
        grafo.setAresta_na_ListaAresta(a);
        
        a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s0"));
+       grafo.setAresta_na_ListaAresta(a);
+       
+       a = grafo.addAresta("aresta t4", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s2"));
        grafo.setAresta_na_ListaAresta(a);
        
        String ver2 = grafo.imprimirArestas(); 
