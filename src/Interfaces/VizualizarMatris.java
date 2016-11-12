@@ -173,7 +173,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("Exibir");
+        jButton1.setText("Atualizar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -305,7 +305,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         impressao_matrizINC.setText(imprimir);
         
         if(imprimir == null){
-            JOptionPane.showMessageDialog(null,"Não existem grafos para serem impressos!","Erro",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Ainda não há nenhum grafo criado!","Erro",JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             

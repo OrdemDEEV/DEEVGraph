@@ -28,6 +28,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+
     public Principal() {
         
         ControleSoVisual visual = new ControleSoVisual();
@@ -285,8 +286,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
         VizualizarMatris ver = new VizualizarMatris(dados);
+        
         area_trabalho.add(ver);
         centralizaForm(ver);
         ver.setVisible(true);
