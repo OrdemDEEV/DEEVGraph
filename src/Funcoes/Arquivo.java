@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 
 public class Arquivo {

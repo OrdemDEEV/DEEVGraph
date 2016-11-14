@@ -361,14 +361,15 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
           JFileChooser file = new JFileChooser(); 
           file.setFileSelectionMode(JFileChooser.FILES_ONLY);
+          
+
           int i= file.showSaveDialog(null);
         if (i==1){
             System.out.println("Nome invalido");
             JOptionPane.showMessageDialog(null,"ATENÇÃO DADOS OS DADOS NÃO FORAM SALVOS!!","Erro",JOptionPane.INFORMATION_MESSAGE);
         } else {
             File arquivo = file.getSelectedFile();
-           arq.salvar_dados(dados.getGrafo().imprimirVertices(), dados.getGrafo().imprimirArestas(),"dados");
-          //JtextFieldLocal.setText(arquivo.getPath());
+            arq.salvar_dados(dados.getGrafo().imprimirVertices(), dados.getGrafo().imprimirArestas(),file.getSelectedFile().getAbsolutePath());
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 

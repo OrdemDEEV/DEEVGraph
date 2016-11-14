@@ -91,7 +91,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(254, 254, 254));
 
         jPanel3.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Vértice"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Criando Vértices"));
 
         jLabel1.setText("Informe o nome:");
 
@@ -152,7 +152,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
         jPanel4.setBackground(new java.awt.Color(254, 254, 254));
 
         jPanel5.setBackground(new java.awt.Color(254, 254, 254));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Aresta"));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Criando Arestas"));
 
         jLabel2.setText("Nome da aresta:");
 
