@@ -31,9 +31,9 @@ public class Arquivo {
 
     }
 
-    public void salvar_dados(String Vertices, String Arestas, String caminho) {
+    public void salvar_dados(String Vertices, String Arestas, String nometxt) {
 
-        try (FileWriter arq = new FileWriter(caminho+".deev")) {
+        try (FileWriter arq = new FileWriter(nometxt+".deev")) {
 
             PrintWriter gravarArq = new PrintWriter(arq);
             gravarArq.printf(Vertices + "\n" + Arestas);

@@ -280,6 +280,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       
+        JOptionPane.showMessageDialog(null,"Você realmente deseja fechar o programa!","Atenção",JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);     // Código do botão exit(para fechar o programa).
                             // PS: Provavelmente alem de sair também botaremos para salvar ao sair.
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -349,8 +351,6 @@ public class Principal extends javax.swing.JFrame {
             File selectedFile = fileChooser.getSelectedFile();
             System.out.println("Selected file" + selectedFile.getAbsolutePath());
             
-                //manda txt para codigo de importação
-                //arq.carregar_dados(selectedFile.getAbsolutePath()); 
             dados.carrega_Grafo(arq.carregar_dados(selectedFile.getAbsolutePath()));//busca dados e abre na função
  
         }
