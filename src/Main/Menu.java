@@ -17,7 +17,7 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     GrafoNo grafo = new GrafoNo();
     Arquivo arq = new Arquivo();
-    
+    //só para testar git recem instalado
     public int menu_Principal()
     {
         int op;
