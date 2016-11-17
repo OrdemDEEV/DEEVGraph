@@ -3,8 +3,9 @@
  */
 package Funcoes;
 
-import Interfaces.VizualizarMatris;
-import Funcoes.Vertice;
+//import Interfaces.VizualizarMatris;  //PRA QUE ESSAS IMPORTAÇÕES?
+//import Funcoes.Vertice;
+
 
 public class GrafoNo extends NoVertice {
 
@@ -203,6 +204,10 @@ public class GrafoNo extends NoVertice {
     public void imprimirMatrizInc() {
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice);
+        int quantidade_de_arestas = getTamArestas(lista_no_arestas);
+
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
 
         while (lista_vertice != null) {
             while (lista_aresta != null) {
@@ -213,8 +218,24 @@ public class GrafoNo extends NoVertice {
                 }
                 lista_aresta = lista_aresta.getNoProxAresta();
             }
+
             System.out.println();
             lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
+        }
+
+        //Armazena em matriz de incidencia;   
+        for (int i = 0; i < quantidade_de_vertices; i++) {
+            for (int j = 0; j < quantidade_de_arestas; j++) {
+                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
+                    matrizadj[i][j] = 1;
+                } else {
+                    matrizadj[i][j] = 0;
+                }
+
+                lista_no_arestas = lista_no_arestas.getNoProxAresta();
+            }
+            lista_vertice = lista_no_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
 
@@ -301,6 +322,9 @@ public class GrafoNo extends NoVertice {
         String texto = null;
         NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice);
+        int quantidade_de_arestas = getTamArestas(lista_no_arestas);
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
         int verifica_primeiro = 0;
 
         while (lista_vertice != null) {
@@ -328,6 +352,21 @@ public class GrafoNo extends NoVertice {
             texto += "\n";
             System.out.println();
             lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
+        }
+
+        //Armazena em matriz de incidencia;   
+        for (int i = 0; i < quantidade_de_vertices; i++) {
+            for (int j = 0; j < quantidade_de_arestas; j++) {
+                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
+                    matrizadj[i][j] = 1;
+                } else {
+                    matrizadj[i][j] = 0;
+                }
+
+                lista_no_arestas = lista_no_arestas.getNoProxAresta();
+            }
+            lista_vertice = lista_no_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
 
@@ -469,4 +508,24 @@ public class GrafoNo extends NoVertice {
         return resposta;
     }
 
-}
+    public void MenorCiclo(NoVertice Chave) {
+        NoVertice lista_vertice = lista_no_vertice.getNoProxVertice();
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice);
+        int quantidade_de_arestas = getTamArestas(lista_no_arestas);
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
+
+        //Pegamos a Mattriz de Incidencia
+        for (int i = 0; i < quantidade_de_vertices; i++) {
+            for (int j = 0; j < quantidade_de_arestas; j++) {
+                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
+                    matrizadj[i][j] = 1;
+                } else {
+                    matrizadj[i][j] = 0;
+                }
+            }
+        }
+        
+        
+    }
+   }
