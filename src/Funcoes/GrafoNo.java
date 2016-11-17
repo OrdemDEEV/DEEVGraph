@@ -5,8 +5,6 @@ package Funcoes;
 
 //import Interfaces.VizualizarMatris;  //PRA QUE ESSAS IMPORTAÇÕES?
 //import Funcoes.Vertice;
-
-
 public class GrafoNo extends NoVertice {
 
     private NoVertice lista_no_vertice = new NoVertice();
@@ -207,38 +205,36 @@ public class GrafoNo extends NoVertice {
         int quantidade_de_vertices = getTamVertices(lista_no_vertice);
         int quantidade_de_arestas = getTamArestas(lista_no_arestas);
 
-        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
+        int matrizINC[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
+        int i = 0;
+        int j = 0;
 
         while (lista_vertice != null) {
             while (lista_aresta != null) {
                 if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
                     System.out.print(" 1");
+                    matrizINC[i][j] = 1;
                 } else {
                     System.out.print(" 0");
+                    matrizINC[i][j] = 0;
                 }
                 lista_aresta = lista_aresta.getNoProxAresta();
+                j++;
             }
-
+            i++;
+            j = 0;
             System.out.println();
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
-
-        //Armazena em matriz de incidencia;   
-        for (int i = 0; i < quantidade_de_vertices; i++) {
-            for (int j = 0; j < quantidade_de_arestas; j++) {
-                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
-                    matrizadj[i][j] = 1;
-                } else {
-                    matrizadj[i][j] = 0;
-                }
-
-                lista_no_arestas = lista_no_arestas.getNoProxAresta();
+        System.out.println("\n\n IMPRIMINDO A MATRIZ ARMAZENADA");
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_arestas; j++) {
+                System.out.print(matrizINC[i][j]);
             }
-            lista_vertice = lista_no_vertice.getNoProxVertice();
-            lista_aresta = lista_no_arestas.getNoProxAresta();
-        }
+            System.out.println();
 
+        }
     }
 
     public String retornarListaAdj() {
@@ -324,7 +320,7 @@ public class GrafoNo extends NoVertice {
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int quantidade_de_vertices = getTamVertices(lista_no_vertice);
         int quantidade_de_arestas = getTamArestas(lista_no_arestas);
-        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
+        int matrizINC[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
         int verifica_primeiro = 0;
 
         while (lista_vertice != null) {
@@ -355,18 +351,28 @@ public class GrafoNo extends NoVertice {
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
 
-        //Armazena em matriz de incidencia;   
-        for (int i = 0; i < quantidade_de_vertices; i++) {
-            for (int j = 0; j < quantidade_de_arestas; j++) {
-                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
-                    matrizadj[i][j] = 1;
-                } else {
-                    matrizadj[i][j] = 0;
-                }
+        lista_vertice = lista_no_vertice.getNoProxVertice();
+        lista_aresta = lista_no_arestas.getNoProxAresta();
+        int i = 0;
+        int j = 0;
 
-                lista_no_arestas = lista_no_arestas.getNoProxAresta();
+        //Armazena em matriz de incidencia;   
+        while (lista_vertice != null) {
+            while (lista_aresta != null) {
+                if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
+                    System.out.print(" 1");
+                    matrizINC[i][j] = 1;
+                } else {
+                    System.out.print(" 0");
+                    matrizINC[i][j] = 0;
+                }
+                lista_aresta = lista_aresta.getNoProxAresta();
+                j++;
             }
-            lista_vertice = lista_no_vertice.getNoProxVertice();
+            i++;
+            j = 0;
+            System.out.println();
+            lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
 
@@ -513,19 +519,29 @@ public class GrafoNo extends NoVertice {
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
         int quantidade_de_vertices = getTamVertices(lista_no_vertice);
         int quantidade_de_arestas = getTamArestas(lista_no_arestas);
-        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
+        int matrizINC[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
 
-        //Pegamos a Mattriz de Incidencia
-        for (int i = 0; i < quantidade_de_vertices; i++) {
-            for (int j = 0; j < quantidade_de_arestas; j++) {
+        int i = 0;
+        int j = 0;
+
+        //Armazena em matriz de incidencia;   
+        while (lista_vertice != null) {
+            while (lista_aresta != null) {
                 if (lista_vertice.getVertice() == lista_aresta.getAresta().getOrigem() || lista_vertice.getVertice() == lista_aresta.getAresta().getDestino()) {
-                    matrizadj[i][j] = 1;
+                    System.out.print(" 1");
+                    matrizINC[i][j] = 1;
                 } else {
-                    matrizadj[i][j] = 0;
+                    System.out.print(" 0");
+                    matrizINC[i][j] = 0;
                 }
+                lista_aresta = lista_aresta.getNoProxAresta();
+                j++;
             }
+            i++;
+            j = 0;
+            System.out.println();
+            lista_vertice = lista_vertice.getNoProxVertice();
+            lista_aresta = lista_no_arestas.getNoProxAresta();
         }
-        
-        
     }
-   }
+}

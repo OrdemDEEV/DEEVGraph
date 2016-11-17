@@ -66,6 +66,7 @@ public class NoVertice {
     }
 
     public Vertice getVertice() {
+
         return vertice;
     }
 

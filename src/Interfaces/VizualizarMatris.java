@@ -22,6 +22,17 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
     public VizualizarMatris(MainControllerInterface_Back_And_Front dados) {
         initComponents();
         this.dados = dados;
+        
+        String imprimir = null;
+                
+        imprimir = dados.imprimir_listaADJ();
+        impressao_lista.setText(imprimir);
+        
+        imprimir = dados.imprimir_matrizADJ();
+        impressao_matrizADJ.setText(imprimir);
+        
+        imprimir = dados.imprimir_matrizINC();
+        impressao_matrizINC.setText(imprimir);
     }
     
     /**
@@ -320,12 +331,6 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         imprimir = dados.imprimir_matrizINC();
         impressao_matrizINC.setText(imprimir);
         
-        if(imprimir == null){
-            JOptionPane.showMessageDialog(null,"Ainda não há nenhum grafo criado!","Erro",JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            
-        }
     }//GEN-LAST:event_ResetarActionPerformed
 
     public void colocarDadosTextArea(){
