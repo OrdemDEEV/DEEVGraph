@@ -66,6 +66,11 @@ public class MainControllerInterface_Back_And_Front {
         return matriz;
     }
     
+    public String imprimir_tipografo(){
+        String tipo = grafo.verificaTipoGrafo();
+        return tipo;
+    }
+    
     //Função que realiza leitura do grafo formal
     public void Ler_Grafo_Formal(String grafo, int tamanho){
         GrafoFormal leitura = new GrafoFormal();

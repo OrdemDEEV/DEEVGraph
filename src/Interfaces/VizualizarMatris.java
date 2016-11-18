@@ -33,6 +33,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         
         imprimir = dados.imprimir_matrizINC();
         impressao_matrizINC.setText(imprimir);
+        
+        imprimir = dados.imprimir_tipografo();
+        tipo_grafo.setText(imprimir);
     }
     
     /**
@@ -59,7 +62,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         Resetar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        tipo_grafo = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         impressao_lista = new javax.swing.JTextArea();
@@ -203,8 +206,8 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Este grafo é definido como:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("SEM DEFINIÇÃO");
+        tipo_grafo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipo_grafo.setText("SEM DEFINIÇÃO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -218,7 +221,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(tipo_grafo)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -229,7 +232,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Resetar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(tipo_grafo))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -344,7 +347,6 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea impressao_matrizINC;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
@@ -357,5 +359,6 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel tipo_grafo;
     // End of variables declaration//GEN-END:variables
 }
