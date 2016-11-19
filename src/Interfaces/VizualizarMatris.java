@@ -34,8 +34,15 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         imprimir = dados.imprimir_matrizINC();
         impressao_matrizINC.setText(imprimir);
         
-        imprimir = dados.imprimir_tipografo();
-        tipo_grafo.setText(imprimir);
+        imprimir = dados.verifica_conectividade();
+        tipo_conexo.setText(imprimir);
+        
+        imprimir = dados.verifica_simples();
+        tipo_simples.setText(imprimir);
+        
+        imprimir = dados.verifica_completo();
+        tipo_completo.setText(imprimir);
+        
     }
     
     /**
@@ -62,13 +69,13 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         Resetar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        tipo_grafo = new javax.swing.JLabel();
+        tipo_conexo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        tipo_grafo1 = new javax.swing.JLabel();
-        tipo_grafo2 = new javax.swing.JLabel();
-        tipo_grafo3 = new javax.swing.JLabel();
+        tipo_planar = new javax.swing.JLabel();
+        tipo_simples = new javax.swing.JLabel();
+        tipo_completo = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         impressao_lista = new javax.swing.JTextArea();
@@ -202,7 +209,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
             }
         });
 
-        Resetar.setText("Excluir Grafos");
+        Resetar.setText("Excluir Grafo");
         Resetar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetarActionPerformed(evt);
@@ -212,8 +219,8 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Conexo:");
 
-        tipo_grafo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tipo_grafo.setText("SEM DEFINIÇÃO");
+        tipo_conexo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipo_conexo.setText("SEM DEFINIÇÃO");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Planar:");
@@ -224,14 +231,14 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Simples:");
 
-        tipo_grafo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tipo_grafo1.setText("SEM DEFINIÇÃO");
+        tipo_planar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipo_planar.setText("SEM DEFINIÇÃO");
 
-        tipo_grafo2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tipo_grafo2.setText("SEM DEFINIÇÃO");
+        tipo_simples.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipo_simples.setText("SEM DEFINIÇÃO");
 
-        tipo_grafo3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tipo_grafo3.setText("SEM DEFINIÇÃO");
+        tipo_completo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipo_completo.setText("SEM DEFINIÇÃO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -247,19 +254,22 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(tipo_grafo2))
+                        .addComponent(tipo_simples))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tipo_grafo1)
-                            .addComponent(tipo_grafo)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(tipo_conexo))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(tipo_planar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tipo_grafo3)))
+                        .addComponent(tipo_completo)))
                 .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
@@ -268,19 +278,19 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(tipo_grafo))
+                    .addComponent(tipo_conexo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(tipo_grafo1))
+                    .addComponent(tipo_planar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(tipo_grafo3))
+                    .addComponent(tipo_completo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(tipo_grafo2))
+                    .addComponent(tipo_simples))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
@@ -416,9 +426,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel tipo_grafo;
-    private javax.swing.JLabel tipo_grafo1;
-    private javax.swing.JLabel tipo_grafo2;
-    private javax.swing.JLabel tipo_grafo3;
+    private javax.swing.JLabel tipo_completo;
+    private javax.swing.JLabel tipo_conexo;
+    private javax.swing.JLabel tipo_planar;
+    private javax.swing.JLabel tipo_simples;
     // End of variables declaration//GEN-END:variables
 }

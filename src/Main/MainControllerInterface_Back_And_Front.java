@@ -66,10 +66,42 @@ public class MainControllerInterface_Back_And_Front {
         return matriz;
     }
     
-    public String imprimir_tipografo(){
+    public String verifica_simples(){
         String tipo = grafo.verificaTipoGrafo();
-        return tipo;
+        String resposta = null;
+        if("É um grafo simples".equals(tipo)){
+            resposta = "Sim";
+        }
+        else{
+            resposta = "Não";
+        }
+        return resposta;
     }
+    
+    public String verifica_completo(){
+        String tipo = grafo.verificaTipoGrafo();
+        String resposta = null;
+        if("É um grafo completo".equals(tipo)){
+            resposta = "Sim";
+        }
+        else{
+            resposta = "Não";
+        }
+        return resposta;
+    }
+    
+    public String verifica_conectividade(){
+        int resultado = grafo.verificar_conectividade();
+        String tipo = null;
+            if(resultado == 0){
+                tipo = "Não";
+            }
+            if(resultado == 1){
+                tipo = "Sim";
+            }
+            return tipo;
+    }
+
     
     //Função que realiza leitura do grafo formal
     public void Ler_Grafo_Formal(String grafo, int tamanho){

@@ -491,7 +491,7 @@ public class GrafoNo extends NoVertice {
     }
 
     public String verificaTipoGrafo() {
-        String resposta = "desconhecido";
+        String resposta = "Desconhecido";
         int laco, conexo, paralelo;
 
         laco = verifica_laco();
