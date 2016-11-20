@@ -421,7 +421,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        detalhes_grafo novo = new detalhes_grafo();
+        detalhes_grafo novo = new detalhes_grafo(dados);
         area_trabalho.add(novo);
         centralizaForm(novo);
         novo.setVisible(true);

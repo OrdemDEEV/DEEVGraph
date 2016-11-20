@@ -140,6 +140,16 @@ public class MainControllerInterface_Back_And_Front {
         arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), caminho);
     }
     
+    public String imprimir_vertices(){
+        String resultado = grafo.imprimirVertices();
+        return resultado;
+    }
+    
+    public String imprimir_arestas(){
+        String resultado = grafo.imprimirArestas();
+        return resultado;
+    }
+    
     //Função que realiza leitura do grafo formal
     public void Ler_Grafo_Formal(String grafo, int tamanho){
         GrafoFormal leitura = new GrafoFormal();
