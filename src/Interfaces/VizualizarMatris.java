@@ -371,6 +371,15 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         imprimir = dados.imprimir_matrizINC();
         impressao_matrizINC.setText(imprimir);
         
+        imprimir = dados.verifica_conectividade();
+        tipo_conexo.setText(imprimir);
+        
+        imprimir = dados.verifica_simples();
+        tipo_simples.setText(imprimir);
+        
+        imprimir = dados.verifica_completo();
+        tipo_completo.setText(imprimir);
+        
         if(imprimir == null){
             JOptionPane.showMessageDialog(null,"Não existem grafos para serem impressos!","Erro",JOptionPane.INFORMATION_MESSAGE);
         }
@@ -397,6 +406,15 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         
         imprimir = dados.imprimir_matrizINC();
         impressao_matrizINC.setText(imprimir);
+        
+        imprimir = dados.verifica_conectividade();
+        tipo_conexo.setText(imprimir);
+        
+        imprimir = dados.verifica_simples();
+        tipo_simples.setText(imprimir);
+        
+        imprimir = dados.verifica_completo();
+        tipo_completo.setText(imprimir);
         
     }//GEN-LAST:event_ResetarActionPerformed
 
