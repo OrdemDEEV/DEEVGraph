@@ -351,7 +351,7 @@ public class GrafoNo extends NoVertice {
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
 
-        lista_vertice = lista_no_vertice.getNoProxVertice();
+   /*     lista_vertice = lista_no_vertice.getNoProxVertice();
         lista_aresta = lista_no_arestas.getNoProxAresta();
         int i = 0;
         int j = 0;
@@ -375,7 +375,7 @@ public class GrafoNo extends NoVertice {
             lista_vertice = lista_vertice.getNoProxVertice();
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
-
+*/
         return texto;
     }
 
@@ -477,7 +477,7 @@ public class GrafoNo extends NoVertice {
                 System.out.print(matrizadj[i][j]);
 
                 if (i == j) {
-                    if (matrizadj[i][j] != 1) {
+                    if (matrizadj[i][j] > 1) {
                         System.out.println();
                         return 1;
                     }
@@ -550,28 +550,31 @@ public class GrafoNo extends NoVertice {
         int verificador = -1;
             while (lista != null) {
                 if (lista.getNomeVertice().equals(nome_vertice)) {
-                    verificador =  1;
+                    System.out.println(lista.getNomeVertice() + "verificaro 1");
+                    return verificador =  1;
                 } if(!lista.getNomeVertice().equals(nome_vertice)) {
-                    verificador = 0;
+                    System.out.println(lista.getNomeVertice() + "verificador 0");
+                    return verificador = 0;
                 }
                 lista = lista.getNoProxVertice();
             }
-        return verificador;
+        return verificador = 0;
     }
      
     public int verificanomearesta(String nome_aresta) {
         NoAresta lista = lista_no_arestas.getNoProxAresta();
-        int verificador = 0;
+        int verificador;
 
             while (lista != null) {
                 if (lista.getNomeAresta().equals(nome_aresta)) {
-                    verificador = 1;
-                } else {
-                    verificador = 0;
+                    return verificador = 1;
+                } 
+                if (lista.getNomeAresta().equals(nome_aresta)) {
+                    return verificador = 0;
                 }
                 lista = lista.getNoProxAresta();
             }
-        return verificador;
+        return verificador = 0;
     } 
      
     
