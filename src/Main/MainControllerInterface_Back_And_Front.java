@@ -150,6 +150,16 @@ public class MainControllerInterface_Back_And_Front {
         return resultado;
     }
     
+    public int qtd_paralelos(){
+        int resultado = grafo.qtdade_paralelos();
+        return resultado;
+    }
+    
+    public int qtd_laco(){
+        int resultado = grafo.qtd_laco();
+        return resultado;
+    }
+    
     //Função que realiza leitura do grafo formal
     public void Ler_Grafo_Formal(String grafo, int tamanho){
         GrafoFormal leitura = new GrafoFormal();

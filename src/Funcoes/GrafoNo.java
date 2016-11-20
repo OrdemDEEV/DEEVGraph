@@ -577,6 +577,80 @@ public class GrafoNo extends NoVertice {
             }
         return verificador = 0;
     } 
-     
+    
+        public int qtdade_paralelos() {
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j;
+
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
+
+        NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
+        NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+        
+        int quantidade_paralelos=0;
+
+        //Armazena os valores em uma Matriz de adjacencia
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_vertices; j++) {
+                matrizadj[i][j] = verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice());
+                lista_verticeC = lista_verticeC.getNoProxVertice();
+            }
+            lista_verticeC = lista_no_vertice.getNoProxVertice();
+            lista_verticeL = lista_verticeL.getNoProxVertice();
+        }
+
+        //descobre se tem alguma aresta paralela na matriz de adjacencia
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_vertices; j++) {
+                System.out.print(matrizadj[i][j]);
+
+                if (matrizadj[i][j] > 1) {
+                    System.out.println();
+                    quantidade_paralelos++;
+                }
+            }
+            System.out.println();
+
+        }
+
+        return quantidade_paralelos;
+
+    }
+        
+        public int qtd_laco() {
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j;
+
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
+        int contador=0;
+
+        NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
+        NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+
+        //Armazena os valores em uma Matriz de adjacencia
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_vertices; j++) {
+                matrizadj[i][j] = verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice());
+                lista_verticeC = lista_verticeC.getNoProxVertice();
+            }
+            lista_verticeC = lista_no_vertice.getNoProxVertice();
+            lista_verticeL = lista_verticeL.getNoProxVertice();
+        }
+
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_vertices; j++) {
+                System.out.print(matrizadj[i][j]);
+
+                if (i == j) {
+                    if (matrizadj[i][j] > 1) {
+                        System.out.println();
+                        contador+=matrizadj[i][j];
+                    }
+                }
+            }
+            System.out.println();
+
+        }
+
+        return contador;
+    }    
     
 }

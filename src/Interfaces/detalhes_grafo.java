@@ -23,6 +23,7 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         String imprimir_vertices = null;
         String imprimir_arestas = null;
         String impressoes_gerais = null;
+        int inteiro=0;
         
         imprimir_vertices = dados.imprimir_vertices();   
         imprimir_arestas = dados.imprimir_arestas();
@@ -38,6 +39,11 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         impressoes_gerais = dados.verifica_completo();
         tipo_completo.setText(impressoes_gerais);
         
+        inteiro = dados.qtd_paralelos();
+        qtd_paralelas.setText(Integer.toString(inteiro));
+        
+        inteiro = dados.qtd_laco();
+        qtd_lacos.setText(Integer.toString(inteiro));
         
     }
 
