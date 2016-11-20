@@ -547,7 +547,7 @@ public class GrafoNo extends NoVertice {
     
     public int verificanomevertice(String nome_vertice) {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
-        int verificador = 0;
+        int verificador = -1;
             while (lista != null) {
                 if (lista.getNomeVertice().equals(nome_vertice)) {
                     verificador =  1;
@@ -559,12 +559,12 @@ public class GrafoNo extends NoVertice {
         return verificador;
     }
      
-    public int verificanomearesta(String nome_vertice) {
+    public int verificanomearesta(String nome_aresta) {
         NoAresta lista = lista_no_arestas.getNoProxAresta();
         int verificador = 0;
 
             while (lista != null) {
-                if (lista.getNomeAresta().equals(nome_vertice)) {
+                if (lista.getNomeAresta().equals(nome_aresta)) {
                     verificador = 1;
                 } else {
                     verificador = 0;

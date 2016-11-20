@@ -304,33 +304,24 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
             String nome_vertice_1 = vertice1.getText();//recolhe vertice 1
             String nome_vertice_2 = vertice2.getText();//recolhe vertice 2
             
-            int verificador_1 =0, verificador_2 =0;
             
             if(dados.verifica_nome_vertice(nome_vertice_1) == 0){
                 JOptionPane.showMessageDialog(null,"O vertice 1 não existe!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
             }
             else{
-                verificador_1 = 1;
-            }
-            if(dados.verifica_nome_vertice(nome_vertice_2) == 0){
-                JOptionPane.showMessageDialog(null,"O vertice 2 não existe!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+              if(dados.verifica_nome_aresta(nome) == 0){
+                    //chama funçoes que cria a  aresta
+                    dados.Criar_Aresta(nome, nome_vertice_1, nome_vertice_2);
+                    JOptionPane.showMessageDialog(null,"Aresta criada com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Verifique o nome da aresta ele ja existe!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+                }   
+            }  
             }
             else{
-                verificador_2 = 1;
-            }
-            if(dados.verifica_nome_aresta(nome) == 1){
-                JOptionPane.showMessageDialog(null,"Verifique o nome da aresta ele ja existe!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
-            }
-            if(dados.verifica_nome_aresta(nome) == 0 && verificador_1 == 1 && verificador_2 == 1){
-                //chama funçoes que cria a  aresta
-                dados.Criar_Aresta(nome, nome_vertice_1, nome_vertice_2);
-                JOptionPane.showMessageDialog(null,"Aresta criada com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
-            }
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE); 
-        }  
+                JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE); 
+            }  
     }//GEN-LAST:event_criarAresta_buttonActionPerformed
 
     private void cancelarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarAresta_buttonActionPerformed

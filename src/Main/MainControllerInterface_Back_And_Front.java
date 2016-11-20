@@ -104,17 +104,18 @@ public class MainControllerInterface_Back_And_Front {
     
     public int verifica_nome_vertice(String nome_vertice){
         int resultado = grafo.verificanomevertice(nome_vertice);
+        int retorno = 0;
             if(resultado == 1){
-                return 1;
+                retorno = 1;
             }
             if(resultado == 0){
-                return 0;
+                retorno = 0;
             }
-            return 0;
+            return retorno;
     }
     
-    public int verifica_nome_aresta(String nome_vertice){
-        int resultado = grafo.verificanomearesta(nome_vertice);
+    public int verifica_nome_aresta(String nome_aresta){
+        int resultado = grafo.verificanomearesta(nome_aresta);
         int retorno = 0;
             if(resultado == 1){
                 retorno = 1;
