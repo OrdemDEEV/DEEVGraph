@@ -15,6 +15,7 @@
 package Main;
 
 import Funcoes.Arestas;
+import Funcoes.Arquivo;
 import Funcoes.GrafoFormal;
 import Funcoes.GrafoListaAdj;
 import Funcoes.GrafoNo;
@@ -31,6 +32,7 @@ public class MainControllerInterface_Back_And_Front {
     GrafoNo grafo = new GrafoNo();
     Vertice v;
     Arestas a;
+    Arquivo arq = new Arquivo();
     
     //função capaz de criar vertice
     public void Criar_Vertice(String nome){
@@ -124,6 +126,10 @@ public class MainControllerInterface_Back_And_Front {
                 retorno =  0;
             }
             return retorno;
+    }
+    
+    public void exportar_dados(String caminho){
+        arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), caminho);
     }
     
     //Função que realiza leitura do grafo formal
