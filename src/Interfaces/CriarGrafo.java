@@ -200,14 +200,14 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
                                         .addComponent(cancelarAresta_button, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(resultado2)
-                                        .addGap(130, 130, 130)
+                                        .addGap(100, 100, 100)
                                         .addComponent(resultado1))
                                     .addComponent(nome_aresta, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 19, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(vertice1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(vertice2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(vertice1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(vertice2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(19, 19, 19))))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -280,11 +280,17 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
     private void criarVertice_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarVertice_buttonActionPerformed
         // FUNÇÃO QUE CRIA UM VERTICE:
         //ja validanddo formulario vazio
-        if(txtNomeVertice.getText().length() > 0 /*&& txtIdVertice.getText().length() > 0*/){
+        if(txtNomeVertice.getText().length() > 0){
             String nome = txtNomeVertice.getText();
-            //int id = Integer.parseInt(txtIdVertice.getText());
-            dados.Criar_Vertice(nome); 
-            JOptionPane.showMessageDialog(null,"Vertice criado com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+            
+                if(dados.verifica_nome_vertice(nome) == 1){
+                    JOptionPane.showMessageDialog(null,"Este nome ja existe cadastre outro!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+                    
+                }
+                if(dados.verifica_nome_vertice(nome) == 0){
+                    dados.Criar_Vertice(nome); 
+                    JOptionPane.showMessageDialog(null,"Vertice criado com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+                }
         }
         else{
            JOptionPane.showMessageDialog(null,"Você precisa prencher todos os campos!","Erro",JOptionPane.INFORMATION_MESSAGE);  
@@ -293,11 +299,12 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
 
     private void criarAresta_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarAresta_buttonActionPerformed
         // FUNÇÃO QUE CRIA UMA ARESTA: 
-        if(/*codigo_aresta.getText().length() > 0 && */ nome_aresta.getText().length() > 0 && vertice1.getText().length() > 0 && vertice2.getText().length() > 0){
+        if(nome_aresta.getText().length() > 0 && vertice1.getText().length() > 0 && vertice2.getText().length() > 0){
             String nome = nome_aresta.getText();//recolhe o nome da aresta
-           // int id = Integer.parseInt(codigo_aresta.getText());//recolhe o codigo
             String nome_vertice_1 = vertice1.getText();//recolhe vertice 1
             String nome_vertice_2 = vertice2.getText();//recolhe vertice 2
+            
+            
             //chama funçoes que cria a  aresta
             dados.Criar_Aresta(nome, nome_vertice_1, nome_vertice_2);
             JOptionPane.showMessageDialog(null,"Aresta criada com sucesso!","Sucesso",JOptionPane.INFORMATION_MESSAGE);

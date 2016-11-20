@@ -101,7 +101,18 @@ public class MainControllerInterface_Back_And_Front {
             }
             return tipo;
     }
-
+    
+    public int verifica_nome_vertice(String nome_vertice){
+        int resultado = grafo.verificanomevertice(nome_vertice);
+            if(resultado == 1){
+                return 1;
+                
+            }
+            if(resultado == 0){
+                return 0;
+            }
+            return 0;
+    }
     
     //Função que realiza leitura do grafo formal
     public void Ler_Grafo_Formal(String grafo, int tamanho){

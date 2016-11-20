@@ -544,4 +544,19 @@ public class GrafoNo extends NoVertice {
             lista_aresta = lista_no_arestas.getNoProxAresta();
         }
     }
+    
+     public int verificanomevertice(String nome_vertice) {
+        NoVertice lista = lista_no_vertice.getNoProxVertice();
+
+            while (lista != null) {
+                if (lista.getNomeVertice().equals(nome_vertice)) {
+                    return 1;
+                } if(!lista.getNomeVertice().equals(nome_vertice)) {
+                    return 0;
+                }
+                lista = lista.getNoProxVertice();
+            }
+        return 0;
+    }
+    
 }
