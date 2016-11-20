@@ -22,11 +22,21 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         
         String imprimir_vertices = null;
         String imprimir_arestas = null;
+        String impressoes_gerais = null;
         
         imprimir_vertices = dados.imprimir_vertices();   
         imprimir_arestas = dados.imprimir_arestas();
         resumo_vertices_criados.setText(imprimir_vertices);
         resumo_arestas_criadas.setText(imprimir_arestas);
+        
+        impressoes_gerais = dados.verifica_conectividade();
+        tipo_conexo.setText(impressoes_gerais);
+        
+        impressoes_gerais = dados.verifica_simples();
+        tipo_simples.setText(impressoes_gerais);
+        
+        impressoes_gerais = dados.verifica_completo();
+        tipo_completo.setText(impressoes_gerais);
         
         
     }
