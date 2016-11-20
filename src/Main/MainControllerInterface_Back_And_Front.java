@@ -106,12 +106,23 @@ public class MainControllerInterface_Back_And_Front {
         int resultado = grafo.verificanomevertice(nome_vertice);
             if(resultado == 1){
                 return 1;
-                
             }
             if(resultado == 0){
                 return 0;
             }
             return 0;
+    }
+    
+    public int verifica_nome_aresta(String nome_vertice){
+        int resultado = grafo.verificanomearesta(nome_vertice);
+        int retorno = 0;
+            if(resultado == 1){
+                retorno = 1;
+            }
+            if(resultado == 0){
+                retorno =  0;
+            }
+            return retorno;
     }
     
     //Função que realiza leitura do grafo formal
