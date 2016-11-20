@@ -91,7 +91,7 @@ public class SobreSistema extends javax.swing.JInternalFrame {
 
         jLabel3.setText("TENDO COMO OBJETIVO, CRIAR LISTAR EXCLUIR E CLASSIFICAR.");
 
-        jLabel4.setText("Desenvolvedores: Eduardo, Victor, Emersom, Dimitry");
+        jLabel4.setText("Desenvolvedores: Dimitry, Eduardo, Emerson, Victor.");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -104,8 +104,10 @@ public class SobreSistema extends javax.swing.JInternalFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)))
+                            .addComponent(jLabel2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(24, 24, 24))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addComponent(jLabel4))
