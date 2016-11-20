@@ -548,17 +548,18 @@ public class GrafoNo extends NoVertice {
     public int verificanomevertice(String nome_vertice) {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
         int verificador = -1;
+        
             while (lista != null) {
                 if (lista.getNomeVertice().equals(nome_vertice)) {
-                    System.out.println(lista.getNomeVertice() + "verificaro 1");
-                    return verificador =  1;
+                    System.out.println(lista.getNomeVertice() + "retorna 1");
+                    return 1;
                 } if(!lista.getNomeVertice().equals(nome_vertice)) {
-                    System.out.println(lista.getNomeVertice() + "verificador 0");
-                    return verificador = 0;
+                    System.out.println(lista.getNomeVertice() + "retorna 0");
+                    verificador = 0;
                 }
                 lista = lista.getNoProxVertice();
             }
-        return verificador = 0;
+        return verificador;
     }
      
     public int verificanomearesta(String nome_aresta) {
@@ -567,10 +568,10 @@ public class GrafoNo extends NoVertice {
 
             while (lista != null) {
                 if (lista.getNomeAresta().equals(nome_aresta)) {
-                    return verificador = 1;
+                    return 1;
                 } 
                 if (lista.getNomeAresta().equals(nome_aresta)) {
-                    return verificador = 0;
+                     verificador = 0;
                 }
                 lista = lista.getNoProxAresta();
             }

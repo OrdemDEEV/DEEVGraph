@@ -69,24 +69,30 @@ public class MainControllerInterface_Back_And_Front {
     }
     
     public String verifica_simples(){
-        String tipo = grafo.verificaTipoGrafo();
         String resposta = null;
-        if("É um grafo simples".equals(tipo)){
+        int laco, paralelo;
+
+        laco = grafo.verifica_laco();
+        paralelo = grafo.verificar_paralelo();
+        
+        if(laco == 0 && paralelo == 0 && grafo.getTamVertices(grafo.getListaVertice()) != 0){
             resposta = "Sim";
-        }
-        else{
+        }else{
             resposta = "Não";
         }
         return resposta;
     }
     
     public String verifica_completo(){
-        String tipo = grafo.verificaTipoGrafo();
         String resposta = null;
-        if("É um grafo completo".equals(tipo)){
+        int conexo;
+
+        conexo = grafo.verificar_conectividade();
+        System.out.println("conexo =" + conexo);
+        
+        if(conexo == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0){
             resposta = "Sim";
-        }
-        else{
+        }else{
             resposta = "Não";
         }
         return resposta;
@@ -95,10 +101,11 @@ public class MainControllerInterface_Back_And_Front {
     public String verifica_conectividade(){
         int resultado = grafo.verificar_conectividade();
         String tipo = null;
-            if(resultado == 0){
+        
+            if(resultado == 0 || grafo.getTamVertices(grafo.getListaVertice()) == 0){
                 tipo = "Não";
             }
-            if(resultado == 1){
+            if(resultado == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0){
                 tipo = "Sim";
             }
             return tipo;
@@ -106,14 +113,15 @@ public class MainControllerInterface_Back_And_Front {
     
     public int verifica_nome_vertice(String nome_vertice){
         int resultado = grafo.verificanomevertice(nome_vertice);
-        int retorno = 0;
+        System.out.println("O nome do vertice procurado foi = " + nome_vertice);
+        
             if(resultado == 1){
-                retorno = 1;
+                return 1;
             }
             if(resultado == 0){
-                retorno = 0;
+                return 0;
             }
-            return retorno;
+            return 0;
     }
     
     public int verifica_nome_aresta(String nome_aresta){
