@@ -5,17 +5,30 @@
  */
 package Interfaces;
 
+import Main.MainControllerInterface_Back_And_Front;
+
 /**
  *
  * @author eduardo
  */
 public class detalhes_grafo extends javax.swing.JInternalFrame {
-
+     MainControllerInterface_Back_And_Front dados;
     /**
      * Creates new form detalhes_grafo
      */
-    public detalhes_grafo() {
+    public detalhes_grafo(MainControllerInterface_Back_And_Front dados) {
         initComponents();
+        this.dados = dados;
+        
+        String imprimir_vertices = null;
+        String imprimir_arestas = null;
+        
+        imprimir_vertices = dados.imprimir_vertices();   
+        imprimir_arestas = dados.imprimir_arestas();
+        resumo_vertices_criados.setText(imprimir_vertices);
+        resumo_arestas_criadas.setText(imprimir_arestas);
+        
+        
     }
 
     /**
@@ -45,7 +58,7 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        resumo_criados = new javax.swing.JTextArea();
+        resumo_vertices_criados = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         tipo_conexo = new javax.swing.JLabel();
         tipo_completo = new javax.swing.JLabel();
@@ -53,6 +66,9 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         tipo_planar = new javax.swing.JLabel();
         qtd_lacos = new javax.swing.JLabel();
         qtd_paralelas = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        resumo_arestas_criadas = new javax.swing.JTextArea();
 
         jPanel3.setBackground(new java.awt.Color(60, 60, 60));
 
@@ -118,11 +134,11 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Quantidade de arestas paralelas:");
 
-        resumo_criados.setColumns(20);
-        resumo_criados.setRows(5);
-        jScrollPane1.setViewportView(resumo_criados);
+        resumo_vertices_criados.setColumns(20);
+        resumo_vertices_criados.setRows(5);
+        jScrollPane1.setViewportView(resumo_vertices_criados);
 
-        jLabel10.setText("Vértices e arestas criadas até agora:");
+        jLabel10.setText("Vértices criados até agora:");
 
         tipo_conexo.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         tipo_conexo.setText("-");
@@ -142,6 +158,12 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         qtd_paralelas.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         qtd_paralelas.setText("-");
 
+        jLabel11.setText("Arestas criadas até agora:");
+
+        resumo_arestas_criadas.setColumns(20);
+        resumo_arestas_criadas.setRows(5);
+        jScrollPane2.setViewportView(resumo_arestas_criadas);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -156,9 +178,6 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
                     .addComponent(jSeparator4)
                     .addComponent(jSeparator5)
                     .addComponent(jSeparator6)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -182,7 +201,13 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(qtd_paralelas)))
+                        .addComponent(qtd_paralelas))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -224,11 +249,15 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
                     .addComponent(qtd_paralelas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,8 +275,8 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -257,6 +286,7 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -268,6 +298,7 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -276,7 +307,8 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel qtd_lacos;
     private javax.swing.JLabel qtd_paralelas;
-    private javax.swing.JTextArea resumo_criados;
+    private javax.swing.JTextArea resumo_arestas_criadas;
+    private javax.swing.JTextArea resumo_vertices_criados;
     private javax.swing.JLabel tipo_completo;
     private javax.swing.JLabel tipo_conexo;
     private javax.swing.JLabel tipo_planar;
