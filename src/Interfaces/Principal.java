@@ -77,7 +77,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Editor de Grafos");
+        setTitle("DEEVgraph");
 
         jPanel1.setBackground(new java.awt.Color(38, 35, 33));
 
@@ -97,7 +97,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("V 1.1.2");
+        jLabel1.setText("V 2.0.0");
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setForeground(new java.awt.Color(254, 254, 254));
@@ -255,6 +255,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem6);
 
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem8.setText("Detalhes do grafo");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

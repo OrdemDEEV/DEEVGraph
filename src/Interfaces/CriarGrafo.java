@@ -61,7 +61,7 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Criar Grafo SImples");
+        setTitle("Criador de grafos");
         setMinimumSize(new java.awt.Dimension(0, 0));
 
         jPanel2.setBackground(new java.awt.Color(60, 60, 60));

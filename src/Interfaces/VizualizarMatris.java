@@ -105,7 +105,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Vizualizar");
+        setTitle("Vizualizar grafos");
 
         jPanel3.setBackground(new java.awt.Color(60, 60, 60));
 
