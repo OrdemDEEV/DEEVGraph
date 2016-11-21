@@ -3,10 +3,8 @@
  */
 package Funcoes;
 
-
 import java.util.PriorityQueue;
 import java.util.Queue;
-
 
 public class GrafoNo extends NoVertice {
 
@@ -106,12 +104,11 @@ public class GrafoNo extends NoVertice {
                 lista = lista.getNoProxVertice();
             }
         }
-        
 
         return texto;
     }
-    
-        public String salvarVertices() {
+
+    public String salvarVertices() {
         NoVertice lista = lista_no_vertice.getNoProxVertice();
         String texto = null;
         int verificador = 0;
@@ -160,8 +157,8 @@ public class GrafoNo extends NoVertice {
 
         return texto;
     }
-    
-        public String salvar_arestas() {
+
+    public String salvar_arestas() {
         NoAresta lista = lista_no_arestas.getNoProxAresta();
         String texto = null;
         int verificador = 0;
@@ -184,7 +181,6 @@ public class GrafoNo extends NoVertice {
 
         return texto;
     }
-    
 
     public int verificar_Adjacencia(Vertice origem, Vertice destino) {
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
@@ -470,6 +466,49 @@ public class GrafoNo extends NoVertice {
         return 1;
     }
 
+    public int verificar_conectividade_completo() {
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j, pivo = 0, teste_vertices_valores = 0;
+
+        int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
+
+        NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
+        NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+
+        //Armazena os valores em uma Matriz de adjacencia
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_vertices; j++) {
+                matrizadj[i][j] = verificar_Adjacencia(lista_verticeL.getVertice(), lista_verticeC.getVertice());
+                lista_verticeC = lista_verticeC.getNoProxVertice();
+            }
+            lista_verticeC = lista_no_vertice.getNoProxVertice();
+            lista_verticeL = lista_verticeL.getNoProxVertice();
+        }
+
+        //descobre se tem alguma coluna sem valores na matriz de adjacencia
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_vertices; j++) {
+                System.out.print(matrizadj[i][j]);
+                if (i == j) {
+                    pivo = pivo + matrizadj[i][j];
+                }
+
+                teste_vertices_valores = matrizadj[i][j] + teste_vertices_valores;
+
+            }
+            System.out.println();
+        }
+
+        if (teste_vertices_valores == 0) {
+            //grafo desconexo
+            return 0;
+        }
+        if (pivo == 0 && teste_vertices_valores == ((quantidade_de_vertices * quantidade_de_vertices)-quantidade_de_vertices)) {
+            return 1;
+        }
+
+        return 0;
+    }
+
     //retorna 1 se tiver alguma aresta paralela
     public int verificar_paralelo() {
         int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j;
@@ -579,18 +618,15 @@ public class GrafoNo extends NoVertice {
         Queue fila = new PriorityQueue();
 
         //percorrer a fila
-        
         System.out.println("inserindo valor na fila = " + fila.add(lista_aresta.getAresta().getOrigem().getNomeVertice()));
         while (teste) {
-           
+
             String vertice1 = (String) fila.peek();
-            System.out.println("Primeiro String testado = "+ vertice1);
+            System.out.println("Primeiro String testado = " + vertice1);
             fila.remove();
 
-
             if (vertice1.equals(lista_aresta2.getAresta().getOrigem().getNomeVertice())) {
-                if(fila.peek() == lista_aresta2.getAresta().getOrigem())
-                {
+                if (fila.peek() == lista_aresta2.getAresta().getOrigem()) {
                     System.out.println("Achou um ciclo");
                 }
                 fila.offer(lista_aresta2.getAresta().getDestino().getNomeVertice());
@@ -608,8 +644,7 @@ public class GrafoNo extends NoVertice {
                  */
 
             } else if (vertice1.equals(lista_aresta2.getAresta().getDestino().getNomeVertice())) {
-                if(fila.peek() == lista_aresta2.getAresta().getDestino())
-                {
+                if (fila.peek() == lista_aresta2.getAresta().getDestino()) {
                     System.out.println("Achou um ciclo");
                 }
                 fila.offer(lista_aresta2.getAresta().getOrigem().getNomeVertice());
@@ -626,13 +661,12 @@ public class GrafoNo extends NoVertice {
             Deletar da lista o que ja foi usado
                  */
                 lista_aresta2 = lista_aresta2.getNoProxAresta();
-                if(lista_aresta2 == null)
-                {
+                if (lista_aresta2 == null) {
                     teste = false;
                 }
-                 }
-                lista_aresta2 = lista_no_arestas.getNoProxAresta();
-            
+            }
+            lista_aresta2 = lista_no_arestas.getNoProxAresta();
+
         }
 
     }

@@ -81,7 +81,7 @@ public class MainControllerInterface_Back_And_Front {
         String resposta = null;
         int conexo, laco, paralelo;
 
-        conexo = grafo.verificar_conectividade();
+        conexo = grafo. verificar_conectividade_completo();
         laco = grafo.verifica_laco();
         paralelo = grafo.verificar_paralelo();
 
