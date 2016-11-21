@@ -79,12 +79,13 @@ public class MainControllerInterface_Back_And_Front {
 
     public String verifica_completo() {
         String resposta = null;
-        int conexo;
+        int conexo, laco, paralelo;
 
         conexo = grafo.verificar_conectividade();
-        System.out.println("conexo =" + conexo);
+        laco = grafo.verifica_laco();
+        paralelo = grafo.verificar_paralelo();
 
-        if (conexo == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0) {
+        if (conexo == 1 && laco == 0 && paralelo == 0 && grafo.getTamVertices(grafo.getListaVertice()) != 0) {
             resposta = "Sim";
         } else {
             resposta = "Não";
@@ -155,7 +156,7 @@ public class MainControllerInterface_Back_And_Front {
     }
 
     //Função que realiza leitura do grafo formal
-    public void Ler_Grafo_Formal(String grafo, int tamanho) {
+    public void ler_Grafo_Formal(String grafo, int tamanho) {
         GrafoFormal leitura = new GrafoFormal();
         //chamada da func que ordena os dados
         int retorno = leitura.separa_dados(grafo, tamanho);
