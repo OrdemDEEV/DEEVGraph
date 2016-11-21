@@ -150,6 +150,7 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Quantidade de arestas paralelas:");
 
+        resumo_vertices_criados.setEditable(false);
         resumo_vertices_criados.setColumns(20);
         resumo_vertices_criados.setRows(5);
         jScrollPane1.setViewportView(resumo_vertices_criados);
@@ -176,6 +177,7 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Arestas criadas até agora:");
 
+        resumo_arestas_criadas.setEditable(false);
         resumo_arestas_criadas.setColumns(20);
         resumo_arestas_criadas.setRows(5);
         jScrollPane2.setViewportView(resumo_arestas_criadas);
