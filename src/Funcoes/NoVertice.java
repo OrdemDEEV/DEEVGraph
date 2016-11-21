@@ -9,6 +9,22 @@ public class NoVertice {
     private NoVertice noProxVertice;
     private NoVertice noAntVertice;
 
+     //Insere um no de Vertice no final da lista de Vertices
+    public NoVertice insereVerticeNo(NoVertice lista_de_vertices, Vertice vertice) {
+        NoVertice novo = criarNoVertice(vertice);
+
+        if (lista_de_vertices == null) {
+            lista_de_vertices = novo;
+        } else {
+            NoVertice ultimo = buscaUltimoNo(lista_de_vertices);
+            novo.noAntVertice = ultimo;
+            ultimo.noProxVertice = novo;
+        }
+
+        return lista_de_vertices;
+    }
+    
+    
     //consulta todos os valores dos vertices
     public String consultaVertices(NoVertice lista_de_vertices, Vertice v) {
         if (lista_de_vertices == null) {
@@ -26,20 +42,7 @@ public class NoVertice {
         return "nao achou";
     }
 
-    //Insere um no de Vertice no final da lista de Vertices
-    public NoVertice insereVerticeNo(NoVertice lista_de_vertices, Vertice vertice) {
-        NoVertice novo = criarNoVertice(vertice);
 
-        if (lista_de_vertices == null) {
-            lista_de_vertices = novo;
-        } else {
-            NoVertice ultimo = buscaUltimoNo(lista_de_vertices);
-            novo.noAntVertice = ultimo;
-            ultimo.noProxVertice = novo;
-        }
-
-        return lista_de_vertices;
-    }
 
     //Busca o ultimo vertice
     public NoVertice buscaUltimoNo(NoVertice lista_de_vertices) {

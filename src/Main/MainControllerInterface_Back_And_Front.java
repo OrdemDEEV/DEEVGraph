@@ -11,13 +11,12 @@
 *
 *
 *       -----IMPORTANT-------
-*/
+ */
 package Main;
 
 import Funcoes.Arestas;
 import Funcoes.Arquivo;
 import Funcoes.GrafoFormal;
-import Funcoes.GrafoListaAdj;
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
 import javax.swing.JOptionPane;
@@ -28,163 +27,157 @@ import javax.swing.JOptionPane;
  */
 public class MainControllerInterface_Back_And_Front {
     //instanciando classe principal das funcoes
-    //GrafoListaAdj grafoadj = new GrafoListaAdj();
     GrafoNo grafo = new GrafoNo();
     Vertice v;
     Arestas a;
     Arquivo arq = new Arquivo();
-    
+
     //função capaz de criar vertice
-    public void Criar_Vertice(String nome){
-       // grafoadj.addVertice(nome, id);
+    public void Criar_Vertice(String nome) {
+        // grafoadj.addVertice(nome, id);
         v = grafo.addVertice(nome); //Cria o vertice nó
         grafo.setVertice_na_ListaVertice(v); //coloca na lista de nós de GrafoNo
     }
-    
+
     //Função capaz de criar aresta
-    public void Criar_Aresta(String nome, String nome_vertice_1, String nome_vertice_2){
+    public void Criar_Aresta(String nome, String nome_vertice_1, String nome_vertice_2) {
         //grafoadj.addAresta(nome, grafo.encontrar_Vertice_ID(id_vertice_1), grafo.encontrar_Vertice_ID(id_vertice_2), id);
         a = grafo.addAresta(nome, grafo.encontrar_Vertice_Nome(nome_vertice_1), grafo.encontrar_Vertice_Nome(nome_vertice_2));
         grafo.setAresta_na_ListaAresta(a);
-        grafo.imprimirArestas();  
+        grafo.imprimirArestas();
     }
-    
+
     //imprimir lista na interface
-    public String imprimir_listaADJ(){
+    public String imprimir_listaADJ() {
         //chama função que retona a lista com texto
         String lista = grafo.retornarListaAdj();
         return lista;
     }
-    
-    public String imprimir_matrizADJ()
-    {
+
+    public String imprimir_matrizADJ() {
         String matriz = grafo.retornarMatrizADJ();
         return matriz;
     }
-    
-    public String imprimir_matrizINC()
-    {
+
+    public String imprimir_matrizINC() {
         String matriz = grafo.retornarMatrizINC();
         return matriz;
     }
-    
-    public String verifica_simples(){
+
+    public String verifica_simples() {
         String resposta = null;
         int laco, paralelo;
 
         laco = grafo.verifica_laco();
         paralelo = grafo.verificar_paralelo();
-        
-        if(laco == 0 && paralelo == 0 && grafo.getTamVertices(grafo.getListaVertice()) != 0){
+
+        if (laco == 0 && paralelo == 0 && grafo.getTamVertices(grafo.getListaVertice()) != 0) {
             resposta = "Sim";
-        }else{
+        } else {
             resposta = "Não";
         }
         return resposta;
     }
-    
-    public String verifica_completo(){
+
+    public String verifica_completo() {
         String resposta = null;
         int conexo;
 
         conexo = grafo.verificar_conectividade();
         System.out.println("conexo =" + conexo);
-        
-        if(conexo == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0){
+
+        if (conexo == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0) {
             resposta = "Sim";
-        }else{
+        } else {
             resposta = "Não";
         }
         return resposta;
     }
-    
-    public String verifica_conectividade(){
+
+    public String verifica_conectividade() {
         int resultado = grafo.verificar_conectividade();
         String tipo = null;
-        
-            if(resultado == 0 || grafo.getTamVertices(grafo.getListaVertice()) == 0){
-                tipo = "Não";
-            }
-            if(resultado == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0){
-                tipo = "Sim";
-            }
-            return tipo;
+
+        if (resultado == 0 || grafo.getTamVertices(grafo.getListaVertice()) == 0) {
+            tipo = "Não";
+        }
+        if (resultado == 1 && grafo.getTamVertices(grafo.getListaVertice()) != 0) {
+            tipo = "Sim";
+        }
+        return tipo;
     }
-    
-    public int verifica_nome_vertice(String nome_vertice){
+
+    public int verifica_nome_vertice(String nome_vertice) {
         int resultado = grafo.verificanomevertice(nome_vertice);
         System.out.println("O nome do vertice procurado foi = " + nome_vertice);
-        
-            if(resultado == 1){
-                return 1;
-            }
-            if(resultado == 0){
-                return 0;
-            }
+
+        if (resultado == 1) {
+            return 1;
+        }
+        if (resultado == 0) {
             return 0;
+        }
+        return 0;
     }
-    
-    public int verifica_nome_aresta(String nome_aresta){
+
+    public int verifica_nome_aresta(String nome_aresta) {
         int resultado = grafo.verificanomearesta(nome_aresta);
         int retorno = 0;
-            if(resultado == 1){
-                retorno = 1;
-            }
-            if(resultado == 0){
-                retorno =  0;
-            }
-            return retorno;
+        if (resultado == 1) {
+            retorno = 1;
+        }
+        if (resultado == 0) {
+            retorno = 0;
+        }
+        return retorno;
     }
-    
-    public void exportar_dados(String caminho){
+
+    public void exportar_dados(String caminho) {
         arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), caminho);
     }
-    
-    public String imprimir_vertices(){
+
+    public String imprimir_vertices() {
         String resultado = grafo.imprimirVertices();
         return resultado;
     }
-    
-    public String imprimir_arestas(){
+
+    public String imprimir_arestas() {
         String resultado = grafo.imprimirArestas();
         return resultado;
     }
-    
-    public int qtd_paralelos(){
+
+    public int qtd_paralelos() {
         int resultado = grafo.qtdade_paralelos();
         return resultado;
     }
-    
-    public int qtd_laco(){
+
+    public int qtd_laco() {
         int resultado = grafo.qtd_laco();
         return resultado;
     }
-    
+
     //Função que realiza leitura do grafo formal
-    public void Ler_Grafo_Formal(String grafo, int tamanho){
+    public void Ler_Grafo_Formal(String grafo, int tamanho) {
         GrafoFormal leitura = new GrafoFormal();
         //chamada da func que ordena os dados
         int retorno = leitura.separa_dados(grafo, tamanho);
-            if(retorno == 1){
-                System.out.println("Erro na leitura!");
-            }
-            else{
-                System.out.println("Sucesso na leitura!");
-            }
+        if (retorno == 1) {
+            System.out.println("Erro na leitura!");
+        } else {
+            System.out.println("Sucesso na leitura!");
+        }
     }
-    
+
     //Destrutor reciar os grafos vazios
-    public void resetar_Grafo()
-    {
-      this.grafo = new GrafoNo();
+    public void resetar_Grafo() {
+        this.grafo = new GrafoNo();
     }
-    
-    public void carrega_Grafo(GrafoNo grafo)
-    {
+
+    public void carrega_Grafo(GrafoNo grafo) {
         this.grafo = grafo;
     }
-    public GrafoNo getGrafo()
-    {
+
+    public GrafoNo getGrafo() {
         return grafo;
     }
 }

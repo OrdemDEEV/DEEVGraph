@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Funcoes.GrafoListaAdj;//importa o package onde esta as funcoes para serem chamadas
+
 import Main.MainControllerInterface_Back_And_Front;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;

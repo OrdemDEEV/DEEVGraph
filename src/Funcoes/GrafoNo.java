@@ -3,11 +3,11 @@
  */
 package Funcoes;
 
-//import Interfaces.VizualizarMatris;  //PRA QUE ESSAS IMPORTAÇÕES?
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-//import Funcoes.Vertice;
+
 public class GrafoNo extends NoVertice {
 
     private NoVertice lista_no_vertice = new NoVertice();
