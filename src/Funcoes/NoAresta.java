@@ -103,4 +103,17 @@ public class NoAresta {
     public String getNomeAresta() {
         return aresta == null ? "erro aqui" : aresta.getnomeAresta();
     }
+
+    NoAresta encontrar_Aresta_Nome(String nomeAresta, NoAresta lista) {
+
+        while (lista != null) {
+            if (nomeAresta.equals(lista.getNomeAresta())) {
+                break;
+            }
+            lista = lista.getNoProxAresta();
+        }
+        
+        
+       return lista;
+    }
 }

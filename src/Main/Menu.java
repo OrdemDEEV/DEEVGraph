@@ -37,6 +37,7 @@ public class Menu {
         System.out.println("11-Verificar paralelo");
         System.out.println("12-Verificar laço");
         System.out.println("13-Verificar tipo de Grafo");
+        System.out.println("14-MenorCiclo");
         System.out.println("0-Finalizar o programa");
                                     
         op = scan.nextInt();
@@ -87,6 +88,8 @@ public class Menu {
             case 13:
                 System.out.println(grafo.verificaTipoGrafo());
                 break;
+            case 14:
+              //  grafo.dijkstra();
             default:
                 System.out.println("Opção Invalida");
                 break;

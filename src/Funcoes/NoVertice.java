@@ -10,16 +10,20 @@ public class NoVertice {
     private NoVertice noAntVertice;
 
     //consulta todos os valores dos vertices
-    public void consultaVertices(NoVertice lista_de_vertices) {
+    public String consultaVertices(NoVertice lista_de_vertices, Vertice v) {
         if (lista_de_vertices == null) {
             System.out.println("Não existem vertices");
         } else {
             NoVertice n = lista_de_vertices;
             while (n != null) {
-                System.out.println("vertice: " + n.vertice);
+                if(v.getNomeVertice().equals(n.getVertice().getNomeVertice()))
+                {
+                    return v.getNomeVertice();
+                }
                 n = n.noProxVertice;
             }
         }
+        return "nao achou";
     }
 
     //Insere um no de Vertice no final da lista de Vertices
