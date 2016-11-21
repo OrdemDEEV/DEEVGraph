@@ -21,7 +21,7 @@ public class Arquivo {
         try (FileWriter arq = new FileWriter(caminho+".txt")) {
 
             PrintWriter gravarArq = new PrintWriter(arq);
-            gravarArq.printf("Lista de Adjacencia%n%n" + listaADJ + "%n%nMatriz de Adjacencia%n%n" + MatrizADJ + "%n%nMatriz de Incidencia%n%n" + MatrizINC);
+            gravarArq.printf("Lista de Adjacencia%n%n" + listaADJ + "%n%nMatriz de Adjacencia%n%n" + MatrizADJ + "%n%nMatriz de Incidencia%n%n" + MatrizINC + "%n%n%n© ordemDeev");
             arq.close();
 
         } catch (IOException ex) {

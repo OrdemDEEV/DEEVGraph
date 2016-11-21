@@ -65,7 +65,7 @@ public class Menu {
                 arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), "Grafo/grafo");
                 break;
             case 7:
-                arq.salvar_dados(grafo.imprimirVertices(), grafo.salvar_arestas(), "Grafo/dados");
+                arq.salvar_dados(grafo.salvarVertices(), grafo.salvar_arestas(), "Grafo/dados");
                 break;
             case 8:
                 //COMENTADO PARA FUNCIONAR NA INTERFACE E PRECISO PEGAR O CAMINHO E NOME DO ARQUIVO E PASSAR COMO PARAMETRO
