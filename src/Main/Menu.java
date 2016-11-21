@@ -89,7 +89,7 @@ public class Menu {
                 System.out.println(grafo.verificaTipoGrafo());
                 break;
             case 14:
-              //  grafo.dijkstra();
+              grafo.menorCaminho();
             default:
                 System.out.println("Opção Invalida");
                 break;

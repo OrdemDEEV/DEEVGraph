@@ -522,40 +522,26 @@ public class GrafoNo extends NoVertice {
         NoAresta lista_aresta2 = lista_no_arestas.getNoProxAresta();
         NoAresta lista_aresta_organizada = new NoAresta();
         NoAresta excluir;
+        boolean teste = true;
 
         Queue fila = new PriorityQueue();
 
         //percorrer a fila
-        fila.offer(lista_aresta.getAresta().getOrigem());
-        while (fila.peek() != null) {
-            while(lista_aresta2 != null)
-            {
-                
+        
+        System.out.println("inserindo valor na fila = " + fila.add(lista_aresta.getAresta().getOrigem().getNomeVertice()));
+        while (teste) {
            
-            Vertice vertice1 = (Vertice) fila.poll();
-            
-            
-            if(vertice1.getNomeVertice().equals(vertice1));
-            
-            
+            String vertice1 = (String) fila.peek();
+            System.out.println("Primeiro String testado = "+ vertice1);
+            fila.remove();
 
-            if (vertice1.getNomeVertice().equals(lista_aresta2.getAresta().getOrigem().getNomeVertice())) {
-                fila.offer(lista_aresta.getAresta().getDestino().getNomeVertice());
 
-                /*
-            Deletar da lista o que ja foi usado
-                 */
-                lista_aresta_organizada.insereArestaNo(lista_aresta_organizada, lista_aresta2.getAresta());
-                excluir = lista_aresta2;
-                lista_aresta2 = lista_aresta2.getNoProxAresta();
-                lista_aresta2.setNoAntAresta(null);
-                excluir = null;
-                /*
-            Deletar da lista o que ja foi usado
-                 */
-
-            } else if (vertice1.getNomeVertice().equals(lista_aresta2.getAresta().getDestino().getNomeVertice())) {
-                fila.offer(lista_aresta.getAresta().getOrigem().getNomeVertice());
+            if (vertice1.equals(lista_aresta2.getAresta().getOrigem().getNomeVertice())) {
+                if(fila.peek() == lista_aresta2.getAresta().getOrigem())
+                {
+                    System.out.println("Achou um ciclo");
+                }
+                fila.offer(lista_aresta2.getAresta().getDestino().getNomeVertice());
 
                 /*
             Deletar da lista o que ja foi usado
@@ -568,10 +554,33 @@ public class GrafoNo extends NoVertice {
                 /*
             Deletar da lista o que ja foi usado
                  */
+
+            } else if (vertice1.equals(lista_aresta2.getAresta().getDestino().getNomeVertice())) {
+                if(fila.peek() == lista_aresta2.getAresta().getDestino())
+                {
+                    System.out.println("Achou um ciclo");
+                }
+                fila.offer(lista_aresta2.getAresta().getOrigem().getNomeVertice());
+
+                /*
+            Deletar da lista o que ja foi usado
+                 */
+                lista_aresta_organizada.insereArestaNo(lista_aresta_organizada, lista_aresta2.getAresta());
+                excluir = lista_aresta2;
                 lista_aresta2 = lista_aresta2.getNoProxAresta();
+                lista_aresta2.setNoAntAresta(null);
+                excluir = null;
+                /*
+            Deletar da lista o que ja foi usado
+                 */
+                lista_aresta2 = lista_aresta2.getNoProxAresta();
+                if(lista_aresta2 == null)
+                {
+                    teste = false;
+                }
                  }
                 lista_aresta2 = lista_no_arestas.getNoProxAresta();
-            }
+            
         }
 
     }
