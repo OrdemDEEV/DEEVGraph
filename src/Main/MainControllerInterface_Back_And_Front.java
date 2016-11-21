@@ -19,7 +19,6 @@ import Funcoes.Arquivo;
 import Funcoes.GrafoFormal;
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,10 +26,10 @@ import javax.swing.JOptionPane;
  */
 public class MainControllerInterface_Back_And_Front {
     //instanciando classe principal das funcoes
-    GrafoNo grafo = new GrafoNo();
-    Vertice v;
-    Arestas a;
-    Arquivo arq = new Arquivo();
+    private GrafoNo grafo = new GrafoNo();
+    private Vertice v;
+    private Arestas a;
+    private Arquivo arq = new Arquivo();
 
     //função capaz de criar vertice
     public void Criar_Vertice(String nome) {
