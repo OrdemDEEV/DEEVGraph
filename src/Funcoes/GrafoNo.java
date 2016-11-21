@@ -544,6 +544,7 @@ public class GrafoNo extends NoVertice {
         return 0;
     }
 
+    //função para teste, FUNÇÃO USADA PARA SABER O TIPO ESTÁ NO PACKAGE Main, na classe MainControllerInterface_Back_And_Front
     public String verificaTipoGrafo() {
         String resposta = "Desconhecido";
         int laco, conexo, paralelo;
