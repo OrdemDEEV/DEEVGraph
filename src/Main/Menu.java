@@ -65,14 +65,14 @@ public class Menu {
                 arq.exportar_Grafo(grafo.retornarListaAdj(), grafo.retornarMatrizADJ(), grafo.retornarMatrizINC(), "Grafo/grafo");
                 break;
             case 7:
-                arq.salvar_dados(grafo.imprimirVertices(), grafo.imprimirArestas(), "Grafo/dados");
+                arq.salvar_dados(grafo.imprimirVertices(), grafo.salvar_arestas(), "Grafo/dados");
                 break;
             case 8:
                 //COMENTADO PARA FUNCIONAR NA INTERFACE E PRECISO PEGAR O CAMINHO E NOME DO ARQUIVO E PASSAR COMO PARAMETRO
                 grafo = arq.carregar_dados("Grafo/dados.deev");
                 break;
             case 9:
-                grafo.imprimirArestas();
+                grafo.salvar_arestas();
                 System.out.println();
                 grafo.imprimirVertices();
                 break;
@@ -186,7 +186,7 @@ public class Menu {
        a = grafo.addAresta("aresta t4", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s2"));
        grafo.setAresta_na_ListaAresta(a);
        
-       String ver2 = grafo.imprimirArestas(); 
+       String ver2 = grafo.salvar_arestas(); 
        
         System.out.println("\n\n\n\n AGORA VAMOS IMPRIMIR AS VAREAVEIS");
         System.out.println("");

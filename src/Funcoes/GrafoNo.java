@@ -90,7 +90,7 @@ public class GrafoNo extends NoVertice {
         String texto = null;
         int verificador = 0;
 
-        if (lista.getVertice() == null) {
+        if (lista == null) {
             System.out.println("não a vertices");
             return texto;
         } else {
@@ -122,6 +122,30 @@ public class GrafoNo extends NoVertice {
         } else {
             while (lista != null) {
                 if (verificador == 0) {
+                    texto = lista.getNomeAresta() + "\n" /* + lista.getAresta().getOrigem().getNomeVertice() + "\n" + lista.getAresta().getDestino().getNomeVertice()*/;
+                    verificador = 1;
+                } else {
+                    texto += "\n" + lista.getNomeAresta() + "\n"/* + lista.getAresta().getOrigem().getNomeVertice() + "\n" + lista.getAresta().getDestino().getNomeVertice()*/;
+                }
+                System.out.println(lista.getNomeAresta() + " // Vertice Origem = " + lista.getAresta().getOrigem().getNomeVertice() + " // Vertice Destino = " + lista.getAresta().getDestino().getNomeVertice());
+                lista = lista.getNoProxAresta();
+            }
+        }
+
+        return texto;
+    }
+    
+        public String salvar_arestas() {
+        NoAresta lista = lista_no_arestas.getNoProxAresta();
+        String texto = null;
+        int verificador = 0;
+
+        if (lista == null) {
+            System.out.println("não a Arestas");
+            return texto;
+        } else {
+            while (lista != null) {
+                if (verificador == 0) {
                     texto = lista.getNomeAresta() + "\n" + lista.getAresta().getOrigem().getNomeVertice() + "\n" + lista.getAresta().getDestino().getNomeVertice();
                     verificador = 1;
                 } else {
@@ -134,6 +158,7 @@ public class GrafoNo extends NoVertice {
 
         return texto;
     }
+    
 
     public int verificar_Adjacencia(Vertice origem, Vertice destino) {
         NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
