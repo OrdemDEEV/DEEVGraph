@@ -43,7 +43,7 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         imprimir = dados.verifica_completo();
         tipo_completo.setText(imprimir);
         
-        imprimir = dados.verifica_menor();
+        imprimir = dados.verifica_planaridade();
         tipo_planar.setText(imprimir);
         
     }
