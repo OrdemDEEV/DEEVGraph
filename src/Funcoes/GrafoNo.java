@@ -502,7 +502,7 @@ public class GrafoNo extends NoVertice {
             //grafo desconexo
             return 0;
         }
-        if (pivo == 0 && teste_vertices_valores == ((quantidade_de_vertices * quantidade_de_vertices)-quantidade_de_vertices)) {
+        if (pivo == 0 && teste_vertices_valores == ((quantidade_de_vertices * quantidade_de_vertices) - quantidade_de_vertices)) {
             return 1;
         }
 
@@ -610,25 +610,22 @@ public class GrafoNo extends NoVertice {
 
     //retorna o menor caminho
     public int menorCiclo() {
-        
-        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j, laco,paralelo, menorCaminho = 0;
+
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j, laco, paralelo, menorCaminho = 0;
 
         int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
 
         NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
         NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
-        
+
         paralelo = verificar_paralelo();
         laco = verifica_laco();
-        if(laco == 1)
-        {
+        if (laco == 1) {
             return 1;
-        }
-        else if(paralelo == 1)
-        {
+        } else if (paralelo == 1) {
             return 2;
         }
-        
+
         //Armazena os valores em uma Matriz de adjacencia
         for (i = 0; i < quantidade_de_vertices; i++) {
             for (j = 0; j < quantidade_de_vertices; j++) {
@@ -642,51 +639,40 @@ public class GrafoNo extends NoVertice {
         for (i = 0; i < quantidade_de_vertices; i++) {
             for (j = 0; j < quantidade_de_vertices; j++) {
                 System.out.print(matrizadj[i][j]);
-                if(matrizadj[i][j] == 1 )
-                {
+                if (matrizadj[i][j] == 1) {
                     matrizadj[i][j] = 0;
                     matrizadj[j][i] = 0;
                     i = j;
-                    menorCaminho ++;
-                   
+                    menorCaminho++;
+
                 }
             }
             System.out.println();
         }
         return menorCaminho;
     }
-    
+
     //return 1 se for planar
-    public int verificaPlanaridade()
-    {
-         int quantidade_de_vertices = getTamVertices(lista_no_vertice);
-         int quantidade_de_arestas = getTamArestas(lista_no_arestas);
-         int menorCiclo = menorCiclo();
-         System.out.println("menor ciclo = " + menorCiclo);
-        
-        if(menorCiclo <= 3)
-        {
-            if(quantidade_de_arestas <= (3*quantidade_de_vertices)-6)
-            {
+    public int verificaPlanaridade() {
+        int quantidade_de_vertices = getTamVertices(lista_no_vertice);
+        int quantidade_de_arestas = getTamArestas(lista_no_arestas);
+        int menorCiclo = menorCiclo();
+        System.out.println("menor ciclo = " + menorCiclo);
+
+        if (menorCiclo <= 3) {
+            if (quantidade_de_arestas <= (3 * quantidade_de_vertices) - 6) {
                 return 1;
+            } else {
+                return 0;
             }
-            else
-            {
-                    return 0;
-                    }
-        }else
-        {
-            if(quantidade_de_arestas <= (2*quantidade_de_vertices)-4)
-            {
+        } else {
+            if (quantidade_de_arestas <= (2 * quantidade_de_vertices) - 4) {
                 return 1;
-            }
-            else
-            {
+            } else {
                 return 0;
             }
         }
-        
-        
+
     }
 
     public NoAresta verificaArestas(Vertice vertice, NoAresta organizada) {
