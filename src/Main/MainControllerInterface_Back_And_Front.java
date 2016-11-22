@@ -93,7 +93,7 @@ public class MainControllerInterface_Back_And_Front {
     }
     
     public String verifica_menor(){
-        int planar = grafo.menorCiclo();
+        int planar = grafo.verificaPlanaridade();
         
             if(planar == 1){
                 return "Sim";
