@@ -570,7 +570,7 @@ public class GrafoNo extends NoVertice {
                 System.out.print(matrizadj[i][j]);
 
                 if (i == j) {
-                    if (matrizadj[i][j] > 1) {
+                    if (matrizadj[i][j] >= 1) {
                         System.out.println();
                         return 1;
                     }
