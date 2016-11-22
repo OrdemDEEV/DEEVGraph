@@ -89,13 +89,27 @@ public class Menu {
                 System.out.println(grafo.verificaTipoGrafo());
                 break;
             case 14:
-              grafo.menorCaminho();
+                verplanar();
             default:
                 System.out.println("Opção Invalida");
                 break;
         }
         
         return op;
+    }
+    
+    public void verplanar()
+    {
+        int ver = grafo.verificaPlanaridade();
+        
+        if(ver == 1)
+        {
+            System.out.println("É planar");
+        }
+        else
+        {
+            System.out.println("Não é planar");
+        }
     }
     
     public void verconexao()
@@ -159,12 +173,12 @@ public class Menu {
        v = grafo.addVertice("Vertice s2");
        grafo.setVertice_na_ListaVertice(v);
        
-       v = grafo.addVertice("Vertice s3");
+      v = grafo.addVertice("Vertice s3");
        grafo.setVertice_na_ListaVertice(v);
-       
+      /*  
        v = grafo.addVertice("Vertice s4");
        grafo.setVertice_na_ListaVertice(v);
-       
+       */
        
        String ver1 = grafo.imprimirVertices();
        
@@ -174,16 +188,16 @@ public class Menu {
        a = grafo.addAresta("aresta t1", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s2"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s0"));
+       a = grafo.addAresta("aresta t2", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s3"));
        grafo.setAresta_na_ListaAresta(a);
-       
+      
+       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s3"), grafo.encontrar_Vertice_Nome("Vertice s0"));
+       grafo.setAresta_na_ListaAresta(a);
+        
        a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s1"), grafo.encontrar_Vertice_Nome("Vertice s3"));
        grafo.setAresta_na_ListaAresta(a);
        
-       a = grafo.addAresta("aresta t3", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s0"));
-       grafo.setAresta_na_ListaAresta(a);
-       
-       a = grafo.addAresta("aresta t4", grafo.encontrar_Vertice_Nome("Vertice s2"), grafo.encontrar_Vertice_Nome("Vertice s2"));
+       a = grafo.addAresta("aresta t4", grafo.encontrar_Vertice_Nome("Vertice s0"), grafo.encontrar_Vertice_Nome("Vertice s2"));
        grafo.setAresta_na_ListaAresta(a);
        
        String ver2 = grafo.salvar_arestas(); 
