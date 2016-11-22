@@ -383,6 +383,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         imprimir = dados.verifica_completo();
         tipo_completo.setText(imprimir);
         
+        imprimir = dados.verifica_planaridade();
+        tipo_planar.setText(imprimir);
+        
         if(imprimir == null){
             JOptionPane.showMessageDialog(null,"Não existem grafos para serem impressos!","Erro",JOptionPane.INFORMATION_MESSAGE);
         }
@@ -418,6 +421,9 @@ public class VizualizarMatris extends javax.swing.JInternalFrame {
         
         imprimir = dados.verifica_completo();
         tipo_completo.setText(imprimir);
+        
+        imprimir = dados.verifica_planaridade();
+        tipo_planar.setText(imprimir);
         
     }//GEN-LAST:event_ResetarActionPerformed
 
