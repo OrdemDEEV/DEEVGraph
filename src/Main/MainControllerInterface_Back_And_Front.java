@@ -91,7 +91,19 @@ public class MainControllerInterface_Back_And_Front {
         }
         return resposta;
     }
-
+    
+    public String verifica_menor(){
+        int planar = grafo.menorCiclo();
+        
+            if(planar == 1){
+                return "Sim";
+            }
+            else{
+                return "Não";
+            }
+        
+    }
+    
     public String verifica_conectividade() {
         int resultado = grafo.verificar_conectividade();
         String tipo = null;

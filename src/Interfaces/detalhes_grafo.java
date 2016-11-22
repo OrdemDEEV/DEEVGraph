@@ -45,6 +45,9 @@ public class detalhes_grafo extends javax.swing.JInternalFrame {
         inteiro = dados.qtd_laco();
         qtd_lacos.setText(Integer.toString(inteiro));
         
+        impressoes_gerais = dados.verifica_menor();
+        tipo_planar.setText(impressoes_gerais);
+        
     }
 
     /**
