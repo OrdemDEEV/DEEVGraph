@@ -78,6 +78,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DEEVgraph");
+        setPreferredSize(new java.awt.Dimension(864, 722));
 
         jPanel1.setBackground(new java.awt.Color(38, 35, 33));
 
