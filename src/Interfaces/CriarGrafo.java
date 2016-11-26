@@ -304,10 +304,10 @@ public class CriarGrafo extends javax.swing.JInternalFrame {
             String nome_vertice_1 = vertice1.getText();//recolhe vertice 1
             String nome_vertice_2 = vertice2.getText();//recolhe vertice 2
             
-            
-            if(dados.verifica_nome_vertice(nome_vertice_1) == 0){
-                JOptionPane.showMessageDialog(null,"O vertice 1 não existe!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
+            if(dados.verifica_nome_vertice(nome_vertice_1) == 0 || dados.verifica_nome_vertice(nome_vertice_2) == 0){
+                JOptionPane.showMessageDialog(null,"verifique o nome dos vertices!!","Sucesso",JOptionPane.INFORMATION_MESSAGE);
             }
+            
             else{
               if(dados.verifica_nome_aresta(nome) == 0){
                     //chama funçoes que cria a  aresta
