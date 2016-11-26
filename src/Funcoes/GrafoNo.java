@@ -3,9 +3,6 @@
  */
 package Funcoes;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 public class GrafoNo extends NoVertice {
 
     private NoVertice lista_no_vertice = new NoVertice();
@@ -196,6 +193,24 @@ public class GrafoNo extends NoVertice {
 
         }
         return valor;
+    }
+        public int verificar_Adjacencia(Vertice v, Arestas a) {
+        NoAresta lista_aresta = lista_no_arestas.getNoProxAresta();
+
+        while (lista_aresta != null) {
+
+            if (lista_aresta.getAresta().getnomeAresta().equals(a.getnomeAresta())) {
+                if (lista_aresta.getAresta().getOrigem().getNomeVertice().equals(v.getNomeVertice()) || lista_aresta.getAresta().getDestino().getNomeVertice().equals(v.getNomeVertice())) {
+                    return 1;
+                }
+                lista_aresta = lista_aresta.getNoProxAresta();
+
+            }
+
+        }
+
+        return 0;
+
     }
 
     public void imprimirListaAdj() {
@@ -432,11 +447,14 @@ public class GrafoNo extends NoVertice {
     //retorna 1 se for conexo
     public int verificar_conectividade() {
         int quantidade_de_vertices = getTamVertices(lista_no_vertice), i, j, testador = 0;
+        int quantidade_de_arestas = getTamArestas(lista_no_arestas);
 
         int matrizadj[][] = new int[quantidade_de_vertices][quantidade_de_vertices];
+        int matrizINC[][] = new int[quantidade_de_vertices][quantidade_de_arestas];
 
         NoVertice lista_verticeL = lista_no_vertice.getNoProxVertice();
         NoVertice lista_verticeC = lista_no_vertice.getNoProxVertice();
+        NoAresta lista_arestas = lista_no_arestas.getNoProxAresta();
 
         //Armazena os valores em uma Matriz de adjacencia
         for (i = 0; i < quantidade_de_vertices; i++) {
@@ -462,8 +480,25 @@ public class GrafoNo extends NoVertice {
             testador = 0;
 
         }
+        
+        lista_verticeL = lista_no_vertice.getNoProxVertice();
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_arestas; j++) {
+                matrizINC[i][j] = verificar_Adjacencia(lista_verticeL.getVertice(), lista_arestas.getAresta());
+            }
+        }
+        for (i = 0; i < quantidade_de_vertices; i++) {
+            for (j = 0; j < quantidade_de_arestas; j++) {
+                testador = matrizINC[i][j] + testador;
+            }
+            if(testador == 1)
+            {
+                return 1;
+            }
+        }
+ 
 
-        return 1;
+        return 0;
     }
 
     public int verificar_conectividade_completo() {
