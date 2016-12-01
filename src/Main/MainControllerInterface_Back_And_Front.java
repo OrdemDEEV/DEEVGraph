@@ -26,6 +26,7 @@ public class MainControllerInterface_Back_And_Front {
     private GrafoNo grafo = new GrafoNo();
     private Vertice v;
     private Arestas a;
+    private Arquivo arq = new Arquivo();
 
     //função capaz de criar vertice
     public void Criar_Vertice(String nome) {
