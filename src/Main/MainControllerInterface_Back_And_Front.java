@@ -20,16 +20,12 @@ import Funcoes.GrafoFormal;
 import Funcoes.GrafoNo;
 import Funcoes.Vertice;
 
-/**
- *
- * @author Eduardo
- */
+
 public class MainControllerInterface_Back_And_Front {
     //instanciando classe principal das funcoes
     private GrafoNo grafo = new GrafoNo();
     private Vertice v;
     private Arestas a;
-    private Arquivo arq = new Arquivo();
 
     //função capaz de criar vertice
     public void Criar_Vertice(String nome) {
